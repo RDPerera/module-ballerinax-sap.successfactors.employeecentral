@@ -327,9 +327,9 @@ modules = [
 ]
 
 [[package]]
-org = "dilanperera"
-name = "ecalternativecostdistribution"
-version = "0.1.0"
+org = "ballerinax"
+name = "sap.successfactors.ecalternativecostdistribution"
+version = "1.0.0"
 dependencies = [
 	{org = "ballerina", name = "data.jsondata"},
 	{org = "ballerina", name = "http"},
@@ -338,6 +338,6 @@ dependencies = [
 	{org = "ballerinax", name = "sap"}
 ]
 modules = [
-	{org = "dilanperera", packageName = "ecalternativecostdistribution", moduleName = "ecalternativecostdistribution"}
+	{org = "ballerinax", packageName = "sap.successfactors.ecalternativecostdistribution", moduleName = "sap.successfactors.ecalternativecostdistribution"}
 ]
 
