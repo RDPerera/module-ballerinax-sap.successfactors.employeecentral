@@ -30,33 +30,33 @@ plugins {
 
 rootProject.name = "module-ballerinax-sap.successfactors.employeecentral"
 
-include ':sales-sanitation'
-include ':sales-ballerina'
-include ':sales-ballerina:api_salesdistrict_srv'
-include ':sales-ballerina:api_salesorganization_srv'
-include ':sales-ballerina:api_sales_order_srv'
-include ':sales-ballerina:api_sd_sa_soldtopartydetn'
-include ':sales-ballerina:salesarea_0001'
-include ':sales-ballerina:api_sd_incoterms_srv'
-include ':sales-ballerina:api_sales_inquiry_srv'
-include ':sales-ballerina:api_sales_quotation_srv'
-include ':sales-ballerina:api_sales_order_simulation_srv'
-include ':sales-ballerina:ce_salesorder_0001'
-include ':sales-examples'
+include ':ballerina'
+include ':ballerina:ecalternativecostdistribution'
+include ':ballerina:ecapprenticemanagement'
+include ':ballerina:eccompensationinformation'
+include ':ballerina:ecdismissalprotection'
+include ':ballerina:ecemployeeprofile'
+include ':ballerina:ecemploymentinformation'
+include ':ballerina:ecmasterdatareplication'
+include ':ballerina:ecpayrolltimesheets'
+include ':ballerina:ecpositionmanagement'
+include ':ballerina:ecskillsmanagement'
+include ':ballerina:ecworkflow'
+include ':ballerina:employeecentralec'
 
-project(':sales-sanitation').projectDir = file("docs/sanitation")
-project(':sales-ballerina').projectDir = file("ballerina")
-project(':sales-ballerina:api_salesdistrict_srv').projectDir = file("ballerina/api_salesdistrict_srv")
-project(':sales-ballerina:api_salesorganization_srv').projectDir = file("ballerina/api_salesorganization_srv")
-project(':sales-ballerina:api_sales_order_srv').projectDir = file("ballerina/api_sales_order_srv")
-project(':sales-ballerina:api_sd_sa_soldtopartydetn').projectDir = file("ballerina/api_sd_sa_soldtopartydetn")
-project(':sales-ballerina:salesarea_0001').projectDir = file("ballerina/salesarea_0001")
-project(':sales-ballerina:api_sd_incoterms_srv').projectDir = file("ballerina/api_sd_incoterms_srv")
-project(':sales-ballerina:api_sales_inquiry_srv').projectDir = file("ballerina/api_sales_inquiry_srv")
-project(':sales-ballerina:api_sales_quotation_srv').projectDir = file("ballerina/api_sales_quotation_srv")
-project(':sales-ballerina:api_sales_order_simulation_srv').projectDir = file("ballerina/api_sales_order_simulation_srv")
-project(':sales-ballerina:ce_salesorder_0001').projectDir = file("ballerina/ce_salesorder_0001")
-project(':sales-examples').projectDir = file("examples")
+project(':ballerina').projectDir = file("ballerina")
+project(':ballerina:ecalternativecostdistribution').projectDir = file("ballerina/ecalternativecostdistribution")
+project(':ballerina:ecapprenticemanagement').projectDir = file("ballerina/ecapprenticemanagement")
+project(':ballerina:eccompensationinformation').projectDir = file("ballerina/eccompensationinformation")
+project(':ballerina:ecdismissalprotection').projectDir = file("ballerina/ecdismissalprotection")
+project(':ballerina:ecemployeeprofile').projectDir = file("ballerina/ecemployeeprofile")
+project(':ballerina:ecemploymentinformation').projectDir = file("ballerina/ecemploymentinformation")
+project(':ballerina:ecmasterdatareplication').projectDir = file("ballerina/ecmasterdatareplication")
+project(':ballerina:ecpayrolltimesheets').projectDir = file("ballerina/ecpayrolltimesheets")
+project(':ballerina:ecpositionmanagement').projectDir = file("ballerina/ecpositionmanagement")
+project(':ballerina:ecskillsmanagement').projectDir = file("ballerina/ecskillsmanagement")
+project(':ballerina:ecworkflow').projectDir = file("ballerina/ecworkflow")
+project(':ballerina:employeecentralec').projectDir = file("ballerina/employeecentralec")
 
 gradleEnterprise {
     buildScan {

@@ -59,7 +59,6 @@ task clean {
 }
 
 task build {
-    dependsOn(updateDocumentationFiles)
     dependsOn(':ballerina:ecalternativecostdistribution:build')
     dependsOn(':ballerina:ecapprenticemanagement:build')
     dependsOn(':ballerina:eccompensationinformation:build')
