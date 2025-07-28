@@ -17,7 +17,7 @@ import ballerina/io;
 import ballerina/os;
 
 public function main(string moduleName, string apiPostfix) returns error? {
-    string[] clientFileLines = check io:fileReadLines(string `../../ballerina/${moduleName}/client.bal`);
+    string[] clientFileLines = check io:fileReadLines(string `../ballerina/${moduleName}/client.bal`);
     string[] updatedClientFileLines = [];
     int j = 0;
 
@@ -37,9 +37,14 @@ public function main(string moduleName, string apiPostfix) returns error? {
 
         int? serviceUrlOccurance = clientFileLines[i].indexOf("string serviceUrl");
         if serviceUrlOccurance is int {
-            clientFileLines[i] = clientFileLines[i].substring(0, serviceUrlOccurance - 1) + "string hostname, int port = 443" +
-                                clientFileLines[i].substring(serviceUrlOccurance + 17);
-            serviceUrlLine = i;
+            // Find the end of the parameter (look for the closing parenthesis)
+            int? closingParenIndex = clientFileLines[i].indexOf(")", serviceUrlOccurance);
+            if closingParenIndex is int {
+                string beforeServiceUrl = clientFileLines[i].substring(0, serviceUrlOccurance);
+                string afterParams = clientFileLines[i].substring(closingParenIndex);
+                clientFileLines[i] = beforeServiceUrl + "string hostname, int port = 443" + afterParams;
+                serviceUrlLine = i;
+            }
         }
 
         int? secondClientOccurance = clientFileLines[i].indexOf("http:Client httpEp");
