@@ -1,59 +1,65 @@
-# Ballerina SAP SuccessFactors Employee Central - Employment Information Connector
-
 ## Overview
 
-[SAP SuccessFactors](https://www.sap.com/products/hcm/successfactors.html) is a comprehensive cloud-based human capital management (HCM) solution designed to help organizations manage their workforce effectively.
+[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
+designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.successfactors.employeecentral.ecemploymentinformation` package provides APIs that enable seamless integration with the SAP SuccessFactors Employment Information API. This service allows you to access employment-related information, including job information, employment termination, and work permit data.
+The `ballerinax/sap.successfactors.ecemploymentinformation` package provides APIs that enable seamless integration with the [SAP SuccessFactors Employment Information API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/d91ecc323849441cb2773fc86f0eff0f.html). The service allows to access employment related information, including job information, employment termination, and work permit.
 
 ## Setup guide
 
-1. Sign in to your SAP SuccessFactors dashboard.
+1. Sign in to your S/4HANA dashboard.
 
-2. Navigate to the `Admin Center` and select `Manage OAuth2 Client Applications`.
+2. Under the `Communication Management` section, click on the `Display Communications Scenario` title.
 
-3. Create a new OAuth2 client application:
-   - Provide a unique application name
-   - Set the application URL
-   - Configure the required scopes for Employment Information access
+   ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-4. Note down the following credentials from your OAuth2 application:
-   - Client ID
-   - Client Secret
-   - Company ID
-   - Username
-   - Password
+3. In the search bar, type `Employment Information Management` and select the corresponding scenario from the results.
 
-5. Identify your SuccessFactors API server URL. You can find your company's API server in the [List of API Servers in SAP SuccessFactors](https://help.sap.com/viewer/d599f15995d348a1b45ba5603e2aba9b/LATEST/en-US/af2b8d5437494b12be88fe374eba75b6.html).
+   ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
+
+4. In the top right corner of the screen, click on `Create Communication Arrangement`.
+
+   ![Click Create Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-3-click-create-arrangement.png)
+
+5. Enter a unique name for the arrangement.
+
+   ![Give Arrangement Name](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-4-give-arrangement-name.png)
+
+6. Choose an existing `Communication System` from the dropdown menu and save your arrangement.
+
+   ![Select Existing Communication Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-5-select-communication-system.png)
+
+7. The hostname (`<unique id>-api.s4hana.cloud.sap`) will be displayed in the top right corner of the screen.
+
+   ![View Hostname](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-6-view-hostname.png)
 
 ## Quickstart
 
-To use the `sap.successfactors.employeecentral.ecemploymentinformation` connector in your Ballerina application, modify the `.bal` file as follows:
+To use the `sap.successfactors.ecemploymentinformation` connector in your Ballerina application, modify the `.bal` file as follows:
 
 ### Step 1: Import the module
 
-Import the `sap.successfactors.employeecentral.ecemploymentinformation` module.
+Import the `sap.successfactors.ecemploymentinformation` module.
 
 ```ballerina
-import ballerinax/sap.successfactors.employeecentral.ecemploymentinformation as ecemployment;
+import ballerinax/sap.successfactors.ecemploymentinformation as ecemployment;
 ```
 
 ### Step 2: Instantiate a new connector
 
-Use the hostname and credentials to initiate a client.
+Use the hostname and credentials to initiate a client
 
 ```ballerina
 configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
-configurable string companyId = ?;
 
 ecemployment:Client ecemploymentClient = check new (
     {
-        auth: {
-            username,
-            password
-        }
+      auth: {
+        username,
+        password
+      }
     },
     hostname
 );
@@ -64,17 +70,7 @@ ecemployment:Client ecemploymentClient = check new (
 Now, utilize the available connector operations.
 
 ```ballerina
-// Get employee employment information
-ecemployment:EmpEmployment[] employmentInfo = check ecemploymentClient->getEmpEmployment("userId123");
-
-// Get employee job information
-ecemployment:EmpJob[] jobInfo = check ecemploymentClient->getEmpJob("userId123");
-
-// Get employee work permit information
-ecemployment:EmpWorkPermit[] workPermits = check ecemploymentClient->getEmpWorkPermit("userId123");
-
-// Get employment termination information
-ecemployment:EmpEmploymentTermination[] terminationInfo = check ecemploymentClient->getEmpEmploymentTermination("userId123");
+ecemployment:EmpEmploymentWrapper empEmployment = check ecemploymentClient->getEmpEmployment();
 ```
 
 ### Step 4: Run the Ballerina application
@@ -85,18 +81,18 @@ bal run
 
 ## Examples
 
-The SAP SuccessFactors Employee Central Ballerina connectors provide practical examples illustrating usage in various scenarios. Explore these examples, covering use cases like accessing employment information and managing job-related data.
+The S/4 HANA Sales and Distribution Ballerina connectors provide practical examples illustrating usage in various
+scenarios. Explore
+these [examples](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples), covering
+use cases like accessing S/4HANA Sales Order (A2X) API.
 
-1. **Employment Data Management** - Demonstrates how to retrieve and manage employee employment information, job details, and work permits.
+1. [Salesforce to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/salesforce-to-sap) -
+   Demonstrates leveraging the `sap.s4hana.api_sales_order_srv:Client` in Ballerina for S/4HANA API interactions. It
+   specifically showcases how to respond to a Salesforce Opportunity Close Event by automatically generating a Sales
+   Order in the S/4HANA SD module.
 
-2. **HR Analytics Integration** - Shows how to integrate employment data with analytics platforms for workforce insights and reporting.
-
-3. **Compliance Management** - Illustrates how to track work permits and employment termination data for regulatory compliance.
-
-## API Reference
-
-For detailed API documentation and available operations, refer to the [SAP SuccessFactors Employment Information API documentation](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/d91ecc323849441cb2773fc86f0eff0f.html).
-
-## Issues and contributions
-
-Issues and Pull Requests are always welcome. Please make sure to read the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md) before starting any work.
+2. [Shopify to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/shopify-to-sap) -
+   Details the integration process between [Shopify](https://admin.shopify.com/), a leading e-commerce platform,
+   and [SAP S/4HANA](https://www.sap.com/products/erp/s4hana.html), a comprehensive ERP system. The objective is to
+   automate SAP sales order creation for new orders placed on Shopify, enhancing efficiency and accuracy in order
+   management.

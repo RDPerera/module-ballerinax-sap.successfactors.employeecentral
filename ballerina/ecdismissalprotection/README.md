@@ -1,59 +1,65 @@
-# Ballerina SAP SuccessFactors Employee Central - Dismissal Protection Connector
-
 ## Overview
 
-[SAP SuccessFactors](https://www.sap.com/products/hcm/successfactors.html) is a comprehensive cloud-based human capital management (HCM) solution designed to help organizations manage their workforce effectively.
+[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
+designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.successfactors.employeecentral.ecdismissalprotection` package provides APIs that enable seamless integration with the SAP SuccessFactors Dismissal Protection API. This service allows you to manage dismissal protection information for employees, ensuring compliance with labor laws and regulations.
+The `ballerinax/sap.successfactors.ecdismissalprotection` package provides APIs that enable seamless integration with the [SAP SuccessFactors Dismissal Protection API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html). The service allows to manage dismissal protection information for employees, ensuring compliance with labor laws and regulations.
 
 ## Setup guide
 
-1. Sign in to your SAP SuccessFactors dashboard.
+1. Sign in to your S/4HANA dashboard.
 
-2. Navigate to the `Admin Center` and select `Manage OAuth2 Client Applications`.
+2. Under the `Communication Management` section, click on the `Display Communications Scenario` title.
 
-3. Create a new OAuth2 client application:
-   - Provide a unique application name
-   - Set the application URL
-   - Configure the required scopes for Dismissal Protection access
+   ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-4. Note down the following credentials from your OAuth2 application:
-   - Client ID
-   - Client Secret
-   - Company ID
-   - Username
-   - Password
+3. In the search bar, type `Employee Dismissal Protection Management` and select the corresponding scenario from the results.
 
-5. Identify your SuccessFactors API server URL. You can find your company's API server in the [List of API Servers in SAP SuccessFactors](https://help.sap.com/viewer/d599f15995d348a1b45ba5603e2aba9b/LATEST/en-US/af2b8d5437494b12be88fe374eba75b6.html).
+   ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
+
+4. In the top right corner of the screen, click on `Create Communication Arrangement`.
+
+   ![Click Create Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-3-click-create-arrangement.png)
+
+5. Enter a unique name for the arrangement.
+
+   ![Give Arrangement Name](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-4-give-arrangement-name.png)
+
+6. Choose an existing `Communication System` from the dropdown menu and save your arrangement.
+
+   ![Select Existing Communication Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-5-select-communication-system.png)
+
+7. The hostname (`<unique id>-api.s4hana.cloud.sap`) will be displayed in the top right corner of the screen.
+
+   ![View Hostname](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-6-view-hostname.png)
 
 ## Quickstart
 
-To use the `sap.successfactors.employeecentral.ecdismissalprotection` connector in your Ballerina application, modify the `.bal` file as follows:
+To use the `sap.successfactors.ecdismissalprotection` connector in your Ballerina application, modify the `.bal` file as follows:
 
 ### Step 1: Import the module
 
-Import the `sap.successfactors.employeecentral.ecdismissalprotection` module.
+Import the `sap.successfactors.ecdismissalprotection` module.
 
 ```ballerina
-import ballerinax/sap.successfactors.employeecentral.ecdismissalprotection as ecdismiss;
+import ballerinax/sap.successfactors.ecdismissalprotection as ecdismiss;
 ```
 
 ### Step 2: Instantiate a new connector
 
-Use the hostname and credentials to initiate a client.
+Use the hostname and credentials to initiate a client
 
 ```ballerina
 configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
-configurable string companyId = ?;
 
 ecdismiss:Client ecdismissClient = check new (
     {
-        auth: {
-            username,
-            password
-        }
+      auth: {
+        username,
+        password
+      }
     },
     hostname
 );
@@ -64,11 +70,7 @@ ecdismiss:Client ecdismissClient = check new (
 Now, utilize the available connector operations.
 
 ```ballerina
-// Get employee dismissal protection information
-ecdismiss:EmployeeDismissalProtection[] dismissalProtection = check ecdismissClient->getEmployeeDismissalProtection("workerId123");
-
-// Get employee dismissal protection details
-ecdismiss:EmployeeDismissalProtectionDetail[] protectionDetails = check ecdismissClient->getEmployeeDismissalProtectionDetail("workerId123");
+ecdismiss:EmployeeDismissalProtectionWrapper dismissalProtection = check ecdismissClient->getEmployeeDismissalProtection();
 ```
 
 ### Step 4: Run the Ballerina application
@@ -79,16 +81,18 @@ bal run
 
 ## Examples
 
-The SAP SuccessFactors Employee Central Ballerina connectors provide practical examples illustrating usage in various scenarios. Explore these examples, covering use cases like managing dismissal protection and compliance monitoring.
+The S/4 HANA Sales and Distribution Ballerina connectors provide practical examples illustrating usage in various
+scenarios. Explore
+these [examples](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples), covering
+use cases like accessing S/4HANA Sales Order (A2X) API.
 
-1. **Dismissal Protection Management** - Demonstrates how to retrieve and manage employee dismissal protection information for compliance purposes.
+1. [Salesforce to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/salesforce-to-sap) -
+   Demonstrates leveraging the `sap.s4hana.api_sales_order_srv:Client` in Ballerina for S/4HANA API interactions. It
+   specifically showcases how to respond to a Salesforce Opportunity Close Event by automatically generating a Sales
+   Order in the S/4HANA SD module.
 
-2. **Legal Compliance Monitoring** - Shows how to monitor dismissal protection status and ensure compliance with labor regulations.
-
-## API Reference
-
-For detailed API documentation and available operations, refer to the [SAP SuccessFactors Dismissal Protection API documentation](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html).
-
-## Issues and contributions
-
-Issues and Pull Requests are always welcome. Please make sure to read the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md) before starting any work.
+2. [Shopify to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/shopify-to-sap) -
+   Details the integration process between [Shopify](https://admin.shopify.com/), a leading e-commerce platform,
+   and [SAP S/4HANA](https://www.sap.com/products/erp/s4hana.html), a comprehensive ERP system. The objective is to
+   automate SAP sales order creation for new orders placed on Shopify, enhancing efficiency and accuracy in order
+   management.

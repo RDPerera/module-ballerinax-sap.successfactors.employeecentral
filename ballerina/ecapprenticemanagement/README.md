@@ -1,59 +1,65 @@
-# Ballerina SAP SuccessFactors Employee Central - Apprentice Management Connector
-
 ## Overview
 
-[SAP SuccessFactors](https://www.sap.com/products/hcm/successfactors.html) is a comprehensive cloud-based human capital management (HCM) solution designed to help organizations manage their workforce effectively.
+[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
+designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.successfactors.employeecentral.ecapprenticemanagement` package provides APIs that enable seamless integration with the SAP SuccessFactors Apprentice Management API. This service allows you to manage apprenticeship programs, track apprentice progress, and maintain apprentice-related information.
+The `ballerinax/sap.successfactors.ecapprenticemanagement` package provides APIs that enable seamless integration with the [SAP SuccessFactors Apprentice Management API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html). The service allows to manage apprenticeship programs, track apprentice progress, and maintain apprentice-related information.
 
 ## Setup guide
 
-1. Sign in to your SAP SuccessFactors dashboard.
+1. Sign in to your S/4HANA dashboard.
 
-2. Navigate to the `Admin Center` and select `Manage OAuth2 Client Applications`.
+2. Under the `Communication Management` section, click on the `Display Communications Scenario` title.
 
-3. Create a new OAuth2 client application:
-   - Provide a unique application name
-   - Set the application URL
-   - Configure the required scopes for Apprentice Management access
+   ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-4. Note down the following credentials from your OAuth2 application:
-   - Client ID
-   - Client Secret
-   - Company ID
-   - Username
-   - Password
+3. In the search bar, type `Apprentice Program Management` and select the corresponding scenario from the results.
 
-5. Identify your SuccessFactors API server URL. You can find your company's API server in the [List of API Servers in SAP SuccessFactors](https://help.sap.com/viewer/d599f15995d348a1b45ba5603e2aba9b/LATEST/en-US/af2b8d5437494b12be88fe374eba75b6.html).
+   ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
+
+4. In the top right corner of the screen, click on `Create Communication Arrangement`.
+
+   ![Click Create Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-3-click-create-arrangement.png)
+
+5. Enter a unique name for the arrangement.
+
+   ![Give Arrangement Name](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-4-give-arrangement-name.png)
+
+6. Choose an existing `Communication System` from the dropdown menu and save your arrangement.
+
+   ![Select Existing Communication Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-5-select-communication-system.png)
+
+7. The hostname (`<unique id>-api.s4hana.cloud.sap`) will be displayed in the top right corner of the screen.
+
+   ![View Hostname](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-6-view-hostname.png)
 
 ## Quickstart
 
-To use the `sap.successfactors.employeecentral.ecapprenticemanagement` connector in your Ballerina application, modify the `.bal` file as follows:
+To use the `sap.successfactors.ecapprenticemanagement` connector in your Ballerina application, modify the `.bal` file as follows:
 
 ### Step 1: Import the module
 
-Import the `sap.successfactors.employeecentral.ecapprenticemanagement` module.
+Import the `sap.successfactors.ecapprenticemanagement` module.
 
 ```ballerina
-import ballerinax/sap.successfactors.employeecentral.ecapprenticemanagement as ecappr;
+import ballerinax/sap.successfactors.ecapprenticemanagement as ecappr;
 ```
 
 ### Step 2: Instantiate a new connector
 
-Use the hostname and credentials to initiate a client.
+Use the hostname and credentials to initiate a client
 
 ```ballerina
 configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
-configurable string companyId = ?;
 
 ecappr:Client ecapprClient = check new (
     {
-        auth: {
-            username,
-            password
-        }
+      auth: {
+        username,
+        password
+      }
     },
     hostname
 );
@@ -64,14 +70,7 @@ ecappr:Client ecapprClient = check new (
 Now, utilize the available connector operations.
 
 ```ballerina
-// Get apprentice information
-ecappr:Apprentice[] apprentices = check ecapprClient->getApprentice("userId123");
-
-// Get apprentice school information
-ecappr:ApprenticeSchool[] schools = check ecapprClient->getApprenticeSchool("externalCode123");
-
-// Get apprentice training events
-ecappr:ApprenticeInternalTrainingEvent[] trainingEvents = check ecapprClient->getApprenticeInternalTrainingEvent("externalCode123");
+ecappr:ApprenticeWrapper apprentice = check ecapprClient->getApprentice();
 ```
 
 ### Step 4: Run the Ballerina application
@@ -82,16 +81,18 @@ bal run
 
 ## Examples
 
-The SAP SuccessFactors Employee Central Ballerina connectors provide practical examples illustrating usage in various scenarios. Explore these examples, covering use cases like managing apprenticeship programs and tracking apprentice development.
+The S/4 HANA Sales and Distribution Ballerina connectors provide practical examples illustrating usage in various
+scenarios. Explore
+these [examples](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples), covering
+use cases like accessing S/4HANA Sales Order (A2X) API.
 
-1. **Apprentice Program Management** - Demonstrates how to manage apprenticeship programs and track apprentice progress.
+1. [Salesforce to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/salesforce-to-sap) -
+   Demonstrates leveraging the `sap.s4hana.api_sales_order_srv:Client` in Ballerina for S/4HANA API interactions. It
+   specifically showcases how to respond to a Salesforce Opportunity Close Event by automatically generating a Sales
+   Order in the S/4HANA SD module.
 
-2. **Training and Development** - Shows how to manage apprentice training events and educational activities.
-
-## API Reference
-
-For detailed API documentation and available operations, refer to the [SAP SuccessFactors Apprentice Management API documentation](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html).
-
-## Issues and contributions
-
-Issues and Pull Requests are always welcome. Please make sure to read the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md) before starting any work.
+2. [Shopify to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/shopify-to-sap) -
+   Details the integration process between [Shopify](https://admin.shopify.com/), a leading e-commerce platform,
+   and [SAP S/4HANA](https://www.sap.com/products/erp/s4hana.html), a comprehensive ERP system. The objective is to
+   automate SAP sales order creation for new orders placed on Shopify, enhancing efficiency and accuracy in order
+   management.
