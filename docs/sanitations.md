@@ -1,8 +1,8 @@
 # SAP S/4HANA OpenAPI Specification Sanitization
 
 _Author_: @niveathika \
-_Created_: 2024/05/21 \
-_Updated_: 2024/07/02 \
+_Created_: 2025/05/21 \
+_Updated_: 2025/07/02 \
 _Edition_: Swan Lake  
 
 ## Sanitization Steps

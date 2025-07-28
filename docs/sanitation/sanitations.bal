@@ -1,4 +1,4 @@
-// Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+// Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
 //
 // WSO2 LLC. licenses this file to you under the Apache License,
 // Version 2.0 (the "License"); you may not use this file except
@@ -93,10 +93,10 @@ type Path record {
 };
 
 type Components record {
-    map<json> schemas;
-    map<ParametersItem> parameters;
-    json responses;
-    json securitySchemes;
+    map<json> schemas?;
+    map<ParametersItem> parameters?;
+    json responses?;
+    json securitySchemes?;
 };
 
 type ResponseCode record {
@@ -123,19 +123,32 @@ type ResponseProperties record {
 };
 
 type Specification record {
-    string openapi;
+    // OpenAPI 3.0 fields
+    string openapi?;
+    // Swagger 2.0 fields
+    string swagger?;
     json info;
-    json externalDocs;
-    string x\-sap\-api\-type;
-    string x\-sap\-shortText;
-    string x\-sap\-software\-min\-version;
-    json[] x\-sap\-ext\-overview;
-    json[] servers;
-    json x\-sap\-extensible;
-    json[] tags;
+    json externalDocs?;
+    string x\-sap\-api\-type?;
+    string x\-sap\-shortText?;
+    string x\-sap\-software\-min\-version?;
+    json[] x\-sap\-ext\-overview?;
+    // OpenAPI 3.0 servers
+    json[] servers?;
+    // Swagger 2.0 fields
+    json x\-sap\-extensible?;
+    string[] schemes?;
+    string host?;
+    string basePath?;
+    string[] consumes?;
+    string[] produces?;
+    json x\-servers?;
+    json[] tags?;
     map<Path> paths;
-    Components components;
-    json[] security;
+    Components components?;
+    json[] security?;
+    // Swagger 2.0 securityDefinitions
+    json securityDefinitions?;
 };
 
 public function main(string apiName) returns error? {
@@ -156,6 +169,10 @@ function sanitizeSameParameterNameAndSchemaName(string specPath) returns error? 
         return;
     }
 
+    // Check if it's Swagger 2.0 or OpenAPI 3.0
+    boolean isSwagger2 = spec.swagger is string;
+    string schemaRefPrefix = isSwagger2 ? "#/definitions/" : "#/components/schemas/";
+
     map<Path> updatedPaths = {};
     map<Path> paths = spec.paths;
     foreach var [key, value] in paths.entries() {
@@ -170,7 +187,8 @@ function sanitizeSameParameterNameAndSchemaName(string specPath) returns error? 
                 if schemaRef is () {
                     continue;
                 }
-                reponseSchema = schemaRef.substring(21);
+                // Extract schema name from reference (skip the prefix length)
+                reponseSchema = schemaRef.substring(schemaRefPrefix.length());
                 break;
             }
         }
@@ -214,6 +232,9 @@ function sanitizeEnumParamters(string specPath) returns error? {
         isODATA4 = true;
     }
 
+    // Check if it's Swagger 2.0 or OpenAPI 3.0
+    boolean isSwagger2 = spec.swagger is string;
+
     map<ParametersItem> selectedParameters = {};
     map<EnumSchema> schemasLookup = {};
     [string, EnumSchema][] selectedSchemas = [];
@@ -256,11 +277,11 @@ function sanitizeEnumParamters(string specPath) returns error? {
                 description: param.description,
                 explode: param.explode,
                 schema: {
-                    "$ref": "#/components/schemas/" + sanitizedParamName[0]
+                    "$ref": (isSwagger2 ? "#/definitions/" : "#/components/schemas/") + sanitizedParamName[0]
                 }
             };
             parameters[i] = {
-                \$ref: "#/components/parameters/" + sanitizedParamName[0]
+                \$ref: (isSwagger2 ? "#/parameters/" : "#/components/parameters/") + sanitizedParamName[0]
             };
             if sanitizedParamName[1] != "" {
                 possibleDuplicateSchemaIndex.push({
@@ -288,7 +309,7 @@ function sanitizeEnumParamters(string specPath) returns error? {
                     boolean isEqual = possibleDuplicateSchema.items.'enum.every(val => selectedSchemas[i][1].items.'enum.indexOf(val) != ());
                     if isEqual {
                         selectedParameters[selectedSchemas[i][0]].schema = {
-                            "$ref": "#/components/schemas/" + duplicateKey
+                            "$ref": (isSwagger2 ? "#/definitions/" : "#/components/schemas/") + duplicateKey
                         };
                         j += 1;
                         continue;
@@ -302,15 +323,56 @@ function sanitizeEnumParamters(string specPath) returns error? {
         }
     }
 
-    foreach var [schemaName, value] in uniqueSchemas.entries() {
-        spec.components.schemas[schemaName] = value.toJson();
-    }
+    // Update schemas and parameters based on the spec version
+    if isSwagger2 {
+        // For Swagger 2.0, update definitions and parameters directly in the JSON
+        json updatedSpecJson = spec.toJson();
+        if updatedSpecJson is map<json> {
+            // Update definitions (schemas)
+            map<json> definitions = {};
+            json existingDefinitions = updatedSpecJson["definitions"];
+            if existingDefinitions is map<json> {
+                definitions = existingDefinitions;
+            }
+            foreach var [schemaName, value] in uniqueSchemas.entries() {
+                definitions[schemaName] = value.toJson();
+            }
+            updatedSpecJson["definitions"] = definitions;
+            
+            // Update parameters
+            map<json> parameters = {};
+            json existingParameters = updatedSpecJson["parameters"];
+            if existingParameters is map<json> {
+                parameters = existingParameters;
+            }
+            foreach var [paramName, value] in selectedParameters.entries() {
+                parameters[paramName] = value.toJson();
+            }
+            updatedSpecJson["parameters"] = parameters;
+            if updatedSpecJson.hasKey("components") {
+                _ = updatedSpecJson.remove("components");
+            }
+        }
+        check io:fileWriteJson(specPath, updatedSpecJson);
+    } else {
+        // For OpenAPI 3.0, use components
+        Components currentComponents = spec.components ?: {schemas: {}};
+        
+        map<json> schemas = currentComponents.schemas ?: {};
+        foreach var [schemaName, value] in uniqueSchemas.entries() {
+            schemas[schemaName] = value.toJson();
+        }
+        currentComponents.schemas = schemas;
 
-    foreach var [paramName, value] in selectedParameters.entries() {
-        spec.components.parameters[paramName] = value;
+        map<ParametersItem> parameters = currentComponents.parameters ?: {};
+        foreach var [paramName, value] in selectedParameters.entries() {
+            parameters[paramName] = value;
+        }
+        currentComponents.parameters = parameters;
+        
+        spec.components = currentComponents;
+        check io:fileWriteJson(specPath, spec.toJson());
     }
-
-    check io:fileWriteJson(specPath, spec.toJson());
 
 }
 
@@ -427,10 +489,32 @@ function sanitizeSchemaNames(string apiName, string specPath) returns error? {
 
     Specification spec = check openAPISpec.cloneWithType(Specification);
 
+    // Handle both Swagger 2.0 and OpenAPI 3.0
+    map<json> schemas = {};
+    boolean isSwagger2 = false;
+    
+    // Check if it's Swagger 2.0 or OpenAPI 3.0
+    if spec.swagger is string {
+        isSwagger2 = true;
+        // For Swagger 2.0, schemas are in definitions
+        if openAPISpec is map<json> {
+            json definitions = openAPISpec["definitions"];
+            if definitions is map<json> {
+                schemas = definitions;
+            }
+        }
+    } else {
+        // For OpenAPI 3.0, schemas are in components.schemas
+        Components? components = spec.components;
+        if components is Components {
+            schemas = components.schemas ?: {};
+        }
+    }
+
     map<json> updatedSchemas = {};
     map<string> updatedNames = {};
 
-    foreach [string, json] [schemaName, schema] in spec.components.schemas.entries() {
+    foreach [string, json] [schemaName, schema] in schemas.entries() {
         boolean schemaNameCheck = schemaName.includes(".");
         if schemaNameCheck {
             string updatedKey = getSanitizedSchemaName(schemaName);
@@ -440,9 +524,27 @@ function sanitizeSchemaNames(string apiName, string specPath) returns error? {
             updatedSchemas[schemaName] = schema;
         }
     }
-    spec.components.schemas = updatedSchemas;
 
-    string updatedSpec = spec.toJsonString();
+    string updatedSpec = "";
+    
+    if isSwagger2 {
+        // For Swagger 2.0, update definitions directly
+        json updatedSpecJson = spec.toJson();
+        if updatedSpecJson is map<json> {
+            updatedSpecJson["definitions"] = updatedSchemas.toJson();
+            if updatedSpecJson.hasKey("components") {
+                _ = updatedSpecJson.remove("components");
+            }
+        }
+        updatedSpec = updatedSpecJson.toJsonString();
+    } else {
+        // For OpenAPI 3.0
+        Components currentComponents = spec.components ?: {schemas: {}};
+        currentComponents.schemas = updatedSchemas;
+        spec.components = currentComponents;
+        updatedSpec = spec.toJsonString();
+    }
+
     foreach [string, string] [oldName, newName] in updatedNames.entries() {
         string sanitizedOldNameRegex = re `\.`.replace(oldName, "\\.");
         regexp:RegExp regexp = re `${sanitizedOldNameRegex}"`;

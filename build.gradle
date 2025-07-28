@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -16,7 +16,7 @@
  * under the License.
  */
 
-description = 'Ballerina - SAP S/4HANA Sales APIs'
+description = 'Ballerina - SAP SuccessFactors Employee Central API'
 
 ext.ballerinaLangVersion = project.ballerinaLangVersion
 
@@ -59,7 +59,17 @@ task clean {
 }
 
 task build {
-    dependsOn(':sales-sanitation:build')
-    dependsOn(':sales-ballerina:build')
-    dependsOn(':sales-examples:build')
+    dependsOn(updateDocumentationFiles)
+    dependsOn(':ballerina:ecalternativecostdistribution:build')
+    dependsOn(':ballerina:ecapprenticemanagement:build')
+    dependsOn(':ballerina:eccompensationinformation:build')
+    dependsOn(':ballerina:ecdismissalprotection:build')
+    dependsOn(':ballerina:ecemployeeprofile:build')
+    dependsOn(':ballerina:ecemploymentinformation:build')
+    dependsOn(':ballerina:ecmasterdatareplication:build')
+    dependsOn(':ballerina:ecpayrolltimesheets:build')
+    dependsOn(':ballerina:ecpositionmanagement:build')
+    dependsOn(':ballerina:ecskillsmanagement:build')
+    dependsOn(':ballerina:ecworkflow:build')
+    dependsOn(':ballerina:employeecentralec:build')
 }

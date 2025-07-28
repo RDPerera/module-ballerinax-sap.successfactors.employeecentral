@@ -28,7 +28,7 @@ plugins {
     id "com.gradle.enterprise" version "3.2"
 }
 
-rootProject.name = "module-ballerinax-sap.s4hana.sales"
+rootProject.name = "module-ballerinax-sap.successfactors.employeecentral"
 
 include ':sales-sanitation'
 include ':sales-ballerina'

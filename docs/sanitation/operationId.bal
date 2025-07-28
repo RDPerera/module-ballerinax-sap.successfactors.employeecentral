@@ -1,4 +1,4 @@
-// Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+// Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
 //
 // WSO2 LLC. licenses this file to you under the Apache License,
 // Version 2.0 (the "License"); you may not use this file except
@@ -38,26 +38,39 @@ type Path record {|
 |};
 
 type Components record {
-    map<json> schemas;
-    json parameters;
-    json responses;
-    json securitySchemes;
+    map<json> schemas?;
+    json parameters?;
+    json responses?;
+    json securitySchemes?;
 };
 
 type Specification record {
-    string openapi;
+    // OpenAPI 3.0 fields
+    string openapi?;
+    // Swagger 2.0 fields
+    string swagger?;
     json info;
-    json externalDocs;
-    string x\-sap\-api\-type;
-    string x\-sap\-shortText;
-    string x\-sap\-software\-min\-version;
-    json[] x\-sap\-ext\-overview;
-    json[] servers;
-    json x\-sap\-extensible;
-    json[] tags;
+    json externalDocs?;
+    string x\-sap\-api\-type?;
+    string x\-sap\-shortText?;
+    string x\-sap\-software\-min\-version?;
+    json[] x\-sap\-ext\-overview?;
+    // OpenAPI 3.0 servers
+    json[] servers?;
+    // Swagger 2.0 fields
+    json x\-sap\-extensible?;
+    string[] schemes?;
+    string host?;
+    string basePath?;
+    string[] consumes?;
+    string[] produces?;
+    json x\-servers?;
+    json[] tags?;
     map<Path> paths;
-    Components components;
-    json[] security;
+    Components components?;
+    json[] security?;
+    // Swagger 2.0 securityDefinitions
+    json securityDefinitions?;
 };
 
 enum HttpMethod {
@@ -73,6 +86,9 @@ public function main(string apiName) returns error? {
     json openAPISpec = check io:fileReadJson(specPath);
 
     Specification spec = check openAPISpec.cloneWithType(Specification);
+
+    // Check if it's Swagger 2.0 or OpenAPI 3.0
+    boolean isSwagger2 = spec.swagger is string;
 
     boolean isODATA4 = false;
     if spec.x\-sap\-api\-type == "ODATAV4" {
@@ -97,7 +113,21 @@ public function main(string apiName) returns error? {
             value.patch.operationId = check getSanitisedPathName(key, PATCH, isODATA4);
         }
     }
-    check io:fileWriteJson(specPath, spec.toJson());
+    
+    // Handle different spec formats when writing back
+    if isSwagger2 {
+        // For Swagger 2.0, ensure we don't include OpenAPI 3.0 specific fields
+        json updatedSpecJson = spec.toJson();
+        if updatedSpecJson is map<json> {
+            if updatedSpecJson.hasKey("components") {
+                _ = updatedSpecJson.remove("components");
+            }
+        }
+        check io:fileWriteJson(specPath, updatedSpecJson);
+    } else {
+        // For OpenAPI 3.0, write as is
+        check io:fileWriteJson(specPath, spec.toJson());
+    }
 }
 
 function getSanitisedPathName(string key, HttpMethod method, boolean isODATA4, json? response = ()) returns string|error {

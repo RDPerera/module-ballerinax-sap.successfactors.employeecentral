@@ -1,0 +1,7 @@
+{
+  "description": "The `ballerinax/sap.successfactors.ecpayrolltimesheets` package provides APIs that enable seamless integration with the [SAP SuccessFactors Payroll Time Sheets API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html). The service allows to manage employee time sheet data, working hours, and payroll-related time information.",
+  "communication-scenario": "Employee Payroll Time Management",
+  "import-statement": "import ballerinax/sap.successfactors.ecpayrolltimesheets as ecpayroll;",
+  "client-init": "ecpayroll:Client ecpayrollClient = check new (",
+  "api-invocation": "ecpayroll:EmployeeTimeSheetWrapper timeSheet = check ecpayrollClient->getEmployeeTimeSheet();"
+}

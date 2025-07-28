@@ -1,4 +1,4 @@
-// Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+// Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
 //
 // WSO2 LLC. licenses this file to you under the Apache License,
 // Version 2.0 (the "License"); you may not use this file except
@@ -17,7 +17,7 @@ import ballerina/io;
 import ballerina/os;
 
 public function main(string moduleName, string apiPostfix) returns error? {
-    string[] clientFileLines = check io:fileReadLines(string `../ballerina/${moduleName}/client.bal`);
+    string[] clientFileLines = check io:fileReadLines(string `../../ballerina/${moduleName}/client.bal`);
     string[] updatedClientFileLines = [];
     int j = 0;
 

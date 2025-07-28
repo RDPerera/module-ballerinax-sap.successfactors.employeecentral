@@ -1,0 +1,7 @@
+{
+  "description": "The `ballerinax/sap.successfactors.ecdismissalprotection` package provides APIs that enable seamless integration with the [SAP SuccessFactors Dismissal Protection API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html). The service allows to manage dismissal protection information for employees, ensuring compliance with labor laws and regulations.",
+  "communication-scenario": "Employee Dismissal Protection Management",
+  "import-statement": "import ballerinax/sap.successfactors.ecdismissalprotection as ecdismiss;",
+  "client-init": "ecdismiss:Client ecdismissClient = check new (",
+  "api-invocation": "ecdismiss:EmployeeDismissalProtectionWrapper dismissalProtection = check ecdismissClient->getEmployeeDismissalProtection();"
+}
