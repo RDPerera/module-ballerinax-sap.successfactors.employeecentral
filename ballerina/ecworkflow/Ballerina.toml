@@ -1,8 +1,13 @@
 [package]
-org = "dilanperera"
-name = "ecworkflow"
-version = "0.1.0"
-distribution = "2201.12.7"
+org = "ballerinax"
+name = "sap.successfactors.ecworkflow"
+version = "1.0.0"
+distribution = "2201.12.0"
+authors = ["Ballerina"]
+keywords = ["Business Management/HCM", "Cost/Paid", "Vendor/SAP", "SuccessFactors", "Employee Central"]
+repository = "https://github.com/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral"
+icon = "../icon.png"
+license = ["Apache-2.0"]
 
 [build-options]
 observabilityIncluded = true
