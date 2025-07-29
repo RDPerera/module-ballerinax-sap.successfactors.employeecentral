@@ -1,98 +1,43 @@
-## Overview
+# Ballerina SAP SuccessFactors Employee Central Connectors
 
-[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
-designed for large-scale enterprises by SAP SE.
+[SAP SuccessFactors Employee Central](https://www.sap.com/products/hcm/core-hr-payroll.html) is a comprehensive human capital management solution that helps organizations manage their workforce effectively. It provides a unified platform for HR processes including employee data management, organizational structures, and employment lifecycle management.
 
-The `ballerinax/sap.successfactors.ecemployeeprofile` package provides APIs that enable seamless integration with the [SAP SuccessFactors Employee Profile API v1.0](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/c508d8543026442d88457f3654b4e91d.html). The service allows to maintain the general background information of an employee, including education and outside work experiences.
+This repository encompasses all Ballerina packages pertaining to the SAP SuccessFactors Employee Central module. Each package provides seamless integration with specific Employee Central APIs:
 
-## Setup guide
+## Available Packages
 
-1. Sign in to your S/4HANA dashboard.
+### Core Employee Management
 
-2. Under the `Communication Management` section, click on the `Display Communications Scenario` title.
+1. **`ballerinax/sap.successfactors.ecemployeeprofile`** - Provides APIs for managing employee profile information including personal details, education background, and work experience data.
 
-   ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
+2. **`ballerinax/sap.successfactors.ecemploymentinformation`** - Enables management of employment-related information including job details, employment status, termination data, and work permits.
 
-3. In the search bar, type `Employee Profile Management` and select the corresponding scenario from the results.
+3. **`ballerinax/sap.successfactors.employeecentralec`** - Core Employee Central APIs for comprehensive employee data management and organizational structure operations.
 
-   ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
+### Compensation and Benefits
 
-4. In the top right corner of the screen, click on `Create Communication Arrangement`.
+4. **`ballerinax/sap.successfactors.eccompensationinformation`** - Handles employee compensation data including salary information, pay scales, and compensation planning.
 
-   ![Click Create Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-3-click-create-arrangement.png)
+5. **`ballerinax/sap.successfactors.ecalternativecostdistribution`** - Manages alternative cost distribution scenarios for employee expenses and cost center allocations.
 
-5. Enter a unique name for the arrangement.
+### Position and Organizational Management
 
-   ![Give Arrangement Name](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-4-give-arrangement-name.png)
+6. **`ballerinax/sap.successfactors.ecpositionmanagement`** - Provides position management capabilities including position creation, hierarchy management, and organizational structure maintenance.
 
-6. Choose an existing `Communication System` from the dropdown menu and save your arrangement.
+7. **`ballerinax/sap.successfactors.ecmasterdatareplication`** - Enables master data replication across Employee Central systems for data consistency and synchronization.
 
-   ![Select Existing Communication Arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-5-select-communication-system.png)
+### Time and Payroll
 
-7. The hostname (`<unique id>-api.s4hana.cloud.sap`) will be displayed in the top right corner of the screen.
+8. **`ballerinax/sap.successfactors.ecpayrolltimesheets`** - Manages payroll timesheet data including time tracking, attendance records, and payroll processing information.
 
-   ![View Hostname](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-6-view-hostname.png)
+### Learning and Development
 
-## Quickstart
+9. **`ballerinax/sap.successfactors.ecskillsmanagement`** - Handles skills and competency management including skill profiles, competency frameworks, and talent development tracking.
 
-To use the `sap.successfactors.ecemployeeprofile` connector in your Ballerina application, modify the `.bal` file as follows:
+10. **`ballerinax/sap.successfactors.ecapprenticemanagement`** - Provides apprentice program management capabilities including apprentice registration, progress tracking, and program administration.
 
-### Step 1: Import the module
+### Workflow and Legal
 
-Import the `sap.successfactors.ecemployeeprofile` module.
+11. **`ballerinax/sap.successfactors.ecworkflow`** - Manages workflow processes within Employee Central including approval workflows, notifications, and process automation.
 
-```ballerina
-import ballerinax/sap.successfactors.ecemployeeprofile as ecprofile;
-```
-
-### Step 2: Instantiate a new connector
-
-Use the hostname and credentials to initiate a client
-
-```ballerina
-configurable string hostname = ?;
-configurable string username = ?;
-configurable string password = ?;
-
-ecprofile:Client ecprofileClient = check new (
-    {
-      auth: {
-        username,
-        password
-      }
-    },
-    hostname
-);
-```
-
-### Step 3: Invoke the connector operation
-
-Now, utilize the available connector operations.
-
-```ballerina
-ecprofile:BackgroundEducationWrapper backgroundEducation = check ecprofileClient->getBackgroundEducation();
-```
-
-### Step 4: Run the Ballerina application
-
-```bash
-bal run
-```
-
-## Examples
-
-The S/4 HANA Sales and Distribution Ballerina connectors provide practical examples illustrating usage in various
-scenarios. Explore
-these [examples](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples), covering
-use cases like accessing S/4HANA Sales Order (A2X) API.
-
-1. [Salesforce to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/salesforce-to-sap) -
-   Demonstrates leveraging the `sap.s4hana.api_sales_order_srv:Client` in Ballerina for S/4HANA API interactions. It
-   specifically showcases how to respond to a Salesforce Opportunity Close Event by automatically generating a Sales
-   Order in the S/4HANA SD module.
-
-2. [Shopify to S/4HANA Integration](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/tree/main/examples/shopify-to-sap) -
-   Details the integration process between [Shopify](https://admin.shopify.com/), a leading e-commerce platform,
-   and [SAP S/4HANA](https://www.sap.com/products/erp/s4hana.html), a comprehensive ERP system. The objective is to
-   automate SAP sales order creation for new orders placed on Shopify, enhancing efficiency and accuracy in order
-   management.
+12. **`ballerinax/sap.successfactors.ecdismissalprotection`** - Handles dismissal protection and termination compliance features including legal requirements and documentation.
