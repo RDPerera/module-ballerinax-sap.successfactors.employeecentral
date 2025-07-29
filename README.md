@@ -1,55 +1,51 @@
-# Ballerina S/4HANA Sales Connectors
+# Ballerina SAP SuccessFactors Employee Central Connectors
 
-[![Build](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/actions/workflows/ci.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.s4hana.sales/branch/main/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.s4hana.sales)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-sap.s4hana.sales.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.sales/commits/main)
-[![GitHub Issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-library/module/s4hana.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-library/labels/module%2Fs4hana)
+[![Build](https://github.com/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral/actions/workflows/ci.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral/branch/main/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.successfactors.employeecentral/commits/main)
+[![GitHub Issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-library/module/successfactors.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-library/labels/module%2Fsuccessfactors)
 
-[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
-designed for large-scale enterprises by SAP SE.
+[SAP SuccessFactors Employee Central](https://www.sap.com/products/hcm/core-hr-payroll.html) is a comprehensive human capital management solution that helps organizations manage their workforce effectively. It provides a unified platform for HR processes including employee data management, organizational structures, and employment lifecycle management.
 
-This repository encompasses all Ballerina packages pertaining to the S/4HANA sales submodule. Notably:
+This repository encompasses all Ballerina packages pertaining to the SAP SuccessFactors Employee Central module. Each package provides seamless integration with specific Employee Central APIs:
 
-1. The `ballerinax/sap.s4hana.api_salesdistrict_srv` package provides APIs that enable seamless integration with
-   the [Sales District - Read API v1.0.0](https://api.sap.com/api/API_SALESDISTRICT_SRV/overview). The service contains
-   sales district and sales district text nodes.
+## Available Packages
 
-2. The `ballerinax/sap.s4hana.api_salesorganization_srv` package provides APIs that enable seamless integration with
-   the [Sales Organization - Read API v1.0.0](https://api.sap.com/api/API_SALESDISTRICT_SRV/overview). The service
-   allows users to read sales organization master data.
+### Core Employee Management
 
-3. The `ballerinax/sap.s4hana.api_sales_order_srv` package provides APIs that enable seamless integration with
-   the [Sales Order (A2X) API v1.0.0](https://api.sap.com/api/API_SALES_ORDER_SRV/overview). The service allows to
-   create, read, update, and delete sales orders.
+1. The `ballerinax/sap.successfactors.ecemployeeprofile` package provides APIs for managing employee profile information including personal details, education background, and work experience data.
 
-4. The `ballerinax/sap.s4hana.api_sd_sa_soldtopartydetn` package provides APIs that enable seamless integration with
-   the [Sold-to Party Assignment of Sales Scheduling Agreement - Read (A2X) v1.0.0](https://api.sap.com/api/API_SD_SA_SOLDTOPARTYDETN/overview).
-   The service allows users to read sold-to party assignment of sales scheduling agreement master data.
+2. The `ballerinax/sap.successfactors.ecemploymentinformation` package enables management of employment-related information including job details, employment status, termination data, and work permits.
 
-5. The `ballerinax/sap.s4hana.salesarea_0001` package provides APIs that enable seamless integration with
-   the [Sales Area - Read (A2X) v1.0.0](https://api.sap.com/api/SALESAREA_0001/overview). The service allows users to
-   read sales areas.
+3. The `ballerinax/sap.successfactors.employeecentralec` package provides core Employee Central APIs for comprehensive employee data management and organizational structure operations.
 
-6. The `ballerinax/sap.s4hana.api_sd_incoterms_srv` package provides APIs that enable seamless integration with
-   the [Incoterm - Read (A2X) v1.0.0](https://api.sap.com/api/API_SD_INCOTERMS_SRV/overview). The service allows users
-   to read incoterms defined in the system.
+### Compensation and Benefits
 
-7. The `ballerinax/sap.s4hana.api_sales_inquiry_srv` package provides APIs that enable seamless integration with
-   the [Sales Inquiry - Read (A2X) API v1.0.0](https://api.sap.com/api/API_SALES_INQUIRY_SRV/overview). The service
-   allows to read Sales Inquiries.
+4. The `ballerinax/sap.successfactors.eccompensationinformation` package handles employee compensation data including salary information, pay scales, and compensation planning.
 
-8. The `ballerinax/sap.s4hana.api_sales_quotation_srv` package provides APIs that enable seamless integration with
-   the [Sales Quotation (A2X) API v1.0.0](https://api.sap.com/api/API_SALES_QUOTATION_SRV/overview). The service allows
-   to create, read, update, and delete sales quotation.
+5. The `ballerinax/sap.successfactors.ecalternativecostdistribution` package manages alternative cost distribution scenarios for employee expenses and cost center allocations.
 
-9. The `ballerinax/sap.s4hana.api_sales_order_simulation_srv` package provides APIs that enable seamless integration
-   with the [Sales Order - Simulate (A2X) API v1.0.0](https://api.sap.com/api/API_SALES_ORDER_SIMULATE_SRV/overview).
-   The service gives you information about pricing, material availability, and the customer's credit limit. The
-   simulated sales order is not saved.
+### Position and Organizational Management
 
-10. The `ballerinax/sap.s4hana.ce_salesorder_0001` package provides APIs that enable seamless integration with
-    the [Sales Order (A2X) API (ODatav4) v1.0.0](https://api.sap.com/api/CE_SALESORDER_0001/overview). The service
-    allows to create, read, update, and delete sales orders.
+6. The `ballerinax/sap.successfactors.ecpositionmanagement` package provides position management capabilities including position creation, hierarchy management, and organizational structure maintenance.
+
+7. The `ballerinax/sap.successfactors.ecmasterdatareplication` package enables master data replication across Employee Central systems for data consistency and synchronization.
+
+### Time and Payroll
+
+8. The `ballerinax/sap.successfactors.ecpayrolltimesheets` package manages payroll timesheet data including time tracking, attendance records, and payroll processing information.
+
+### Learning and Development
+
+9. The `ballerinax/sap.successfactors.ecskillsmanagement` package handles skills and competency management including skill profiles, competency frameworks, and talent development tracking.
+
+10. The `ballerinax/sap.successfactors.ecapprenticemanagement` package provides apprentice program management capabilities including apprentice registration, progress tracking, and program administration.
+
+### Workflow and Legal
+
+11. The `ballerinax/sap.successfactors.ecworkflow` package manages workflow processes within Employee Central including approval workflows, notifications, and process automation.
+
+12. The `ballerinax/sap.successfactors.ecdismissalprotection` package handles dismissal protection and termination compliance features including legal requirements and documentation.
 
 ## Issues and projects
 
@@ -103,21 +99,23 @@ Execute the commands below to build from the source.
 4. To build only one specific package
 
    ```bash
-   ./gradlew clean :sales-ballerina:<api_name>:build
+   ./gradlew clean :ballerina:<module_name>:build
    ```
 
-   | API Name                       | Connector                                            |
-   |--------------------------------|------------------------------------------------------|
-   | api_salesdistrict_srv          | ballerinax/sap.s4hana.api_salesdistrict_srv          |
-   | api_salesorganization_srv      | ballerinax/sap.s4hana.api_salesorganization_srv      |
-   | api_sales_order_srv            | ballerinax/sap.s4hana.api_sales_order_srv            |
-   | api_sd_sa_soldtopartydetn      | ballerinax/sap.s4hana.api_sd_sa_soldtopartydetn      |
-   | salesarea_0001                 | ballerinax/sap.s4hana.salesarea_0001                 |
-   | api_sd_incoterms_srv           | ballerinax/sap.s4hana.api_sd_incoterms_srv           |
-   | api_sales_inquiry_srv          | ballerinax/sap.s4hana.api_sales_inquiry_srv          |
-   | api_sales_quotation_srv        | ballerinax/sap.s4hana.api_sales_quotation_srv        |
-   | api_sales_order_simulation_srv | ballerinax/sap.s4hana.api_sales_order_simulation_srv |
-   | ce_salesorder_0001             | ballerinax/sap.s4hana.ce_salesorder_0001             |
+   | Module Name                    | Connector                                                    |
+   |--------------------------------|--------------------------------------------------------------|
+   | ecemployeeprofile              | ballerinax/sap.successfactors.ecemployeeprofile             |
+   | ecemploymentinformation        | ballerinax/sap.successfactors.ecemploymentinformation       |
+   | employeecentralec              | ballerinax/sap.successfactors.employeecentralec             |
+   | eccompensationinformation      | ballerinax/sap.successfactors.eccompensationinformation     |
+   | ecalternativecostdistribution  | ballerinax/sap.successfactors.ecalternativecostdistribution |
+   | ecpositionmanagement           | ballerinax/sap.successfactors.ecpositionmanagement          |
+   | ecmasterdatareplication        | ballerinax/sap.successfactors.ecmasterdatareplication       |
+   | ecpayrolltimesheets            | ballerinax/sap.successfactors.ecpayrolltimesheets           |
+   | ecskillsmanagement             | ballerinax/sap.successfactors.ecskillsmanagement            |
+   | ecapprenticemanagement         | ballerinax/sap.successfactors.ecapprenticemanagement        |
+   | ecworkflow                     | ballerinax/sap.successfactors.ecworkflow                    |
+   | ecdismissalprotection          | ballerinax/sap.successfactors.ecdismissalprotection         |
 
 5. To run tests against different environment:
 
@@ -162,7 +160,7 @@ All the contributors are encouraged to read the [Ballerina Code of Conduct](http
 
 ## Useful links
 
-* For more information go to the [`sap` package](https://lib.ballerina.io/ballerinax/sap/latest).
+* For more information go to the [`sap.successfactors` package](https://lib.ballerina.io/ballerinax/sap.successfactors/latest).
 * For example demonstrations of the usage, go to [Ballerina By Examples](https://ballerina.io/learn/by-example/).
 * Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
 * Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
