@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createApprenticeEventType(ApprenticeEvent payload, map<string|string[]> headers = {}) returns Created\ ApprenticeEventType|error {
+    remote isolated function createApprenticeEventType(ApprenticeEvent payload, map<string|string[]> headers = {}) returns CreatedApprenticeEventType|error {
         string resourcePath = string `/ApprenticeEventType`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -82,7 +82,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateApprenticeEventType(string externalCode, Modified\ ApprenticeEventType payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateApprenticeEventType(string externalCode, ModifiedApprenticeEventType payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ApprenticeEventType('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -118,7 +118,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createDepartmentApprenticeDetail(DepartmentApprenticeDetail payload, map<string|string[]> headers = {}) returns Created\ DepartmentApprenticeDetail|error {
+    remote isolated function createDepartmentApprenticeDetail(DepartmentApprenticeDetail payload, map<string|string[]> headers = {}) returns CreatedDepartmentApprenticeDetail|error {
         string resourcePath = string `/DepartmentApprenticeDetail`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -149,7 +149,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateDepartmentApprenticeDetail(string Department_effectiveStartDate, string Department_externalCode, int externalCode, Modified\ DepartmentApprenticeDetail payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateDepartmentApprenticeDetail(string Department_effectiveStartDate, string Department_externalCode, int externalCode, ModifiedDepartmentApprenticeDetail payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/DepartmentApprenticeDetail(Department_effectiveStartDate=${getEncodedUri(Department_effectiveStartDate)},Department_externalCode='${getEncodedUri(Department_externalCode)}',externalCode=${getEncodedUri(externalCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -187,7 +187,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createApprenticeSchool(ApprenticeSchool payload, map<string|string[]> headers = {}) returns Created\ ApprenticeSchool|error {
+    remote isolated function createApprenticeSchool(ApprenticeSchool payload, map<string|string[]> headers = {}) returns CreatedApprenticeSchool|error {
         string resourcePath = string `/ApprenticeSchool`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -214,7 +214,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateApprenticeSchool(string externalCode, Modified\ ApprenticeSchool payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateApprenticeSchool(string externalCode, ModifiedApprenticeSchool payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ApprenticeSchool('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -250,7 +250,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createApprenticeGroup(ApprenticeGroup payload, map<string|string[]> headers = {}) returns Created\ ApprenticeGroup|error {
+    remote isolated function createApprenticeGroup(ApprenticeGroup payload, map<string|string[]> headers = {}) returns CreatedApprenticeGroup|error {
         string resourcePath = string `/ApprenticeGroup`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -277,7 +277,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateApprenticeGroup(string externalCode, Modified\ ApprenticeGroup payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateApprenticeGroup(string externalCode, ModifiedApprenticeGroup payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ApprenticeGroup('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -313,7 +313,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createApprenticeSchoolEvent(ApprenticeSchoolEvent payload, map<string|string[]> headers = {}) returns Created\ ApprenticeSchoolEvent|error {
+    remote isolated function createApprenticeSchoolEvent(ApprenticeSchoolEvent payload, map<string|string[]> headers = {}) returns CreatedApprenticeSchoolEvent|error {
         string resourcePath = string `/ApprenticeSchoolEvent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -340,7 +340,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateApprenticeSchoolEvent(string externalCode, Modified\ ApprenticeSchoolEvent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateApprenticeSchoolEvent(string externalCode, ModifiedApprenticeSchoolEvent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ApprenticeSchoolEvent('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -448,7 +448,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createApprentice(Apprentice payload, map<string|string[]> headers = {}) returns Created\ Apprentice|error {
+    remote isolated function createApprentice(Apprentice payload, map<string|string[]> headers = {}) returns CreatedApprentice|error {
         string resourcePath = string `/Apprentice`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -475,7 +475,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateApprentice(string user, Modified\ Apprentice payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateApprentice(string user, ModifiedApprentice payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Apprentice('${getEncodedUri(user)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

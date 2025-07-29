@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmpCostDistribution(SFOData\.EmpCostDistribution payload, map<string|string[]> headers = {}) returns Created\ EmpCostDistribution|error {
+    remote isolated function createEmpCostDistribution(SFOData\.EmpCostDistribution payload, map<string|string[]> headers = {}) returns CreatedEmpCostDistribution|error {
         string resourcePath = string `/EmpCostDistribution`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -84,7 +84,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmpCostDistribution(string effectiveStartDate, string usersSysId, Modified\ EmpCostDistribution payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmpCostDistribution(string effectiveStartDate, string usersSysId, ModifiedEmpCostDistribution payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmpCostDistribution(effectiveStartDate=${getEncodedUri(effectiveStartDate)},usersSysId='${getEncodedUri(usersSysId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -121,7 +121,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmpCostDistributionItem(SFOData\.EmpCostDistributionItem payload, map<string|string[]> headers = {}) returns Created\ EmpCostDistributionItem|error {
+    remote isolated function createEmpCostDistributionItem(SFOData\.EmpCostDistributionItem payload, map<string|string[]> headers = {}) returns CreatedEmpCostDistributionItem|error {
         string resourcePath = string `/EmpCostDistributionItem`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -152,7 +152,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmpCostDistributionItem(string EmpCostDistribution_effectiveStartDate, string EmpCostDistribution_usersSysId, int externalCode, Modified\ EmpCostDistributionItem payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmpCostDistributionItem(string EmpCostDistribution_effectiveStartDate, string EmpCostDistribution_usersSysId, int externalCode, ModifiedEmpCostDistributionItem payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmpCostDistributionItem(EmpCostDistribution_effectiveStartDate=${getEncodedUri(EmpCostDistribution_effectiveStartDate)},EmpCostDistribution_usersSysId='${getEncodedUri(EmpCostDistribution_usersSysId)}',externalCode=${getEncodedUri(externalCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmployeeDismissalProtectionDetail(EmployeeDismissalProtectionDetail payload, map<string|string[]> headers = {}) returns Created\ EmployeeDismissalProtectionDetail|error {
+    remote isolated function createEmployeeDismissalProtectionDetail(EmployeeDismissalProtectionDetail payload, map<string|string[]> headers = {}) returns CreatedEmployeeDismissalProtectionDetail|error {
         string resourcePath = string `/EmployeeDismissalProtectionDetail`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -84,7 +84,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmployeeDismissalProtectionDetail(string EmployeeDismissalProtection_workerId, string externalCode, Modified\ EmployeeDismissalProtectionDetail payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmployeeDismissalProtectionDetail(string EmployeeDismissalProtection_workerId, string externalCode, ModifiedEmployeeDismissalProtectionDetail payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmployeeDismissalProtectionDetail(EmployeeDismissalProtection_workerId='${getEncodedUri(EmployeeDismissalProtection_workerId)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -121,7 +121,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmployeeDismissalProtection(EmployeeDismissalProtection payload, map<string|string[]> headers = {}) returns Created\ EmployeeDismissalProtection|error {
+    remote isolated function createEmployeeDismissalProtection(EmployeeDismissalProtection payload, map<string|string[]> headers = {}) returns CreatedEmployeeDismissalProtection|error {
         string resourcePath = string `/EmployeeDismissalProtection`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -148,7 +148,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmployeeDismissalProtection(string workerId, Modified\ EmployeeDismissalProtection payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmployeeDismissalProtection(string workerId, ModifiedEmployeeDismissalProtection payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmployeeDismissalProtection('${getEncodedUri(workerId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

@@ -20,7 +20,7 @@
 import ballerina/constraint;
 import ballerina/http;
 
-public type Created\ EmployeeDataReplicationConfirmation record {
+public type CreatedEmployeeDataReplicationConfirmation record {
     EmployeeDataReplicationConfirmation d?;
 };
 
@@ -41,7 +41,7 @@ public type EmployeeDataReplicationConfirmationErrorMessage_1 record {
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ EmployeeDataReplicationElement d?;
+    CollectionofEmployeeDataReplicationElement d?;
 };
 
 # Represents the Queries record for the operation: getEmployeeDataReplicationConfirmation
@@ -57,11 +57,11 @@ public type EmployeeDataReplicationElement_1 record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ EmployeeDataReplicationNotification d?;
+    CollectionofEmployeeDataReplicationNotification d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ EmployeeDataReplicationConfirmation d?;
+    CollectionofEmployeeDataReplicationConfirmation d?;
 };
 
 public type EmployeeDataReplicationConfirmation_1 record {
@@ -120,7 +120,7 @@ public type ConnectionConfig record {|
 |};
 
 public type Wrapper record {
-    Collection\ of\ EmployeeDataReplicationConfirmationErrorMessage d?;
+    CollectionofEmployeeDataReplicationConfirmationErrorMessage d?;
 };
 
 # Represents the Queries record for the operation: listEmployeeDataReplicationElements
@@ -146,10 +146,10 @@ public type ListEmployeeDataReplicationElementsQueries record {
 public type EmployeeDataReplicationConfirmation record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.EmployeeDataReplicationConfirmationErrorMessage employeeDataReplicationConfirmationErrorMessages?;
+    RelatedCollectionSFOData_EmployeeDataReplicationConfirmationErrorMessage employeeDataReplicationConfirmationErrorMessages?;
 };
 
-public type Collection\ of\ EmployeeDataReplicationElement record {
+public type CollectionofEmployeeDataReplicationElement record {
     EmployeeDataReplicationElement[] results?;
 };
 
@@ -167,7 +167,7 @@ public type DeleteEmployeeDataReplicationElementHeaders record {
     string If\-Match?;
 };
 
-public type Created\ EmployeeDataReplicationNotification record {
+public type CreatedEmployeeDataReplicationNotification record {
     EmployeeDataReplicationNotification d?;
 };
 
@@ -191,7 +191,7 @@ public type ListEmployeeDataReplicationConfirmationsQueries record {
     ("additionalTimeInformation"|"country"|"createdBy"|"createdDate"|"createdDateTime"|"externalCode"|"externalName_de_DE"|"externalName_defaultValue"|"externalName_en_GB"|"externalName_en_US"|"externalName_es_ES"|"externalName_fr_FR"|"externalName_ja_JP"|"externalName_ko_KR"|"externalName_localized"|"externalName_nl_NL"|"externalName_pt_BR"|"externalName_pt_PT"|"externalName_ru_RU"|"externalName_zh_CN"|"externalName_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"personId"|"proxyExternalCodeList"|"replicationContentType"|"replicationProcessingTime"|"replicationStartTime"|"replicationTargetSystem"|"replicationUpdateStatus"|"usersSysId")[] \$select?;
 };
 
-public type Collection\ of\ EmployeeDataReplicationConfirmation record {
+public type CollectionofEmployeeDataReplicationConfirmation record {
     EmployeeDataReplicationConfirmation[] results?;
 };
 
@@ -223,7 +223,7 @@ public type ListEmployeeDataReplicationNotificationsQueries record {
     ("country"|"createdBy"|"createdDate"|"createdDateTime"|"externalCode"|"externalName_de_DE"|"externalName_defaultValue"|"externalName_en_GB"|"externalName_en_US"|"externalName_es_ES"|"externalName_fr_FR"|"externalName_ja_JP"|"externalName_ko_KR"|"externalName_localized"|"externalName_nl_NL"|"externalName_pt_BR"|"externalName_pt_PT"|"externalName_ru_RU"|"externalName_zh_CN"|"externalName_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"personId"|"replicationContentType"|"replicationEvent"|"replicationEventTime"|"replicationTargetSystem"|"senderId"|"usersSysId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmployeeDataReplicationConfirmationErrorMessage record {
+public type RelatedCollectionSFOData_EmployeeDataReplicationConfirmationErrorMessage record {
     EmployeeDataReplicationConfirmationErrorMessage[] results?;
 };
 
@@ -250,7 +250,7 @@ public type ListEmployeeDataReplicationConfirmationErrorMessagesQueries record {
     ("EmployeeDataReplicationConfirmation_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"detailedSourceMessageURL"|"externalCode"|"externalName_de_DE"|"externalName_defaultValue"|"externalName_en_GB"|"externalName_en_US"|"externalName_es_ES"|"externalName_fr_FR"|"externalName_ja_JP"|"externalName_ko_KR"|"externalName_localized"|"externalName_nl_NL"|"externalName_pt_BR"|"externalName_pt_PT"|"externalName_ru_RU"|"externalName_zh_CN"|"externalName_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"replicationMessageNodeType"|"sourceAttributeDescription"|"sourceAttributeId"|"sourceMessageSeverity"|"sourceMessageText"|"sourceMessageTypeId"|"sourceMessageVariable1"|"sourceMessageVariable2"|"sourceMessageVariable3"|"sourceMessageVariable4"|"sourceObjectTypeDescription"|"sourceObjectTypeId"|"sourcePersonIdentifier"|"sourceValidityPeriodEndDate"|"sourceValidityPeriodStartDate"|"technicalInformation"|"userSysId"|"workagreementId")[] \$select?;
 };
 
-public type Created\ EmployeeDataReplicationConfirmationErrorMessage record {
+public type CreatedEmployeeDataReplicationConfirmationErrorMessage record {
     EmployeeDataReplicationConfirmationErrorMessage d?;
 };
 
@@ -260,10 +260,10 @@ public type GetEmployeeDataReplicationConfirmationErrorMessageQueries record {
     ("EmployeeDataReplicationConfirmation_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"detailedSourceMessageURL"|"externalCode"|"externalName_de_DE"|"externalName_defaultValue"|"externalName_en_GB"|"externalName_en_US"|"externalName_es_ES"|"externalName_fr_FR"|"externalName_ja_JP"|"externalName_ko_KR"|"externalName_localized"|"externalName_nl_NL"|"externalName_pt_BR"|"externalName_pt_PT"|"externalName_ru_RU"|"externalName_zh_CN"|"externalName_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"replicationMessageNodeType"|"sourceAttributeDescription"|"sourceAttributeId"|"sourceMessageSeverity"|"sourceMessageText"|"sourceMessageTypeId"|"sourceMessageVariable1"|"sourceMessageVariable2"|"sourceMessageVariable3"|"sourceMessageVariable4"|"sourceObjectTypeDescription"|"sourceObjectTypeId"|"sourcePersonIdentifier"|"sourceValidityPeriodEndDate"|"sourceValidityPeriodStartDate"|"technicalInformation"|"userSysId"|"workagreementId")[] \$select?;
 };
 
-public type Collection\ of\ EmployeeDataReplicationNotification record {
+public type CollectionofEmployeeDataReplicationNotification record {
     EmployeeDataReplicationNotification[] results?;
 };
 
-public type Collection\ of\ EmployeeDataReplicationConfirmationErrorMessage record {
+public type CollectionofEmployeeDataReplicationConfirmationErrorMessage record {
     EmployeeDataReplicationConfirmationErrorMessage[] results?;
 };

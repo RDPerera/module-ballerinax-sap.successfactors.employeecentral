@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundCommunity(Background_Community payload, map<string|string[]> headers = {}) returns Created\ Background_Community|error {
+    remote isolated function createBackgroundCommunity(Background_Community payload, map<string|string[]> headers = {}) returns CreatedBackground_Community|error {
         string resourcePath = string `/Background_Community`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -84,7 +84,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundCommunity(int backgroundElementId, string userId, Modified\ Background_Community payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundCommunity(int backgroundElementId, string userId, ModifiedBackground_Community payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Community(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -121,7 +121,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundCourses(Background_Courses payload, map<string|string[]> headers = {}) returns Created\ Background_Courses|error {
+    remote isolated function createBackgroundCourses(Background_Courses payload, map<string|string[]> headers = {}) returns CreatedBackground_Courses|error {
         string resourcePath = string `/Background_Courses`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -150,7 +150,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundCourses(int backgroundElementId, string userId, Modified\ Background_Courses payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundCourses(int backgroundElementId, string userId, ModifiedBackground_Courses payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Courses(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -187,7 +187,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundBenefitselection(Background_Benefitselection payload, map<string|string[]> headers = {}) returns Created\ Background_Benefitselection|error {
+    remote isolated function createBackgroundBenefitselection(Background_Benefitselection payload, map<string|string[]> headers = {}) returns CreatedBackground_Benefitselection|error {
         string resourcePath = string `/Background_Benefitselection`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -216,7 +216,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundBenefitselection(int backgroundElementId, string userId, Modified\ Background_Benefitselection payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundBenefitselection(int backgroundElementId, string userId, ModifiedBackground_Benefitselection payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Benefitselection(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -253,7 +253,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundOutsideWorkExperience(Background_OutsideWorkExperience payload, map<string|string[]> headers = {}) returns Created\ Background_OutsideWorkExperience|error {
+    remote isolated function createBackgroundOutsideWorkExperience(Background_OutsideWorkExperience payload, map<string|string[]> headers = {}) returns CreatedBackground_OutsideWorkExperience|error {
         string resourcePath = string `/Background_OutsideWorkExperience`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -282,7 +282,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundOutsideWorkExperience(int backgroundElementId, string userId, Modified\ Background_OutsideWorkExperience payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundOutsideWorkExperience(int backgroundElementId, string userId, ModifiedBackground_OutsideWorkExperience payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_OutsideWorkExperience(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -319,7 +319,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundPromotability(Background_Promotability payload, map<string|string[]> headers = {}) returns Created\ Background_Promotability|error {
+    remote isolated function createBackgroundPromotability(Background_Promotability payload, map<string|string[]> headers = {}) returns CreatedBackground_Promotability|error {
         string resourcePath = string `/Background_Promotability`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -348,7 +348,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundPromotability(int backgroundElementId, string userId, Modified\ Background_Promotability payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundPromotability(int backgroundElementId, string userId, ModifiedBackground_Promotability payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Promotability(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -385,7 +385,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundFsaelection(Background_Fsaelection payload, map<string|string[]> headers = {}) returns Created\ Background_Fsaelection|error {
+    remote isolated function createBackgroundFsaelection(Background_Fsaelection payload, map<string|string[]> headers = {}) returns CreatedBackground_Fsaelection|error {
         string resourcePath = string `/Background_Fsaelection`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -414,7 +414,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundFsaelection(int backgroundElementId, string userId, Modified\ Background_Fsaelection payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundFsaelection(int backgroundElementId, string userId, ModifiedBackground_Fsaelection payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Fsaelection(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -451,7 +451,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundCompensation(Background_Compensation payload, map<string|string[]> headers = {}) returns Created\ Background_Compensation|error {
+    remote isolated function createBackgroundCompensation(Background_Compensation payload, map<string|string[]> headers = {}) returns CreatedBackground_Compensation|error {
         string resourcePath = string `/Background_Compensation`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -480,7 +480,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundCompensation(int backgroundElementId, string userId, Modified\ Background_Compensation payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundCompensation(int backgroundElementId, string userId, ModifiedBackground_Compensation payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Compensation(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -517,7 +517,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundMemberships(Background_Memberships payload, map<string|string[]> headers = {}) returns Created\ Background_Memberships|error {
+    remote isolated function createBackgroundMemberships(Background_Memberships payload, map<string|string[]> headers = {}) returns CreatedBackground_Memberships|error {
         string resourcePath = string `/Background_Memberships`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -546,7 +546,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundMemberships(int backgroundElementId, string userId, Modified\ Background_Memberships payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundMemberships(int backgroundElementId, string userId, ModifiedBackground_Memberships payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Memberships(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -583,7 +583,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundDocuments(Background_Documents payload, map<string|string[]> headers = {}) returns Created\ Background_Documents|error {
+    remote isolated function createBackgroundDocuments(Background_Documents payload, map<string|string[]> headers = {}) returns CreatedBackground_Documents|error {
         string resourcePath = string `/Background_Documents`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -612,7 +612,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundDocuments(int backgroundElementId, string userId, Modified\ Background_Documents payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundDocuments(int backgroundElementId, string userId, ModifiedBackground_Documents payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Documents(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -649,7 +649,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundFuncExperience(Background_FuncExperience payload, map<string|string[]> headers = {}) returns Created\ Background_FuncExperience|error {
+    remote isolated function createBackgroundFuncExperience(Background_FuncExperience payload, map<string|string[]> headers = {}) returns CreatedBackground_FuncExperience|error {
         string resourcePath = string `/Background_FuncExperience`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -678,7 +678,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundFuncExperience(int backgroundElementId, string userId, Modified\ Background_FuncExperience payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundFuncExperience(int backgroundElementId, string userId, ModifiedBackground_FuncExperience payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_FuncExperience(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -715,7 +715,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundTalentPool(Background_TalentPool payload, map<string|string[]> headers = {}) returns Created\ Background_TalentPool|error {
+    remote isolated function createBackgroundTalentPool(Background_TalentPool payload, map<string|string[]> headers = {}) returns CreatedBackground_TalentPool|error {
         string resourcePath = string `/Background_TalentPool`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -744,7 +744,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundTalentPool(int backgroundElementId, string userId, Modified\ Background_TalentPool payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundTalentPool(int backgroundElementId, string userId, ModifiedBackground_TalentPool payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_TalentPool(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -781,7 +781,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createUserBadges(UserBadges payload, map<string|string[]> headers = {}) returns Created\ UserBadges|error {
+    remote isolated function createUserBadges(UserBadges payload, map<string|string[]> headers = {}) returns CreatedUserBadges|error {
         string resourcePath = string `/UserBadges`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -832,7 +832,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundGoogledocs(Background_Googledocs payload, map<string|string[]> headers = {}) returns Created\ Background_Googledocs|error {
+    remote isolated function createBackgroundGoogledocs(Background_Googledocs payload, map<string|string[]> headers = {}) returns CreatedBackground_Googledocs|error {
         string resourcePath = string `/Background_Googledocs`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -861,7 +861,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundGoogledocs(int backgroundElementId, string userId, Modified\ Background_Googledocs payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundGoogledocs(int backgroundElementId, string userId, ModifiedBackground_Googledocs payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Googledocs(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -898,7 +898,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundAwards(Background_Awards payload, map<string|string[]> headers = {}) returns Created\ Background_Awards|error {
+    remote isolated function createBackgroundAwards(Background_Awards payload, map<string|string[]> headers = {}) returns CreatedBackground_Awards|error {
         string resourcePath = string `/Background_Awards`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -927,7 +927,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundAwards(int backgroundElementId, string userId, Modified\ Background_Awards payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundAwards(int backgroundElementId, string userId, ModifiedBackground_Awards payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Awards(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -964,7 +964,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundEducation(Background_Education payload, map<string|string[]> headers = {}) returns Created\ Background_Education|error {
+    remote isolated function createBackgroundEducation(Background_Education payload, map<string|string[]> headers = {}) returns CreatedBackground_Education|error {
         string resourcePath = string `/Background_Education`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -993,7 +993,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundEducation(int backgroundElementId, string userId, Modified\ Background_Education payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundEducation(int backgroundElementId, string userId, ModifiedBackground_Education payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Education(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1030,7 +1030,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundMobility(Background_Mobility payload, map<string|string[]> headers = {}) returns Created\ Background_Mobility|error {
+    remote isolated function createBackgroundMobility(Background_Mobility payload, map<string|string[]> headers = {}) returns CreatedBackground_Mobility|error {
         string resourcePath = string `/Background_Mobility`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1059,7 +1059,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundMobility(int backgroundElementId, string userId, Modified\ Background_Mobility payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundMobility(int backgroundElementId, string userId, ModifiedBackground_Mobility payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Mobility(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1096,7 +1096,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundVarPayEmpHistData(Background_VarPayEmpHistData payload, map<string|string[]> headers = {}) returns Created\ Background_VarPayEmpHistData|error {
+    remote isolated function createBackgroundVarPayEmpHistData(Background_VarPayEmpHistData payload, map<string|string[]> headers = {}) returns CreatedBackground_VarPayEmpHistData|error {
         string resourcePath = string `/Background_VarPayEmpHistData`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1123,7 +1123,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundVarPayEmpHistData(int backgroundElementId, Modified\ Background_VarPayEmpHistData payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundVarPayEmpHistData(int backgroundElementId, ModifiedBackground_VarPayEmpHistData payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_VarPayEmpHistData(${getEncodedUri(backgroundElementId)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1159,7 +1159,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundInsideWorkExperience(Background_InsideWorkExperience payload, map<string|string[]> headers = {}) returns Created\ Background_InsideWorkExperience|error {
+    remote isolated function createBackgroundInsideWorkExperience(Background_InsideWorkExperience payload, map<string|string[]> headers = {}) returns CreatedBackground_InsideWorkExperience|error {
         string resourcePath = string `/Background_InsideWorkExperience`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1188,7 +1188,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundInsideWorkExperience(int backgroundElementId, string userId, Modified\ Background_InsideWorkExperience payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundInsideWorkExperience(int backgroundElementId, string userId, ModifiedBackground_InsideWorkExperience payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_InsideWorkExperience(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1225,7 +1225,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundPreferredNextMove(Background_PreferredNextMove payload, map<string|string[]> headers = {}) returns Created\ Background_PreferredNextMove|error {
+    remote isolated function createBackgroundPreferredNextMove(Background_PreferredNextMove payload, map<string|string[]> headers = {}) returns CreatedBackground_PreferredNextMove|error {
         string resourcePath = string `/Background_PreferredNextMove`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1254,7 +1254,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundPreferredNextMove(int backgroundElementId, string userId, Modified\ Background_PreferredNextMove payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundPreferredNextMove(int backgroundElementId, string userId, ModifiedBackground_PreferredNextMove payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_PreferredNextMove(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1316,7 +1316,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEPPublicProfile(EPPublicProfile payload, map<string|string[]> headers = {}) returns Created\ EPPublicProfile|error {
+    remote isolated function createEPPublicProfile(EPPublicProfile payload, map<string|string[]> headers = {}) returns CreatedEPPublicProfile|error {
         string resourcePath = string `/EPPublicProfile`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1343,7 +1343,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEPPublicProfile(string userId, Modified\ EPPublicProfile payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEPPublicProfile(string userId, ModifiedEPPublicProfile payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EPPublicProfile('${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1379,7 +1379,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundLanguages(Background_Languages payload, map<string|string[]> headers = {}) returns Created\ Background_Languages|error {
+    remote isolated function createBackgroundLanguages(Background_Languages payload, map<string|string[]> headers = {}) returns CreatedBackground_Languages|error {
         string resourcePath = string `/Background_Languages`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1408,7 +1408,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundLanguages(int backgroundElementId, string userId, Modified\ Background_Languages payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundLanguages(int backgroundElementId, string userId, ModifiedBackground_Languages payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Languages(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1445,7 +1445,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundSysScoreCardDevelopmentObjectivesPortlet(Background_SysScoreCardDevelopmentObjectivesPortlet payload, map<string|string[]> headers = {}) returns Created\ Background_SysScoreCardDevelopmentObjectivesPortlet|error {
+    remote isolated function createBackgroundSysScoreCardDevelopmentObjectivesPortlet(Background_SysScoreCardDevelopmentObjectivesPortlet payload, map<string|string[]> headers = {}) returns CreatedBackground_SysScoreCardDevelopmentObjectivesPortlet|error {
         string resourcePath = string `/Background_SysScoreCardDevelopmentObjectivesPortlet`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1474,7 +1474,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundSysScoreCardDevelopmentObjectivesPortlet(int backgroundElementId, string userId, Modified\ Background_SysScoreCardDevelopmentObjectivesPortlet payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundSysScoreCardDevelopmentObjectivesPortlet(int backgroundElementId, string userId, ModifiedBackground_SysScoreCardDevelopmentObjectivesPortlet payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_SysScoreCardDevelopmentObjectivesPortlet(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1511,7 +1511,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundTalentPoolcorp(Background_TalentPoolcorp payload, map<string|string[]> headers = {}) returns Created\ Background_TalentPoolcorp|error {
+    remote isolated function createBackgroundTalentPoolcorp(Background_TalentPoolcorp payload, map<string|string[]> headers = {}) returns CreatedBackground_TalentPoolcorp|error {
         string resourcePath = string `/Background_TalentPoolcorp`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1540,7 +1540,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundTalentPoolcorp(int backgroundElementId, string userId, Modified\ Background_TalentPoolcorp payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundTalentPoolcorp(int backgroundElementId, string userId, ModifiedBackground_TalentPoolcorp payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_TalentPoolcorp(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1602,7 +1602,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundSpecialAssign(Background_SpecialAssign payload, map<string|string[]> headers = {}) returns Created\ Background_SpecialAssign|error {
+    remote isolated function createBackgroundSpecialAssign(Background_SpecialAssign payload, map<string|string[]> headers = {}) returns CreatedBackground_SpecialAssign|error {
         string resourcePath = string `/Background_SpecialAssign`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1631,7 +1631,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundSpecialAssign(int backgroundElementId, string userId, Modified\ Background_SpecialAssign payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundSpecialAssign(int backgroundElementId, string userId, ModifiedBackground_SpecialAssign payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_SpecialAssign(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1668,7 +1668,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundCertificates(Background_Certificates payload, map<string|string[]> headers = {}) returns Created\ Background_Certificates|error {
+    remote isolated function createBackgroundCertificates(Background_Certificates payload, map<string|string[]> headers = {}) returns CreatedBackground_Certificates|error {
         string resourcePath = string `/Background_Certificates`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1697,7 +1697,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundCertificates(int backgroundElementId, string userId, Modified\ Background_Certificates payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundCertificates(int backgroundElementId, string userId, ModifiedBackground_Certificates payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_Certificates(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1734,7 +1734,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundVarPayEmpHistDataECSource(Background_VarPayEmpHistDataECSource payload, map<string|string[]> headers = {}) returns Created\ Background_VarPayEmpHistDataECSource|error {
+    remote isolated function createBackgroundVarPayEmpHistDataECSource(Background_VarPayEmpHistDataECSource payload, map<string|string[]> headers = {}) returns CreatedBackground_VarPayEmpHistDataECSource|error {
         string resourcePath = string `/Background_VarPayEmpHistDataECSource`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1761,7 +1761,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundVarPayEmpHistDataECSource(int backgroundElementId, Modified\ Background_VarPayEmpHistDataECSource payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundVarPayEmpHistDataECSource(int backgroundElementId, ModifiedBackground_VarPayEmpHistDataECSource payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_VarPayEmpHistDataECSource(${getEncodedUri(backgroundElementId)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1797,7 +1797,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBackgroundLeadExperience(Background_LeadExperience payload, map<string|string[]> headers = {}) returns Created\ Background_LeadExperience|error {
+    remote isolated function createBackgroundLeadExperience(Background_LeadExperience payload, map<string|string[]> headers = {}) returns CreatedBackground_LeadExperience|error {
         string resourcePath = string `/Background_LeadExperience`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1826,7 +1826,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBackgroundLeadExperience(int backgroundElementId, string userId, Modified\ Background_LeadExperience payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBackgroundLeadExperience(int backgroundElementId, string userId, ModifiedBackground_LeadExperience payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Background_LeadExperience(backgroundElementId=${getEncodedUri(backgroundElementId)},userId='${getEncodedUri(userId)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1863,7 +1863,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallObjective(TrendData_SysOverallObjective payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallObjective|error {
+    remote isolated function createTrendDataSysOverallObjective(TrendData_SysOverallObjective payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallObjective|error {
         string resourcePath = string `/TrendData_SysOverallObjective`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1890,7 +1890,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallObjective(int id, Modified\ TrendData_SysOverallObjective payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallObjective(int id, ModifiedTrendData_SysOverallObjective payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallObjective(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1926,7 +1926,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallCompetency(TrendData_SysOverallCompetency payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallCompetency|error {
+    remote isolated function createTrendDataSysOverallCompetency(TrendData_SysOverallCompetency payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallCompetency|error {
         string resourcePath = string `/TrendData_SysOverallCompetency`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1953,7 +1953,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallCompetency(int id, Modified\ TrendData_SysOverallCompetency payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallCompetency(int id, ModifiedTrendData_SysOverallCompetency payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallCompetency(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1989,7 +1989,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallPotential(TrendData_SysOverallPotential payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallPotential|error {
+    remote isolated function createTrendDataSysOverallPotential(TrendData_SysOverallPotential payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallPotential|error {
         string resourcePath = string `/TrendData_SysOverallPotential`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2016,7 +2016,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallPotential(int id, Modified\ TrendData_SysOverallPotential payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallPotential(int id, ModifiedTrendData_SysOverallPotential payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallPotential(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2052,7 +2052,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallPerformance(TrendData_SysOverallPerformance payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallPerformance|error {
+    remote isolated function createTrendDataSysOverallPerformance(TrendData_SysOverallPerformance payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallPerformance|error {
         string resourcePath = string `/TrendData_SysOverallPerformance`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2079,7 +2079,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallPerformance(int id, Modified\ TrendData_SysOverallPerformance payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallPerformance(int id, ModifiedTrendData_SysOverallPerformance payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallPerformance(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2115,7 +2115,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallCustom1(TrendData_SysOverallCustom1 payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallCustom1|error {
+    remote isolated function createTrendDataSysOverallCustom1(TrendData_SysOverallCustom1 payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallCustom1|error {
         string resourcePath = string `/TrendData_SysOverallCustom1`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2142,7 +2142,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallCustom1(int id, Modified\ TrendData_SysOverallCustom1 payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallCustom1(int id, ModifiedTrendData_SysOverallCustom1 payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallCustom1(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2178,7 +2178,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createTrendDataSysOverallCustom2(TrendData_SysOverallCustom2 payload, map<string|string[]> headers = {}) returns Created\ TrendData_SysOverallCustom2|error {
+    remote isolated function createTrendDataSysOverallCustom2(TrendData_SysOverallCustom2 payload, map<string|string[]> headers = {}) returns CreatedTrendData_SysOverallCustom2|error {
         string resourcePath = string `/TrendData_SysOverallCustom2`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2205,7 +2205,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateTrendDataSysOverallCustom2(int id, Modified\ TrendData_SysOverallCustom2 payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateTrendDataSysOverallCustom2(int id, ModifiedTrendData_SysOverallCustom2 payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/TrendData_SysOverallCustom2(${getEncodedUri(id)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

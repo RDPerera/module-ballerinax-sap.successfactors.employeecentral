@@ -37,9 +37,6 @@ version = "1.7.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
-modules = [
-	{org = "ballerina", packageName = "constraint", moduleName = "constraint"}
-]
 
 [[package]]
 org = "ballerina"
@@ -219,9 +216,6 @@ dependencies = [
 	{org = "ballerina", name = "lang.value"},
 	{org = "ballerina", name = "observe"}
 ]
-modules = [
-	{org = "ballerina", packageName = "log", moduleName = "log"}
-]
 
 [[package]]
 org = "ballerina"
@@ -334,18 +328,16 @@ modules = [
 
 [[package]]
 org = "ballerinax"
-name = "sap.successfactors.ecemploymentinformation"
+name = "sap.successfactors.ecalternativecostdistribution"
 version = "1.0.0"
 dependencies = [
-	{org = "ballerina", name = "constraint"},
 	{org = "ballerina", name = "data.jsondata"},
 	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "log"},
 	{org = "ballerina", name = "url"},
 	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "sap"}
 ]
 modules = [
-	{org = "ballerinax", packageName = "sap.successfactors.ecemploymentinformation", moduleName = "sap.successfactors.ecemploymentinformation"}
+	{org = "ballerinax", packageName = "sap.successfactors.ecalternativecostdistribution", moduleName = "sap.successfactors.ecalternativecostdistribution"}
 ]
 

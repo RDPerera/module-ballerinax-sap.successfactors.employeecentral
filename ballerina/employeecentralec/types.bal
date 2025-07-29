@@ -20,7 +20,7 @@
 import ballerina/constraint;
 import ballerina/http;
 
-public type Collection\ of\ EducationMajorEntity record {
+public type CollectionofEducationMajorEntity record {
     EducationMajorEntity[] results?;
 };
 
@@ -86,7 +86,7 @@ public type PerGlobalInfoZAF_1 record {
     PerGlobalInfoZAF d?;
 };
 
-public type Collection\ of\ ServiceDeskCountrySupportInformation record {
+public type CollectionofServiceDeskCountrySupportInformation record {
     ServiceDeskCountrySupportInformation[] results?;
 };
 
@@ -180,18 +180,18 @@ public type ListPerGlobalInfoCHEsQueries record {
 
 public type ServiceDeskContactSupportInformation record {
     string externalCode?;
-    Related\ CollectionSFOData\.ServiceDeskCountrySupportInformation serviceDeskCountrySupportInformation?;
+    RelatedCollectionSFOData_ServiceDeskCountrySupportInformation serviceDeskCountrySupportInformation?;
 };
 
-public type Collection\ of\ PerGlobalInfoESP record {
+public type CollectionofPerGlobalInfoESP record {
     PerGlobalInfoESP[] results?;
 };
 
-public type Created\ ServiceDeskContactSupportInformation record {
+public type CreatedServiceDeskContactSupportInformation record {
     ServiceDeskContactSupportInformation d?;
 };
 
-public type Collection\ of\ PerGlobalInfoUSA record {
+public type CollectionofPerGlobalInfoUSA record {
     PerGlobalInfoUSA[] results?;
 };
 
@@ -262,7 +262,7 @@ public type PerGlobalInfoSAU_1 record {
 };
 
 public type Wrapper record {
-    Collection\ of\ PerGlobalInfoARE d?;
+    CollectionofPerGlobalInfoARE d?;
 };
 
 public type PerGlobalInfoDEU_1 record {
@@ -284,7 +284,7 @@ public type PerGlobalInfoNLD_1 record {
     PerGlobalInfoNLD d?;
 };
 
-public type Modified\ EducationMajorContent record {
+public type ModifiedEducationMajorContent record {
     EducationMajorContent d?;
 };
 
@@ -326,7 +326,7 @@ public type ListPerGlobalInfoFRAsQueries record {
 };
 
 public type Wrapper_19 record {
-    Collection\ of\ PerGlobalInfoDEU d?;
+    CollectionofPerGlobalInfoDEU d?;
 };
 
 public type PerGlobalInfoNLD record {
@@ -337,23 +337,23 @@ public type PerGlobalInfoNLD record {
 };
 
 public type Wrapper_17 record {
-    Collection\ of\ EducationMajorContent d?;
+    CollectionofEducationMajorContent d?;
 };
 
 public type Wrapper_18 record {
-    Collection\ of\ PerGlobalInfoFRA d?;
+    CollectionofPerGlobalInfoFRA d?;
 };
 
 public type Wrapper_15 record {
-    Collection\ of\ PerGlobalInfoUSA d?;
+    CollectionofPerGlobalInfoUSA d?;
 };
 
-public type Collection\ of\ PerGlobalInfoARE record {
+public type CollectionofPerGlobalInfoARE record {
     PerGlobalInfoARE[] results?;
 };
 
 public type Wrapper_16 record {
-    Collection\ of\ ServiceDeskCountrySupportInformation d?;
+    CollectionofServiceDeskCountrySupportInformation d?;
 };
 
 public type EducationMajorContent record {
@@ -366,11 +366,11 @@ public type EducationMajorContent record {
 };
 
 public type Wrapper_13 record {
-    Collection\ of\ EducationMajorEntity d?;
+    CollectionofEducationMajorEntity d?;
 };
 
 public type Wrapper_14 record {
-    Collection\ of\ PerGlobalInfoCAN d?;
+    CollectionofPerGlobalInfoCAN d?;
 };
 
 public type EducationMajorContent_1 record {
@@ -384,11 +384,11 @@ public type GetPerGlobalInfoFRAQueries record {
 };
 
 public type Wrapper_11 record {
-    Collection\ of\ PerGlobalInfoAUS d?;
+    CollectionofPerGlobalInfoAUS d?;
 };
 
 public type Wrapper_12 record {
-    Collection\ of\ PerGlobalInfoESP d?;
+    CollectionofPerGlobalInfoESP d?;
 };
 
 public type ServiceDeskCountrySupportInformation_1 record {
@@ -403,10 +403,10 @@ public type PerGlobalInfoARE record {
 };
 
 public type Wrapper_10 record {
-    Collection\ of\ PerGlobalInfoGBR d?;
+    CollectionofPerGlobalInfoGBR d?;
 };
 
-public type Created\ EducationMajorContent record {
+public type CreatedEducationMajorContent record {
     EducationMajorContent d?;
 };
 
@@ -416,7 +416,7 @@ public type GetServiceDeskCountrySupportInformationQueries record {
     ("ServiceDeskContactSupportInformation_externalCode"|"country"|"createdBy"|"createdDateTime"|"email"|"externalCode"|"isInternationalSupport"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"phoneNumber"|"place"|"tollFreeNumber")[] \$select?;
 };
 
-public type Collection\ of\ PerGlobalInfoNLD record {
+public type CollectionofPerGlobalInfoNLD record {
     PerGlobalInfoNLD[] results?;
 };
 
@@ -428,11 +428,11 @@ public type GetEducationDegreeContentQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ CurrencyExchangeRate record {
+public type CreatedCurrencyExchangeRate record {
     CurrencyExchangeRate d?;
 };
 
-public type Collection\ of\ PerGlobalInfoQAT record {
+public type CollectionofPerGlobalInfoQAT record {
     PerGlobalInfoQAT[] results?;
 };
 
@@ -440,11 +440,11 @@ public type PerGlobalInfoCHN_1 record {
     PerGlobalInfoCHN d?;
 };
 
-public type Collection\ of\ PerGlobalInfoAUS record {
+public type CollectionofPerGlobalInfoAUS record {
     PerGlobalInfoAUS[] results?;
 };
 
-public type Modified\ EducationMajorEntity record {
+public type ModifiedEducationMajorEntity record {
     EducationMajorEntity d?;
 };
 
@@ -462,7 +462,7 @@ public type PerGlobalInfoESP record {
     string startDate?;
 };
 
-public type Collection\ of\ CurrencyExchangeRate record {
+public type CollectionofCurrencyExchangeRate record {
     CurrencyExchangeRate[] results?;
 };
 
@@ -494,20 +494,20 @@ public type PerGlobalInfoARE_1 record {
     PerGlobalInfoARE d?;
 };
 
-public type Collection\ of\ PerGlobalInfoPRT record {
+public type CollectionofPerGlobalInfoPRT record {
     PerGlobalInfoPRT[] results?;
 };
 
-public type Collection\ of\ EducationMajorContent record {
+public type CollectionofEducationMajorContent record {
     EducationMajorContent[] results?;
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ PerGlobalInfoBRA d?;
+    CollectionofPerGlobalInfoBRA d?;
 };
 
 public type Wrapper_9 record {
-    Collection\ of\ PerGlobalInfoCHE d?;
+    CollectionofPerGlobalInfoCHE d?;
 };
 
 # Represents the Queries record for the operation: getPerGlobalInfoQAT
@@ -520,32 +520,32 @@ public type CurrencyExchangeRate_1 record {
     CurrencyExchangeRate d?;
 };
 
-public type Collection\ of\ PerGlobalInfoCAN record {
+public type CollectionofPerGlobalInfoCAN record {
     PerGlobalInfoCAN[] results?;
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ CurrencyExchangeRate d?;
+    CollectionofCurrencyExchangeRate d?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ NonRecurringPayment d?;
+    CollectionofNonRecurringPayment d?;
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ EducationDegreeEntity d?;
+    CollectionofEducationDegreeEntity d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ ServiceDeskContactSupportInformation d?;
+    CollectionofServiceDeskContactSupportInformation d?;
 };
 
-public type Collection\ of\ EducationDegreeEntity record {
+public type CollectionofEducationDegreeEntity record {
     EducationDegreeEntity[] results?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ PerGlobalInfoCHN d?;
+    CollectionofPerGlobalInfoCHN d?;
 };
 
 public type PerGlobalInfoGBR_1 record {
@@ -553,14 +553,14 @@ public type PerGlobalInfoGBR_1 record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ PerGlobalInfoFIN d?;
+    CollectionofPerGlobalInfoFIN d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ EducationDegreeContent d?;
+    CollectionofEducationDegreeContent d?;
 };
 
-public type Modified\ ServiceDeskCountrySupportInformation record {
+public type ModifiedServiceDeskCountrySupportInformation record {
     ServiceDeskCountrySupportInformation d?;
 };
 
@@ -582,7 +582,7 @@ public type ListPerGlobalInfoQATsQueries record {
     ("country"|"createdBy"|"createdDateTime"|"createdOn"|"endDate"|"genericDate1"|"genericDate10"|"genericDate2"|"genericDate3"|"genericDate4"|"genericDate5"|"genericDate6"|"genericDate7"|"genericNumber1"|"genericNumber10"|"genericNumber11"|"genericNumber12"|"genericNumber13"|"genericNumber14"|"genericNumber15"|"genericNumber16"|"genericNumber2"|"genericNumber3"|"genericNumber4"|"genericNumber5"|"genericNumber6"|"genericNumber7"|"genericNumber8"|"genericNumber9"|"genericString1"|"genericString10"|"genericString11"|"genericString12"|"genericString13"|"genericString14"|"genericString15"|"genericString16"|"genericString17"|"genericString18"|"genericString19"|"genericString2"|"genericString20"|"genericString21"|"genericString22"|"genericString3"|"genericString4"|"genericString5"|"genericString6"|"genericString7"|"genericString8"|"genericString9"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"operation"|"personIdExternal"|"startDate")[] \$select?;
 };
 
-public type Created\ EducationDegreeContent record {
+public type CreatedEducationDegreeContent record {
     EducationDegreeContent d?;
 };
 
@@ -611,7 +611,7 @@ public type GetNonRecurringPaymentQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"currencyCode"|"currencyGO"|"externalCode"|"formId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"nonRecurringPayPeriodEndDate"|"nonRecurringPayPeriodStartDate"|"notes"|"payCompValue"|"payComponentCode"|"payComponentGroupId"|"payComponentType"|"payDate"|"recordStatus"|"sentToPayroll"|"taxTreatment"|"templateId"|"userSysId")[] \$select?;
 };
 
-public type Collection\ of\ PerGlobalInfoCHE record {
+public type CollectionofPerGlobalInfoCHE record {
     PerGlobalInfoCHE[] results?;
 };
 
@@ -662,7 +662,7 @@ public type EducationDegreeContent_1 record {
     EducationDegreeContent d?;
 };
 
-public type Collection\ of\ PerGlobalInfoITA record {
+public type CollectionofPerGlobalInfoITA record {
     PerGlobalInfoITA[] results?;
 };
 
@@ -672,7 +672,7 @@ public type GetPerGlobalInfoZAFQueries record {
     ("country"|"createdBy"|"createdDateTime"|"createdOn"|"endDate"|"genericDate1"|"genericDate10"|"genericDate2"|"genericDate3"|"genericDate4"|"genericDate5"|"genericDate6"|"genericDate7"|"genericNumber1"|"genericNumber10"|"genericNumber11"|"genericNumber12"|"genericNumber13"|"genericNumber14"|"genericNumber15"|"genericNumber16"|"genericNumber2"|"genericNumber3"|"genericNumber4"|"genericNumber5"|"genericNumber6"|"genericNumber7"|"genericNumber8"|"genericNumber9"|"genericString1"|"genericString10"|"genericString11"|"genericString12"|"genericString13"|"genericString14"|"genericString15"|"genericString16"|"genericString17"|"genericString18"|"genericString19"|"genericString2"|"genericString20"|"genericString21"|"genericString22"|"genericString3"|"genericString4"|"genericString5"|"genericString6"|"genericString7"|"genericString8"|"genericString9"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"operation"|"personIdExternal"|"startDate")[] \$select?;
 };
 
-public type Collection\ of\ PerGlobalInfoCHN record {
+public type CollectionofPerGlobalInfoCHN record {
     PerGlobalInfoCHN[] results?;
 };
 
@@ -774,7 +774,7 @@ public type PerGlobalInfoQAT_1 record {
     PerGlobalInfoQAT d?;
 };
 
-public type Related\ CollectionSFOData\.GetBizXActionResponse record {
+public type RelatedCollectionSFOData_GetBizXActionResponse record {
     GetBizXActionResponse[] results?;
 };
 
@@ -782,31 +782,31 @@ public type PerGlobalInfoCHE_1 record {
     PerGlobalInfoCHE d?;
 };
 
-public type Collection\ of\ EducationDegreeContent record {
+public type CollectionofEducationDegreeContent record {
     EducationDegreeContent[] results?;
 };
 
-public type Collection\ of\ PerGlobalInfoGBR record {
+public type CollectionofPerGlobalInfoGBR record {
     PerGlobalInfoGBR[] results?;
 };
 
-public type Modified\ CurrencyExchangeRate record {
+public type ModifiedCurrencyExchangeRate record {
     CurrencyExchangeRate d?;
 };
 
-public type Created\ EducationDegreeEntity record {
+public type CreatedEducationDegreeEntity record {
     EducationDegreeEntity d?;
 };
 
-public type Modified\ EducationDegreeContent record {
+public type ModifiedEducationDegreeContent record {
     EducationDegreeContent d?;
 };
 
 public type Result record {
-    Related\ CollectionSFOData\.GetBizXActionResponse d?;
+    RelatedCollectionSFOData_GetBizXActionResponse d?;
 };
 
-public type Modified\ EducationDegreeEntity record {
+public type ModifiedEducationDegreeEntity record {
     EducationDegreeEntity d?;
 };
 
@@ -816,7 +816,7 @@ public type GetGetBizXActionQueries record {
     string actionSourceId;
 };
 
-public type Collection\ of\ PerGlobalInfoFIN record {
+public type CollectionofPerGlobalInfoFIN record {
     PerGlobalInfoFIN[] results?;
 };
 
@@ -965,7 +965,7 @@ public type ListPerGlobalInfoAUSsQueries record {
     ("country"|"createdBy"|"createdDateTime"|"createdOn"|"endDate"|"genericDate1"|"genericDate10"|"genericDate2"|"genericDate3"|"genericDate4"|"genericDate5"|"genericDate6"|"genericDate7"|"genericNumber1"|"genericNumber10"|"genericNumber11"|"genericNumber12"|"genericNumber13"|"genericNumber14"|"genericNumber15"|"genericNumber16"|"genericNumber2"|"genericNumber3"|"genericNumber4"|"genericNumber5"|"genericNumber6"|"genericNumber7"|"genericNumber8"|"genericNumber9"|"genericString1"|"genericString10"|"genericString11"|"genericString12"|"genericString13"|"genericString14"|"genericString15"|"genericString16"|"genericString17"|"genericString18"|"genericString19"|"genericString2"|"genericString20"|"genericString21"|"genericString22"|"genericString3"|"genericString4"|"genericString5"|"genericString6"|"genericString7"|"genericString8"|"genericString9"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"operation"|"personIdExternal"|"startDate")[] \$select?;
 };
 
-public type Collection\ of\ ServiceDeskContactSupportInformation record {
+public type CollectionofServiceDeskContactSupportInformation record {
     ServiceDeskContactSupportInformation[] results?;
 };
 
@@ -1049,7 +1049,7 @@ public type ListPerGlobalInfoBRAsQueries record {
     ("country"|"createdBy"|"createdDateTime"|"createdOn"|"endDate"|"genericDate1"|"genericDate10"|"genericDate2"|"genericDate3"|"genericDate4"|"genericDate5"|"genericDate6"|"genericDate7"|"genericNumber1"|"genericNumber10"|"genericNumber11"|"genericNumber12"|"genericNumber13"|"genericNumber14"|"genericNumber15"|"genericNumber16"|"genericNumber2"|"genericNumber3"|"genericNumber4"|"genericNumber5"|"genericNumber6"|"genericNumber7"|"genericNumber8"|"genericNumber9"|"genericString1"|"genericString10"|"genericString11"|"genericString12"|"genericString13"|"genericString14"|"genericString15"|"genericString16"|"genericString17"|"genericString18"|"genericString19"|"genericString2"|"genericString20"|"genericString21"|"genericString22"|"genericString3"|"genericString4"|"genericString5"|"genericString6"|"genericString7"|"genericString8"|"genericString9"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"operation"|"personIdExternal"|"startDate")[] \$select?;
 };
 
-public type Created\ ServiceDeskCountrySupportInformation record {
+public type CreatedServiceDeskCountrySupportInformation record {
     ServiceDeskCountrySupportInformation d?;
 };
 
@@ -1058,22 +1058,22 @@ public type NonRecurringPayment record {
     string externalCode?;
 };
 
-public type Created\ EducationMajorEntity record {
+public type CreatedEducationMajorEntity record {
     EducationMajorEntity d?;
 };
 
 public type GetBizXActionResponse record {
 };
 
-public type Collection\ of\ PerGlobalInfoSAU record {
+public type CollectionofPerGlobalInfoSAU record {
     PerGlobalInfoSAU[] results?;
 };
 
-public type Collection\ of\ NonRecurringPayment record {
+public type CollectionofNonRecurringPayment record {
     NonRecurringPayment[] results?;
 };
 
-public type Related\ CollectionSFOData\.ServiceDeskCountrySupportInformation record {
+public type RelatedCollectionSFOData_ServiceDeskCountrySupportInformation record {
     ServiceDeskCountrySupportInformation[] results?;
 };
 
@@ -1127,7 +1127,7 @@ public type ListPerGlobalInfoCANsQueries record {
 };
 
 public type Wrapper_26 record {
-    Collection\ of\ PerGlobalInfoZAF d?;
+    CollectionofPerGlobalInfoZAF d?;
 };
 
 # Represents the Queries record for the operation: getEducationMajorEntity
@@ -1143,27 +1143,27 @@ public type GetEducationDegreeEntityQueries record {
 };
 
 public type Wrapper_24 record {
-    Collection\ of\ PerGlobalInfoQAT d?;
+    CollectionofPerGlobalInfoQAT d?;
 };
 
 public type Wrapper_25 record {
-    Collection\ of\ PerGlobalInfoSAU d?;
+    CollectionofPerGlobalInfoSAU d?;
 };
 
 public type Wrapper_22 record {
-    Collection\ of\ PerGlobalInfoNLD d?;
+    CollectionofPerGlobalInfoNLD d?;
 };
 
 public type Wrapper_23 record {
-    Collection\ of\ PerGlobalInfoPRT d?;
+    CollectionofPerGlobalInfoPRT d?;
 };
 
 public type Wrapper_20 record {
-    Collection\ of\ PerGlobalInfoDNK d?;
+    CollectionofPerGlobalInfoDNK d?;
 };
 
 public type Wrapper_21 record {
-    Collection\ of\ PerGlobalInfoITA d?;
+    CollectionofPerGlobalInfoITA d?;
 };
 
 public type PerGlobalInfoDNK_1 record {
@@ -1201,7 +1201,7 @@ public type PerGlobalInfoZAF record {
     string startDate?;
 };
 
-public type Collection\ of\ PerGlobalInfoZAF record {
+public type CollectionofPerGlobalInfoZAF record {
     PerGlobalInfoZAF[] results?;
 };
 
@@ -1213,7 +1213,7 @@ public type PerGlobalInfoUSA_1 record {
     PerGlobalInfoUSA d?;
 };
 
-public type Collection\ of\ PerGlobalInfoFRA record {
+public type CollectionofPerGlobalInfoFRA record {
     PerGlobalInfoFRA[] results?;
 };
 
@@ -1271,7 +1271,7 @@ public type ListNonRecurringPaymentsQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"currencyCode"|"currencyGO"|"externalCode"|"formId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"nonRecurringPayPeriodEndDate"|"nonRecurringPayPeriodStartDate"|"notes"|"payCompValue"|"payComponentCode"|"payComponentGroupId"|"payComponentType"|"payDate"|"recordStatus"|"sentToPayroll"|"taxTreatment"|"templateId"|"userSysId")[] \$select?;
 };
 
-public type Collection\ of\ PerGlobalInfoBRA record {
+public type CollectionofPerGlobalInfoBRA record {
     PerGlobalInfoBRA[] results?;
 };
 
@@ -1283,11 +1283,11 @@ public type EducationDegreeContent record {
     EducationDegreeEntity entityNav?;
 };
 
-public type Collection\ of\ PerGlobalInfoDEU record {
+public type CollectionofPerGlobalInfoDEU record {
     PerGlobalInfoDEU[] results?;
 };
 
-public type Modified\ ServiceDeskContactSupportInformation record {
+public type ModifiedServiceDeskContactSupportInformation record {
     ServiceDeskContactSupportInformation d?;
 };
 
@@ -1340,7 +1340,7 @@ public type PerGlobalInfoBRA_1 record {
     PerGlobalInfoBRA d?;
 };
 
-public type Collection\ of\ PerGlobalInfoDNK record {
+public type CollectionofPerGlobalInfoDNK record {
     PerGlobalInfoDNK[] results?;
 };
 

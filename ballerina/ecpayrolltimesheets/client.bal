@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -80,7 +80,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createExternalAllowance(ExternalAllowance payload, map<string|string[]> headers = {}) returns Created\ ExternalAllowance|error {
+    remote isolated function createExternalAllowance(ExternalAllowance payload, map<string|string[]> headers = {}) returns CreatedExternalAllowance|error {
         string resourcePath = string `/ExternalAllowance`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -107,7 +107,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateExternalAllowance(string externalCode, Modified\ ExternalAllowance payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateExternalAllowance(string externalCode, ModifiedExternalAllowance payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalAllowance('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -168,7 +168,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createExternalTimeRecord(ExternalTimeRecord payload, map<string|string[]> headers = {}) returns Created\ ExternalTimeRecord|error {
+    remote isolated function createExternalTimeRecord(ExternalTimeRecord payload, map<string|string[]> headers = {}) returns CreatedExternalTimeRecord|error {
         string resourcePath = string `/ExternalTimeRecord`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -195,7 +195,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateExternalTimeRecord(string externalCode, Modified\ ExternalTimeRecord payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateExternalTimeRecord(string externalCode, ModifiedExternalTimeRecord payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalTimeRecord('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -231,7 +231,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createExternalTimeData(ExternalTimeData payload, map<string|string[]> headers = {}) returns Created\ ExternalTimeData|error {
+    remote isolated function createExternalTimeData(ExternalTimeData payload, map<string|string[]> headers = {}) returns CreatedExternalTimeData|error {
         string resourcePath = string `/ExternalTimeData`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -258,7 +258,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateExternalTimeData(string externalCode, Modified\ ExternalTimeData payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateExternalTimeData(string externalCode, ModifiedExternalTimeData payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalTimeData('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -423,7 +423,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createExternalTimeSegment(ExternalTimeSegment payload, map<string|string[]> headers = {}) returns Created\ ExternalTimeSegment|error {
+    remote isolated function createExternalTimeSegment(ExternalTimeSegment payload, map<string|string[]> headers = {}) returns CreatedExternalTimeSegment|error {
         string resourcePath = string `/ExternalTimeSegment`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -452,7 +452,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateExternalTimeSegment(string ExternalTimeRecord_externalCode, string externalCode, Modified\ ExternalTimeSegment payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateExternalTimeSegment(string ExternalTimeRecord_externalCode, string externalCode, ModifiedExternalTimeSegment payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalTimeSegment(ExternalTimeRecord_externalCode='${getEncodedUri(ExternalTimeRecord_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

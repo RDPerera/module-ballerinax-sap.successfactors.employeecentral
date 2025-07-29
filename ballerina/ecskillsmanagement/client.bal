@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCertificationContent(CertificationContent payload, map<string|string[]> headers = {}) returns Created\ CertificationContent|error {
+    remote isolated function createCertificationContent(CertificationContent payload, map<string|string[]> headers = {}) returns CreatedCertificationContent|error {
         string resourcePath = string `/CertificationContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -84,7 +84,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCertificationContent(string JobProfile_externalCode, string externalCode, Modified\ CertificationContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCertificationContent(string JobProfile_externalCode, string externalCode, ModifiedCertificationContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CertificationContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -121,7 +121,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createFamilyEntity(FamilyEntity payload, map<string|string[]> headers = {}) returns Created\ FamilyEntity|error {
+    remote isolated function createFamilyEntity(FamilyEntity payload, map<string|string[]> headers = {}) returns CreatedFamilyEntity|error {
         string resourcePath = string `/FamilyEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -148,7 +148,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateFamilyEntity(string externalCode, Modified\ FamilyEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateFamilyEntity(string externalCode, ModifiedFamilyEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/FamilyEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -184,7 +184,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCertificationEntity(CertificationEntity payload, map<string|string[]> headers = {}) returns Created\ CertificationEntity|error {
+    remote isolated function createCertificationEntity(CertificationEntity payload, map<string|string[]> headers = {}) returns CreatedCertificationEntity|error {
         string resourcePath = string `/CertificationEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -211,7 +211,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCertificationEntity(string externalCode, Modified\ CertificationEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCertificationEntity(string externalCode, ModifiedCertificationEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CertificationEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -247,7 +247,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobResponsibilityContent(JobResponsibilityContent payload, map<string|string[]> headers = {}) returns Created\ JobResponsibilityContent|error {
+    remote isolated function createJobResponsibilityContent(JobResponsibilityContent payload, map<string|string[]> headers = {}) returns CreatedJobResponsibilityContent|error {
         string resourcePath = string `/JobResponsibilityContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -276,7 +276,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobResponsibilityContent(string JobProfile_externalCode, string externalCode, Modified\ JobResponsibilityContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobResponsibilityContent(string JobProfile_externalCode, string externalCode, ModifiedJobResponsibilityContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobResponsibilityContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -313,7 +313,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createInterviewQuestionContent(InterviewQuestionContent payload, map<string|string[]> headers = {}) returns Created\ InterviewQuestionContent|error {
+    remote isolated function createInterviewQuestionContent(InterviewQuestionContent payload, map<string|string[]> headers = {}) returns CreatedInterviewQuestionContent|error {
         string resourcePath = string `/InterviewQuestionContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -342,7 +342,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateInterviewQuestionContent(string JobProfile_externalCode, string externalCode, Modified\ InterviewQuestionContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateInterviewQuestionContent(string JobProfile_externalCode, string externalCode, ModifiedInterviewQuestionContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/InterviewQuestionContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -379,7 +379,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobResponsibilityEntity(JobResponsibilityEntity payload, map<string|string[]> headers = {}) returns Created\ JobResponsibilityEntity|error {
+    remote isolated function createJobResponsibilityEntity(JobResponsibilityEntity payload, map<string|string[]> headers = {}) returns CreatedJobResponsibilityEntity|error {
         string resourcePath = string `/JobResponsibilityEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -406,7 +406,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobResponsibilityEntity(string externalCode, Modified\ JobResponsibilityEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobResponsibilityEntity(string externalCode, ModifiedJobResponsibilityEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobResponsibilityEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -442,7 +442,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRatedSkillMapping(RatedSkillMapping payload, map<string|string[]> headers = {}) returns Created\ RatedSkillMapping|error {
+    remote isolated function createRatedSkillMapping(RatedSkillMapping payload, map<string|string[]> headers = {}) returns CreatedRatedSkillMapping|error {
         string resourcePath = string `/RatedSkillMapping`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -471,7 +471,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRatedSkillMapping(string SkillProfile_externalCode, string externalCode, Modified\ RatedSkillMapping payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRatedSkillMapping(string SkillProfile_externalCode, string externalCode, ModifiedRatedSkillMapping payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RatedSkillMapping(SkillProfile_externalCode='${getEncodedUri(SkillProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -508,7 +508,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRoleCompetencyBehaviorMappingEntity(RoleCompetencyBehaviorMappingEntity payload, map<string|string[]> headers = {}) returns Created\ RoleCompetencyBehaviorMappingEntity|error {
+    remote isolated function createRoleCompetencyBehaviorMappingEntity(RoleCompetencyBehaviorMappingEntity payload, map<string|string[]> headers = {}) returns CreatedRoleCompetencyBehaviorMappingEntity|error {
         string resourcePath = string `/RoleCompetencyBehaviorMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -537,7 +537,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRoleCompetencyBehaviorMappingEntity(string RoleEntity_externalCode, string externalCode, Modified\ RoleCompetencyBehaviorMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRoleCompetencyBehaviorMappingEntity(string RoleEntity_externalCode, string externalCode, ModifiedRoleCompetencyBehaviorMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RoleCompetencyBehaviorMappingEntity(RoleEntity_externalCode='${getEncodedUri(RoleEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -574,7 +574,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRoleEntity(RoleEntity payload, map<string|string[]> headers = {}) returns Created\ RoleEntity|error {
+    remote isolated function createRoleEntity(RoleEntity payload, map<string|string[]> headers = {}) returns CreatedRoleEntity|error {
         string resourcePath = string `/RoleEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -601,7 +601,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRoleEntity(string externalCode, Modified\ RoleEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRoleEntity(string externalCode, ModifiedRoleEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RoleEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -637,7 +637,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobProfileLocalizedData(JobProfileLocalizedData payload, map<string|string[]> headers = {}) returns Created\ JobProfileLocalizedData|error {
+    remote isolated function createJobProfileLocalizedData(JobProfileLocalizedData payload, map<string|string[]> headers = {}) returns CreatedJobProfileLocalizedData|error {
         string resourcePath = string `/JobProfileLocalizedData`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -666,7 +666,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobProfileLocalizedData(string JobProfile_externalCode, string externalCode, Modified\ JobProfileLocalizedData payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobProfileLocalizedData(string JobProfile_externalCode, string externalCode, ModifiedJobProfileLocalizedData payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobProfileLocalizedData(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -703,7 +703,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobCodeMappingEntity(JobCodeMappingEntity payload, map<string|string[]> headers = {}) returns Created\ JobCodeMappingEntity|error {
+    remote isolated function createJobCodeMappingEntity(JobCodeMappingEntity payload, map<string|string[]> headers = {}) returns CreatedJobCodeMappingEntity|error {
         string resourcePath = string `/JobCodeMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -732,7 +732,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobCodeMappingEntity(string RoleEntity_externalCode, string externalCode, Modified\ JobCodeMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobCodeMappingEntity(string RoleEntity_externalCode, string externalCode, ModifiedJobCodeMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobCodeMappingEntity(RoleEntity_externalCode='${getEncodedUri(RoleEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -769,7 +769,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCompetencyType(Competency payload, map<string|string[]> headers = {}) returns Created\ CompetencyType|error {
+    remote isolated function createCompetencyType(Competency payload, map<string|string[]> headers = {}) returns CreatedCompetencyType|error {
         string resourcePath = string `/CompetencyType`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -796,7 +796,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCompetencyType(int GUID, Modified\ CompetencyType payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCompetencyType(int GUID, ModifiedCompetencyType payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CompetencyType(${getEncodedUri(GUID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -832,7 +832,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmploymentConditionContent(EmploymentConditionContent payload, map<string|string[]> headers = {}) returns Created\ EmploymentConditionContent|error {
+    remote isolated function createEmploymentConditionContent(EmploymentConditionContent payload, map<string|string[]> headers = {}) returns CreatedEmploymentConditionContent|error {
         string resourcePath = string `/EmploymentConditionContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -861,7 +861,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmploymentConditionContent(string JobProfile_externalCode, string externalCode, Modified\ EmploymentConditionContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmploymentConditionContent(string JobProfile_externalCode, string externalCode, ModifiedEmploymentConditionContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmploymentConditionContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -898,7 +898,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createFamilyCompetencyMappingEntity(FamilyCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns Created\ FamilyCompetencyMappingEntity|error {
+    remote isolated function createFamilyCompetencyMappingEntity(FamilyCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns CreatedFamilyCompetencyMappingEntity|error {
         string resourcePath = string `/FamilyCompetencyMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -927,7 +927,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateFamilyCompetencyMappingEntity(string FamilyEntity_externalCode, string externalCode, Modified\ FamilyCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateFamilyCompetencyMappingEntity(string FamilyEntity_externalCode, string externalCode, ModifiedFamilyCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/FamilyCompetencyMappingEntity(FamilyEntity_externalCode='${getEncodedUri(FamilyEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -964,7 +964,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPhysicalReqEntity(PhysicalReqEntity payload, map<string|string[]> headers = {}) returns Created\ PhysicalReqEntity|error {
+    remote isolated function createPhysicalReqEntity(PhysicalReqEntity payload, map<string|string[]> headers = {}) returns CreatedPhysicalReqEntity|error {
         string resourcePath = string `/PhysicalReqEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -991,7 +991,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePhysicalReqEntity(string externalCode, Modified\ PhysicalReqEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePhysicalReqEntity(string externalCode, ModifiedPhysicalReqEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PhysicalReqEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1027,7 +1027,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createInterviewQuestionEntity(InterviewQuestionEntity payload, map<string|string[]> headers = {}) returns Created\ InterviewQuestionEntity|error {
+    remote isolated function createInterviewQuestionEntity(InterviewQuestionEntity payload, map<string|string[]> headers = {}) returns CreatedInterviewQuestionEntity|error {
         string resourcePath = string `/InterviewQuestionEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1054,7 +1054,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateInterviewQuestionEntity(string externalCode, Modified\ InterviewQuestionEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateInterviewQuestionEntity(string externalCode, ModifiedInterviewQuestionEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/InterviewQuestionEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1090,7 +1090,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJDTemplateFamilyMapping(JDTemplateFamilyMapping payload, map<string|string[]> headers = {}) returns Created\ JDTemplateFamilyMapping|error {
+    remote isolated function createJDTemplateFamilyMapping(JDTemplateFamilyMapping payload, map<string|string[]> headers = {}) returns CreatedJDTemplateFamilyMapping|error {
         string resourcePath = string `/JDTemplateFamilyMapping`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1119,7 +1119,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJDTemplateFamilyMapping(string JobDescTemplate_externalCode, string externalCode, Modified\ JDTemplateFamilyMapping payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJDTemplateFamilyMapping(string JobDescTemplate_externalCode, string externalCode, ModifiedJDTemplateFamilyMapping payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JDTemplateFamilyMapping(JobDescTemplate_externalCode='${getEncodedUri(JobDescTemplate_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1156,7 +1156,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createBehaviorMappingEntity(BehaviorMappingEntity payload, map<string|string[]> headers = {}) returns Created\ BehaviorMappingEntity|error {
+    remote isolated function createBehaviorMappingEntity(BehaviorMappingEntity payload, map<string|string[]> headers = {}) returns CreatedBehaviorMappingEntity|error {
         string resourcePath = string `/BehaviorMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1185,7 +1185,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateBehaviorMappingEntity(string CompetencyEntity_externalCode, string externalCode, Modified\ BehaviorMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateBehaviorMappingEntity(string CompetencyEntity_externalCode, string externalCode, ModifiedBehaviorMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/BehaviorMappingEntity(CompetencyEntity_externalCode='${getEncodedUri(CompetencyEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1222,7 +1222,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createSkillEntity(SkillEntity payload, map<string|string[]> headers = {}) returns Created\ SkillEntity|error {
+    remote isolated function createSkillEntity(SkillEntity payload, map<string|string[]> headers = {}) returns CreatedSkillEntity|error {
         string resourcePath = string `/SkillEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1249,7 +1249,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateSkillEntity(string externalCode, Modified\ SkillEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateSkillEntity(string externalCode, ModifiedSkillEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/SkillEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1285,7 +1285,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPhysicalReqContent(PhysicalReqContent payload, map<string|string[]> headers = {}) returns Created\ PhysicalReqContent|error {
+    remote isolated function createPhysicalReqContent(PhysicalReqContent payload, map<string|string[]> headers = {}) returns CreatedPhysicalReqContent|error {
         string resourcePath = string `/PhysicalReqContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1314,7 +1314,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePhysicalReqContent(string JobProfile_externalCode, string externalCode, Modified\ PhysicalReqContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePhysicalReqContent(string JobProfile_externalCode, string externalCode, ModifiedPhysicalReqContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PhysicalReqContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1351,7 +1351,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createSkillContent(SkillContent payload, map<string|string[]> headers = {}) returns Created\ SkillContent|error {
+    remote isolated function createSkillContent(SkillContent payload, map<string|string[]> headers = {}) returns CreatedSkillContent|error {
         string resourcePath = string `/SkillContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1380,7 +1380,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateSkillContent(string JobProfile_externalCode, string externalCode, Modified\ SkillContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateSkillContent(string JobProfile_externalCode, string externalCode, ModifiedSkillContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/SkillContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1417,7 +1417,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRoleCompetencyMappingEntity(RoleCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns Created\ RoleCompetencyMappingEntity|error {
+    remote isolated function createRoleCompetencyMappingEntity(RoleCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns CreatedRoleCompetencyMappingEntity|error {
         string resourcePath = string `/RoleCompetencyMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1446,7 +1446,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRoleCompetencyMappingEntity(string RoleEntity_externalCode, string externalCode, Modified\ RoleCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRoleCompetencyMappingEntity(string RoleEntity_externalCode, string externalCode, ModifiedRoleCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RoleCompetencyMappingEntity(RoleEntity_externalCode='${getEncodedUri(RoleEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1483,7 +1483,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createSelfReportSkillMapping(SelfReportSkillMapping payload, map<string|string[]> headers = {}) returns Created\ SelfReportSkillMapping|error {
+    remote isolated function createSelfReportSkillMapping(SelfReportSkillMapping payload, map<string|string[]> headers = {}) returns CreatedSelfReportSkillMapping|error {
         string resourcePath = string `/SelfReportSkillMapping`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1512,7 +1512,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateSelfReportSkillMapping(string SkillProfile_externalCode, string externalCode, Modified\ SelfReportSkillMapping payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateSelfReportSkillMapping(string SkillProfile_externalCode, string externalCode, ModifiedSelfReportSkillMapping payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/SelfReportSkillMapping(SkillProfile_externalCode='${getEncodedUri(SkillProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1585,7 +1585,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createFamilySkillMappingEntity(FamilySkillMappingEntity payload, map<string|string[]> headers = {}) returns Created\ FamilySkillMappingEntity|error {
+    remote isolated function createFamilySkillMappingEntity(FamilySkillMappingEntity payload, map<string|string[]> headers = {}) returns CreatedFamilySkillMappingEntity|error {
         string resourcePath = string `/FamilySkillMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1614,7 +1614,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateFamilySkillMappingEntity(string FamilyEntity_externalCode, string externalCode, Modified\ FamilySkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateFamilySkillMappingEntity(string FamilyEntity_externalCode, string externalCode, ModifiedFamilySkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/FamilySkillMappingEntity(FamilyEntity_externalCode='${getEncodedUri(FamilyEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1651,7 +1651,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRoleSkillMappingEntity(RoleSkillMappingEntity payload, map<string|string[]> headers = {}) returns Created\ RoleSkillMappingEntity|error {
+    remote isolated function createRoleSkillMappingEntity(RoleSkillMappingEntity payload, map<string|string[]> headers = {}) returns CreatedRoleSkillMappingEntity|error {
         string resourcePath = string `/RoleSkillMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1680,7 +1680,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRoleSkillMappingEntity(string RoleEntity_externalCode, string externalCode, Modified\ RoleSkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRoleSkillMappingEntity(string RoleEntity_externalCode, string externalCode, ModifiedRoleSkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RoleSkillMappingEntity(RoleEntity_externalCode='${getEncodedUri(RoleEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1717,7 +1717,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobDescTemplate(JobDescTemplate payload, map<string|string[]> headers = {}) returns Created\ JobDescTemplate|error {
+    remote isolated function createJobDescTemplate(JobDescTemplate payload, map<string|string[]> headers = {}) returns CreatedJobDescTemplate|error {
         string resourcePath = string `/JobDescTemplate`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1744,7 +1744,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobDescTemplate(string externalCode, Modified\ JobDescTemplate payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobDescTemplate(string externalCode, ModifiedJobDescTemplate payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobDescTemplate('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1780,7 +1780,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createSkillProfile(SkillProfile payload, map<string|string[]> headers = {}) returns Created\ SkillProfile|error {
+    remote isolated function createSkillProfile(SkillProfile payload, map<string|string[]> headers = {}) returns CreatedSkillProfile|error {
         string resourcePath = string `/SkillProfile`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1807,7 +1807,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateSkillProfile(string externalCode, Modified\ SkillProfile payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateSkillProfile(string externalCode, ModifiedSkillProfile payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/SkillProfile('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1843,7 +1843,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCompetencyEntity(CompetencyEntity payload, map<string|string[]> headers = {}) returns Created\ CompetencyEntity|error {
+    remote isolated function createCompetencyEntity(CompetencyEntity payload, map<string|string[]> headers = {}) returns CreatedCompetencyEntity|error {
         string resourcePath = string `/CompetencyEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1870,7 +1870,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCompetencyEntity(string externalCode, Modified\ CompetencyEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCompetencyEntity(string externalCode, ModifiedCompetencyEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CompetencyEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1906,7 +1906,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCompetencyContent(CompetencyContent payload, map<string|string[]> headers = {}) returns Created\ CompetencyContent|error {
+    remote isolated function createCompetencyContent(CompetencyContent payload, map<string|string[]> headers = {}) returns CreatedCompetencyContent|error {
         string resourcePath = string `/CompetencyContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1935,7 +1935,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCompetencyContent(string JobProfile_externalCode, string externalCode, Modified\ CompetencyContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCompetencyContent(string JobProfile_externalCode, string externalCode, ModifiedCompetencyContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CompetencyContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1972,7 +1972,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRelevantIndustryEntity(RelevantIndustryEntity payload, map<string|string[]> headers = {}) returns Created\ RelevantIndustryEntity|error {
+    remote isolated function createRelevantIndustryEntity(RelevantIndustryEntity payload, map<string|string[]> headers = {}) returns CreatedRelevantIndustryEntity|error {
         string resourcePath = string `/RelevantIndustryEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1999,7 +1999,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRelevantIndustryEntity(string externalCode, Modified\ RelevantIndustryEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRelevantIndustryEntity(string externalCode, ModifiedRelevantIndustryEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RelevantIndustryEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2035,7 +2035,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRoleTalentPoolMappingEntity(RoleTalentPoolMappingEntity payload, map<string|string[]> headers = {}) returns Created\ RoleTalentPoolMappingEntity|error {
+    remote isolated function createRoleTalentPoolMappingEntity(RoleTalentPoolMappingEntity payload, map<string|string[]> headers = {}) returns CreatedRoleTalentPoolMappingEntity|error {
         string resourcePath = string `/RoleTalentPoolMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2064,7 +2064,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRoleTalentPoolMappingEntity(string RoleEntity_externalCode, string externalCode, Modified\ RoleTalentPoolMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRoleTalentPoolMappingEntity(string RoleEntity_externalCode, string externalCode, ModifiedRoleTalentPoolMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RoleTalentPoolMappingEntity(RoleEntity_externalCode='${getEncodedUri(RoleEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2101,7 +2101,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEmploymentConditionEntity(EmploymentConditionEntity payload, map<string|string[]> headers = {}) returns Created\ EmploymentConditionEntity|error {
+    remote isolated function createEmploymentConditionEntity(EmploymentConditionEntity payload, map<string|string[]> headers = {}) returns CreatedEmploymentConditionEntity|error {
         string resourcePath = string `/EmploymentConditionEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2128,7 +2128,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEmploymentConditionEntity(string externalCode, Modified\ EmploymentConditionEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEmploymentConditionEntity(string externalCode, ModifiedEmploymentConditionEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EmploymentConditionEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2164,7 +2164,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createJobDescSection(JobDescSection payload, map<string|string[]> headers = {}) returns Created\ JobDescSection|error {
+    remote isolated function createJobDescSection(JobDescSection payload, map<string|string[]> headers = {}) returns CreatedJobDescSection|error {
         string resourcePath = string `/JobDescSection`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2193,7 +2193,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateJobDescSection(string JobDescTemplate_externalCode, string externalCode, Modified\ JobDescSection payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateJobDescSection(string JobDescTemplate_externalCode, string externalCode, ModifiedJobDescSection payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/JobDescSection(JobDescTemplate_externalCode='${getEncodedUri(JobDescTemplate_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2230,7 +2230,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createRelevantIndustryContent(RelevantIndustryContent payload, map<string|string[]> headers = {}) returns Created\ RelevantIndustryContent|error {
+    remote isolated function createRelevantIndustryContent(RelevantIndustryContent payload, map<string|string[]> headers = {}) returns CreatedRelevantIndustryContent|error {
         string resourcePath = string `/RelevantIndustryContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2259,7 +2259,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateRelevantIndustryContent(string JobProfile_externalCode, string externalCode, Modified\ RelevantIndustryContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateRelevantIndustryContent(string JobProfile_externalCode, string externalCode, ModifiedRelevantIndustryContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/RelevantIndustryContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2296,7 +2296,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPositionEntity(PositionEntity payload, map<string|string[]> headers = {}) returns Created\ PositionEntity|error {
+    remote isolated function createPositionEntity(PositionEntity payload, map<string|string[]> headers = {}) returns CreatedPositionEntity|error {
         string resourcePath = string `/PositionEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2323,7 +2323,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePositionEntity(string externalCode, Modified\ PositionEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePositionEntity(string externalCode, ModifiedPositionEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PositionEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2359,7 +2359,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPositionCompetencyMappingEntity(PositionCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns Created\ PositionCompetencyMappingEntity|error {
+    remote isolated function createPositionCompetencyMappingEntity(PositionCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns CreatedPositionCompetencyMappingEntity|error {
         string resourcePath = string `/PositionCompetencyMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2388,7 +2388,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePositionCompetencyMappingEntity(string PositionEntity_externalCode, string externalCode, Modified\ PositionCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePositionCompetencyMappingEntity(string PositionEntity_externalCode, string externalCode, ModifiedPositionCompetencyMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PositionCompetencyMappingEntity(PositionEntity_externalCode='${getEncodedUri(PositionEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2425,7 +2425,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPositionSkillMappingEntity(PositionSkillMappingEntity payload, map<string|string[]> headers = {}) returns Created\ PositionSkillMappingEntity|error {
+    remote isolated function createPositionSkillMappingEntity(PositionSkillMappingEntity payload, map<string|string[]> headers = {}) returns CreatedPositionSkillMappingEntity|error {
         string resourcePath = string `/PositionSkillMappingEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2454,7 +2454,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePositionSkillMappingEntity(string PositionEntity_externalCode, string externalCode, Modified\ PositionSkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePositionSkillMappingEntity(string PositionEntity_externalCode, string externalCode, ModifiedPositionSkillMappingEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PositionSkillMappingEntity(PositionEntity_externalCode='${getEncodedUri(PositionEntity_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

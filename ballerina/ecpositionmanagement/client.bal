@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -55,7 +55,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPositionRequisitionStatus(PositionRequisitionStatus payload, map<string|string[]> headers = {}) returns Created\ PositionRequisitionStatus|error {
+    remote isolated function createPositionRequisitionStatus(PositionRequisitionStatus payload, map<string|string[]> headers = {}) returns CreatedPositionRequisitionStatus|error {
         string resourcePath = string `/PositionRequisitionStatus`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -82,7 +82,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePositionRequisitionStatus(int code, Modified\ PositionRequisitionStatus payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePositionRequisitionStatus(int code, ModifiedPositionRequisitionStatus payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PositionRequisitionStatus(${getEncodedUri(code)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -118,7 +118,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPositionMatrixRelationship(PositionMatrixRelationship payload, map<string|string[]> headers = {}) returns Created\ PositionMatrixRelationship|error {
+    remote isolated function createPositionMatrixRelationship(PositionMatrixRelationship payload, map<string|string[]> headers = {}) returns CreatedPositionMatrixRelationship|error {
         string resourcePath = string `/PositionMatrixRelationship`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -149,7 +149,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePositionMatrixRelationship(string Position_code, string Position_effectiveStartDate, string matrixRelationshipType, Modified\ PositionMatrixRelationship payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePositionMatrixRelationship(string Position_code, string Position_effectiveStartDate, string matrixRelationshipType, ModifiedPositionMatrixRelationship payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PositionMatrixRelationship(Position_code='${getEncodedUri(Position_code)}',Position_effectiveStartDate=${getEncodedUri(Position_effectiveStartDate)},matrixRelationshipType='${getEncodedUri(matrixRelationshipType)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -187,7 +187,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createPosition(Position payload, map<string|string[]> headers = {}) returns Created\ Position|error {
+    remote isolated function createPosition(Position payload, map<string|string[]> headers = {}) returns CreatedPosition|error {
         string resourcePath = string `/Position`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -216,7 +216,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updatePosition(string code, string effectiveStartDate, Modified\ Position payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updatePosition(string code, string effectiveStartDate, ModifiedPosition payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/Position(code='${getEncodedUri(code)}',effectiveStartDate=${getEncodedUri(effectiveStartDate)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

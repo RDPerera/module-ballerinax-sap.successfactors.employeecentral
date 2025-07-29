@@ -46,11 +46,11 @@ public type ListJDTemplateFamilyMappingsQueries record {
     ("JobDescTemplate_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"family"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ EmploymentConditionEntity record {
+public type ModifiedEmploymentConditionEntity record {
     EmploymentConditionEntity d?;
 };
 
-public type Collection\ of\ BehaviorMappingEntity record {
+public type CollectionofBehaviorMappingEntity record {
     BehaviorMappingEntity[] results?;
 };
 
@@ -60,15 +60,15 @@ public type DeleteSkillProfileHeaders record {
     string If\-Match?;
 };
 
-public type Created\ JobDescSection record {
+public type CreatedJobDescSection record {
     JobDescSection d?;
 };
 
-public type Created\ FamilyCompetencyMappingEntity record {
+public type CreatedFamilyCompetencyMappingEntity record {
     FamilyCompetencyMappingEntity d?;
 };
 
-public type Modified\ JDTemplateFamilyMapping record {
+public type ModifiedJDTemplateFamilyMapping record {
     JDTemplateFamilyMapping d?;
 };
 
@@ -84,7 +84,7 @@ public type JobCodeMappingEntity_1 record {
     JobCodeMappingEntity d?;
 };
 
-public type Modified\ PositionEntity record {
+public type ModifiedPositionEntity record {
     PositionEntity d?;
 };
 
@@ -106,7 +106,7 @@ public type ListInterviewQuestionEntitiesQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"question_de_DE"|"question_defaultValue"|"question_en_GB"|"question_en_US"|"question_es_ES"|"question_fr_FR"|"question_ja_JP"|"question_ko_KR"|"question_localized"|"question_nl_NL"|"question_pt_BR"|"question_pt_PT"|"question_ru_RU"|"question_zh_CN"|"question_zh_TW"|"status"|"subModule"|"transactionSequence"|"type_de_DE"|"type_defaultValue"|"type_en_GB"|"type_en_US"|"type_es_ES"|"type_fr_FR"|"type_ja_JP"|"type_ko_KR"|"type_localized"|"type_nl_NL"|"type_pt_BR"|"type_pt_PT"|"type_ru_RU"|"type_zh_CN"|"type_zh_TW")[] \$select?;
 };
 
-public type Created\ SkillContent record {
+public type CreatedSkillContent record {
     SkillContent d?;
 };
 
@@ -114,15 +114,15 @@ public type JobDescSection_1 record {
     JobDescSection d?;
 };
 
-public type Created\ RoleCompetencyBehaviorMappingEntity record {
+public type CreatedRoleCompetencyBehaviorMappingEntity record {
     RoleCompetencyBehaviorMappingEntity d?;
 };
 
-public type Collection\ of\ RoleSkillMappingEntity record {
+public type CollectionofRoleSkillMappingEntity record {
     RoleSkillMappingEntity[] results?;
 };
 
-public type Collection\ of\ RoleTalentPoolMappingEntity record {
+public type CollectionofRoleTalentPoolMappingEntity record {
     RoleTalentPoolMappingEntity[] results?;
 };
 
@@ -152,7 +152,7 @@ public type SelfReportSkillMapping record {
     SkillEntity skillNav?;
 };
 
-public type Created\ PositionCompetencyMappingEntity record {
+public type CreatedPositionCompetencyMappingEntity record {
     PositionCompetencyMappingEntity d?;
 };
 
@@ -162,7 +162,7 @@ public type GetCertificationEntityQueries record {
     ("certification_de_DE"|"certification_defaultValue"|"certification_en_GB"|"certification_en_US"|"certification_es_ES"|"certification_fr_FR"|"certification_ja_JP"|"certification_ko_KR"|"certification_localized"|"certification_nl_NL"|"certification_pt_BR"|"certification_pt_PT"|"certification_ru_RU"|"certification_zh_CN"|"certification_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Collection\ of\ FamilyCompetencyMappingEntity record {
+public type CollectionofFamilyCompetencyMappingEntity record {
     FamilyCompetencyMappingEntity[] results?;
 };
 
@@ -211,18 +211,18 @@ public type ConnectionConfig record {|
 |};
 
 public type Wrapper record {
-    Collection\ of\ CertificationContent d?;
+    CollectionofCertificationContent d?;
 };
 
-public type Created\ SkillEntity record {
+public type CreatedSkillEntity record {
     SkillEntity d?;
 };
 
-public type Related\ CollectionSFOData\.EmploymentConditionContent record {
+public type RelatedCollectionSFOData_EmploymentConditionContent record {
     EmploymentConditionContent[] results?;
 };
 
-public type Created\ PositionSkillMappingEntity record {
+public type CreatedPositionSkillMappingEntity record {
     PositionSkillMappingEntity d?;
 };
 
@@ -246,20 +246,20 @@ public type ListPhysicalReqContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ InterviewQuestionEntity record {
+public type CreatedInterviewQuestionEntity record {
     InterviewQuestionEntity d?;
 };
 
-public type Created\ PhysicalReqContent record {
+public type CreatedPhysicalReqContent record {
     PhysicalReqContent d?;
 };
 
-public type Modified\ RelevantIndustryEntity record {
+public type ModifiedRelevantIndustryEntity record {
     RelevantIndustryEntity d?;
 };
 
 public type Wrapper_19 record {
-    Collection\ of\ PhysicalReqContent d?;
+    CollectionofPhysicalReqContent d?;
 };
 
 # Represents the Queries record for the operation: listCompetencyContents
@@ -282,24 +282,24 @@ public type ListCompetencyContentsQueries record {
     ("JobProfile_externalCode"|"competencyMappingId"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"role"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ JobDescTemplate record {
+public type ModifiedJobDescTemplate record {
     JobDescTemplate d?;
 };
 
 public type Wrapper_17 record {
-    Collection\ of\ BehaviorMappingEntity d?;
+    CollectionofBehaviorMappingEntity d?;
 };
 
 public type Wrapper_18 record {
-    Collection\ of\ SkillEntity d?;
+    CollectionofSkillEntity d?;
 };
 
 public type Wrapper_15 record {
-    Collection\ of\ InterviewQuestionEntity d?;
+    CollectionofInterviewQuestionEntity d?;
 };
 
 public type Wrapper_16 record {
-    Collection\ of\ JDTemplateFamilyMapping d?;
+    CollectionofJDTemplateFamilyMapping d?;
 };
 
 # Represents the Queries record for the operation: listSelfReportSkillMappings
@@ -323,34 +323,34 @@ public type ListSelfReportSkillMappingsQueries record {
 };
 
 public type Wrapper_13 record {
-    Collection\ of\ FamilyCompetencyMappingEntity d?;
+    CollectionofFamilyCompetencyMappingEntity d?;
 };
 
-public type Collection\ of\ CompetencyEntity record {
+public type CollectionofCompetencyEntity record {
     CompetencyEntity[] results?;
 };
 
 public type Wrapper_14 record {
-    Collection\ of\ PhysicalReqEntity d?;
+    CollectionofPhysicalReqEntity d?;
 };
 
 public type Wrapper_11 record {
-    Collection\ of\ CompetencyType d?;
+    CollectionofCompetencyType d?;
 };
 
-public type Modified\ CertificationContent record {
+public type ModifiedCertificationContent record {
     CertificationContent d?;
 };
 
 public type Wrapper_12 record {
-    Collection\ of\ EmploymentConditionContent d?;
+    CollectionofEmploymentConditionContent d?;
 };
 
 public type Wrapper_10 record {
-    Collection\ of\ JobCodeMappingEntity d?;
+    CollectionofJobCodeMappingEntity d?;
 };
 
-public type Created\ FamilySkillMappingEntity record {
+public type CreatedFamilySkillMappingEntity record {
     FamilySkillMappingEntity d?;
 };
 
@@ -368,7 +368,7 @@ public type DeleteRatedSkillMappingHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ RoleSkillMappingEntity record {
+public type ModifiedRoleSkillMappingEntity record {
     RoleSkillMappingEntity d?;
 };
 
@@ -392,7 +392,7 @@ public type ListPositionEntitiesQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"jobCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"position"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ PositionSkillMappingEntity record {
+public type ModifiedPositionSkillMappingEntity record {
     PositionSkillMappingEntity d?;
 };
 
@@ -416,11 +416,11 @@ public type ListJobResponsibilityContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.CertificationContent record {
+public type RelatedCollectionSFOData_CertificationContent record {
     CertificationContent[] results?;
 };
 
-public type Modified\ PositionCompetencyMappingEntity record {
+public type ModifiedPositionCompetencyMappingEntity record {
     PositionCompetencyMappingEntity d?;
 };
 
@@ -450,7 +450,7 @@ public type RelevantIndustryContent_1 record {
     RelevantIndustryContent d?;
 };
 
-public type Collection\ of\ CompetencyType record {
+public type CollectionofCompetencyType record {
     Competency[] results?;
 };
 
@@ -474,7 +474,7 @@ public type GetSelfReportSkillMappingQueries record {
     ("SkillProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"skill"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ CompetencyEntity record {
+public type CreatedCompetencyEntity record {
     CompetencyEntity d?;
 };
 
@@ -518,24 +518,24 @@ public type ListRoleSkillMappingEntitiesQueries record {
 public type CompetencyEntity record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.BehaviorMappingEntity behaviors?;
-    Related\ CollectionSFOData\.CompetencyEntity competencies?;
-    Related\ CollectionSFOData\.CompetencyType competencyTypes?;
+    RelatedCollectionSFOData_BehaviorMappingEntity behaviors?;
+    RelatedCollectionSFOData_CompetencyEntity competencies?;
+    RelatedCollectionSFOData_CompetencyType competencyTypes?;
 };
 
-public type Collection\ of\ SkillEntity record {
+public type CollectionofSkillEntity record {
     SkillEntity[] results?;
 };
 
-public type Created\ PositionEntity record {
+public type CreatedPositionEntity record {
     PositionEntity d?;
 };
 
-public type Modified\ JobDescSection record {
+public type ModifiedJobDescSection record {
     JobDescSection d?;
 };
 
-public type Related\ CollectionSFOData\.FamilyCompetencyMappingEntity record {
+public type RelatedCollectionSFOData_FamilyCompetencyMappingEntity record {
     FamilyCompetencyMappingEntity[] results?;
 };
 
@@ -572,7 +572,7 @@ public type ListRoleCompetencyBehaviorMappingEntitiesQueries record {
     ("RoleEntity_externalCode"|"behaviorMappingEntity"|"competency"|"createdBy"|"createdDateTime"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"rating_de_DE"|"rating_defaultValue"|"rating_en_DEBUG"|"rating_en_GB"|"rating_en_US"|"rating_es_ES"|"rating_fr_FR"|"rating_ja_JP"|"rating_ko_KR"|"rating_localized"|"rating_nl_NL"|"rating_pt_BR"|"rating_pt_PT"|"rating_ru_RU"|"rating_zh_CN"|"rating_zh_TW"|"status"|"subModule"|"weight_de_DE"|"weight_defaultValue"|"weight_en_DEBUG"|"weight_en_GB"|"weight_en_US"|"weight_es_ES"|"weight_fr_FR"|"weight_ja_JP"|"weight_ko_KR"|"weight_localized"|"weight_nl_NL"|"weight_pt_BR"|"weight_pt_PT"|"weight_ru_RU"|"weight_zh_CN"|"weight_zh_TW")[] \$select?;
 };
 
-public type Modified\ InterviewQuestionContent record {
+public type ModifiedInterviewQuestionContent record {
     InterviewQuestionContent d?;
 };
 
@@ -584,7 +584,7 @@ public type JDTemplateFamilyMapping record {
     FamilyEntity familyNav?;
 };
 
-public type Modified\ JobCodeMappingEntity record {
+public type ModifiedJobCodeMappingEntity record {
     JobCodeMappingEntity d?;
 };
 
@@ -594,7 +594,7 @@ public type DeleteEmploymentConditionEntityHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ PositionSkillMappingEntity record {
+public type CollectionofPositionSkillMappingEntity record {
     PositionSkillMappingEntity[] results?;
 };
 
@@ -610,7 +610,7 @@ public type GetCertificationContentQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ RelevantIndustryContent record {
+public type CreatedRelevantIndustryContent record {
     RelevantIndustryContent d?;
 };
 
@@ -618,15 +618,15 @@ public type FamilyCompetencyMappingEntity_1 record {
     FamilyCompetencyMappingEntity d?;
 };
 
-public type Collection\ of\ RoleCompetencyMappingEntity record {
+public type CollectionofRoleCompetencyMappingEntity record {
     RoleCompetencyMappingEntity[] results?;
 };
 
-public type Modified\ RoleCompetencyMappingEntity record {
+public type ModifiedRoleCompetencyMappingEntity record {
     RoleCompetencyMappingEntity d?;
 };
 
-public type Collection\ of\ EmploymentConditionEntity record {
+public type CollectionofEmploymentConditionEntity record {
     EmploymentConditionEntity[] results?;
 };
 
@@ -654,11 +654,11 @@ public type DeleteCertificationContentHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ CompetencyContent record {
+public type CollectionofCompetencyContent record {
     CompetencyContent[] results?;
 };
 
-public type Related\ CollectionSFOData\.RoleSkillMappingEntity record {
+public type RelatedCollectionSFOData_RoleSkillMappingEntity record {
     RoleSkillMappingEntity[] results?;
 };
 
@@ -697,7 +697,7 @@ public type ListEmploymentConditionEntitiesQueries record {
     ("condition_de_DE"|"condition_defaultValue"|"condition_en_GB"|"condition_en_US"|"condition_es_ES"|"condition_fr_FR"|"condition_ja_JP"|"condition_ko_KR"|"condition_localized"|"condition_nl_NL"|"condition_pt_BR"|"condition_pt_PT"|"condition_ru_RU"|"condition_zh_CN"|"condition_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.CompetencyType record {
+public type RelatedCollectionSFOData_CompetencyType record {
     Competency[] results?;
 };
 
@@ -707,7 +707,7 @@ public type DeleteFamilyEntityHeaders record {
     string If\-Match?;
 };
 
-public type Created\ JobResponsibilityEntity record {
+public type CreatedJobResponsibilityEntity record {
     JobResponsibilityEntity d?;
 };
 
@@ -723,15 +723,15 @@ public type DeleteInterviewQuestionEntityHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ JDTemplateFamilyMapping record {
+public type CollectionofJDTemplateFamilyMapping record {
     JDTemplateFamilyMapping[] results?;
 };
 
-public type Modified\ FamilySkillMappingEntity record {
+public type ModifiedFamilySkillMappingEntity record {
     FamilySkillMappingEntity d?;
 };
 
-public type Collection\ of\ JobDescTemplate record {
+public type CollectionofJobDescTemplate record {
     JobDescTemplate[] results?;
 };
 
@@ -766,7 +766,7 @@ public type SkillContent_1 record {
     SkillContent d?;
 };
 
-public type Created\ RoleTalentPoolMappingEntity record {
+public type CreatedRoleTalentPoolMappingEntity record {
     RoleTalentPoolMappingEntity d?;
 };
 
@@ -807,11 +807,11 @@ public type GetJobResponsibilityEntityQueries record {
     ("category_de_DE"|"category_defaultValue"|"category_en_GB"|"category_en_US"|"category_es_ES"|"category_fr_FR"|"category_ja_JP"|"category_ko_KR"|"category_localized"|"category_nl_NL"|"category_pt_BR"|"category_pt_PT"|"category_ru_RU"|"category_zh_CN"|"category_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"duty_de_DE"|"duty_defaultValue"|"duty_en_GB"|"duty_en_US"|"duty_es_ES"|"duty_fr_FR"|"duty_ja_JP"|"duty_ko_KR"|"duty_localized"|"duty_nl_NL"|"duty_pt_BR"|"duty_pt_PT"|"duty_ru_RU"|"duty_zh_CN"|"duty_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"libName_de_DE"|"libName_defaultValue"|"libName_en_GB"|"libName_en_US"|"libName_es_ES"|"libName_fr_FR"|"libName_ja_JP"|"libName_ko_KR"|"libName_localized"|"libName_nl_NL"|"libName_pt_BR"|"libName_pt_PT"|"libName_ru_RU"|"libName_zh_CN"|"libName_zh_TW"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ RoleCompetencyBehaviorMappingEntity record {
+public type ModifiedRoleCompetencyBehaviorMappingEntity record {
     RoleCompetencyBehaviorMappingEntity d?;
 };
 
-public type Collection\ of\ JobDescSection record {
+public type CollectionofJobDescSection record {
     JobDescSection[] results?;
 };
 
@@ -870,7 +870,7 @@ public type EmploymentConditionContent record {
     EmploymentConditionEntity entityNav?;
 };
 
-public type Modified\ JobResponsibilityContent record {
+public type ModifiedJobResponsibilityContent record {
     JobResponsibilityContent d?;
 };
 
@@ -886,15 +886,15 @@ public type GetJobDescSectionQueries record {
     ("JobDescTemplate_externalCode"|"bold"|"boldHeader"|"bulletType"|"contentType"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"externalPosting"|"fontSizeHeader"|"internalPosting"|"italic"|"italicHeader"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"multiContents"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"onlyAdmin"|"order"|"removable"|"required"|"showInJobReq"|"smallIcon"|"status"|"subModule"|"transactionSequence"|"underline"|"underlineHeader")[] \$select?;
 };
 
-public type Collection\ of\ JobCodeMappingEntity record {
+public type CollectionofJobCodeMappingEntity record {
     JobCodeMappingEntity[] results?;
 };
 
-public type Modified\ RatedSkillMapping record {
+public type ModifiedRatedSkillMapping record {
     RatedSkillMapping d?;
 };
 
-public type Collection\ of\ RatedSkillMapping record {
+public type CollectionofRatedSkillMapping record {
     RatedSkillMapping[] results?;
 };
 
@@ -985,11 +985,11 @@ public type GetJobCodeMappingEntityQueries record {
     ("RoleEntity_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"jobCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence"|"type"|"usage")[] \$select?;
 };
 
-public type Modified\ JobResponsibilityEntity record {
+public type ModifiedJobResponsibilityEntity record {
     JobResponsibilityEntity d?;
 };
 
-public type Related\ CollectionSFOData\.CompetencyContent record {
+public type RelatedCollectionSFOData_CompetencyContent record {
     CompetencyContent[] results?;
 };
 
@@ -1013,11 +1013,11 @@ public type ListSkillContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"proLevel_de_DE"|"proLevel_defaultValue"|"proLevel_en_GB"|"proLevel_en_US"|"proLevel_es_ES"|"proLevel_fr_FR"|"proLevel_ja_JP"|"proLevel_ko_KR"|"proLevel_localized"|"proLevel_nl_NL"|"proLevel_pt_BR"|"proLevel_pt_PT"|"proLevel_ru_RU"|"proLevel_zh_CN"|"proLevel_zh_TW"|"role"|"sectionId"|"sectionType"|"skillMappingId"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Collection\ of\ SelfReportSkillMapping record {
+public type CollectionofSelfReportSkillMapping record {
     SelfReportSkillMapping[] results?;
 };
 
-public type Modified\ RoleEntity record {
+public type ModifiedRoleEntity record {
     RoleEntity d?;
 };
 
@@ -1029,7 +1029,7 @@ public type GetJobResponsibilityContentQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ JDTemplateFamilyMapping record {
+public type CreatedJDTemplateFamilyMapping record {
     JDTemplateFamilyMapping d?;
 };
 
@@ -1060,12 +1060,12 @@ public type ListCompetencyTypesQueries record {
 public type SkillProfile record {
     @constraint:String {maxLength: 100}
     string externalCode?;
-    Related\ CollectionSFOData\.RatedSkillMapping ratedSkills?;
-    Related\ CollectionSFOData\.SelfReportSkillMapping selfReportSkills?;
+    RelatedCollectionSFOData_RatedSkillMapping ratedSkills?;
+    RelatedCollectionSFOData_SelfReportSkillMapping selfReportSkills?;
 };
 
 public type Wrapper_28 record {
-    Collection\ of\ CompetencyEntity d?;
+    CollectionofCompetencyEntity d?;
 };
 
 public type PhysicalReqEntity record {
@@ -1073,16 +1073,16 @@ public type PhysicalReqEntity record {
     string externalCode?;
 };
 
-public type Created\ PhysicalReqEntity record {
+public type CreatedPhysicalReqEntity record {
     PhysicalReqEntity d?;
 };
 
 public type Wrapper_29 record {
-    Collection\ of\ CompetencyContent d?;
+    CollectionofCompetencyContent d?;
 };
 
 public type Wrapper_26 record {
-    Collection\ of\ JobDescTemplate d?;
+    CollectionofJobDescTemplate d?;
 };
 
 public type InterviewQuestionEntity record {
@@ -1099,11 +1099,11 @@ public type GetInterviewQuestionContentQueries record {
 };
 
 public type Wrapper_27 record {
-    Collection\ of\ SkillProfile d?;
+    CollectionofSkillProfile d?;
 };
 
 public type Wrapper_24 record {
-    Collection\ of\ FamilySkillMappingEntity d?;
+    CollectionofFamilySkillMappingEntity d?;
 };
 
 public type BehaviorMappingEntity record {
@@ -1114,49 +1114,49 @@ public type BehaviorMappingEntity record {
 };
 
 public type Wrapper_25 record {
-    Collection\ of\ RoleSkillMappingEntity d?;
+    CollectionofRoleSkillMappingEntity d?;
 };
 
-public type Collection\ of\ CertificationContent record {
+public type CollectionofCertificationContent record {
     CertificationContent[] results?;
 };
 
 public type Wrapper_22 record {
-    Collection\ of\ SelfReportSkillMapping d?;
+    CollectionofSelfReportSkillMapping d?;
 };
 
-public type Created\ CompetencyType record {
+public type CreatedCompetencyType record {
     Competency d?;
 };
 
 public type Wrapper_20 record {
-    Collection\ of\ SkillContent d?;
+    CollectionofSkillContent d?;
 };
 
 public type Wrapper_21 record {
-    Collection\ of\ RoleCompetencyMappingEntity d?;
+    CollectionofRoleCompetencyMappingEntity d?;
 };
 
-public type Modified\ CompetencyContent record {
+public type ModifiedCompetencyContent record {
     CompetencyContent d?;
 };
 
-public type Related\ CollectionSFOData\.RatedSkillMapping record {
+public type RelatedCollectionSFOData_RatedSkillMapping record {
     RatedSkillMapping[] results?;
 };
 
-public type Related\ CollectionSFOData\.JDTemplateFamilyMapping record {
+public type RelatedCollectionSFOData_JDTemplateFamilyMapping record {
     JDTemplateFamilyMapping[] results?;
 };
 
 public type JobDescTemplate record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.JDTemplateFamilyMapping jdFamilyMappings?;
-    Related\ CollectionSFOData\.JobDescSection sections?;
+    RelatedCollectionSFOData_JDTemplateFamilyMapping jdFamilyMappings?;
+    RelatedCollectionSFOData_JobDescSection sections?;
 };
 
-public type Collection\ of\ JobResponsibilityEntity record {
+public type CollectionofJobResponsibilityEntity record {
     JobResponsibilityEntity[] results?;
 };
 
@@ -1166,7 +1166,7 @@ public type GetSkillEntityQueries record {
     ("category_de_DE"|"category_defaultValue"|"category_en_GB"|"category_en_US"|"category_es_ES"|"category_fr_FR"|"category_ja_JP"|"category_ko_KR"|"category_localized"|"category_nl_NL"|"category_pt_BR"|"category_pt_PT"|"category_ru_RU"|"category_zh_CN"|"category_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"definition_de_DE"|"definition_defaultValue"|"definition_en_GB"|"definition_en_US"|"definition_es_ES"|"definition_fr_FR"|"definition_ja_JP"|"definition_ko_KR"|"definition_localized"|"definition_nl_NL"|"definition_pt_BR"|"definition_pt_PT"|"definition_ru_RU"|"definition_zh_CN"|"definition_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"group_de_DE"|"group_defaultValue"|"group_en_GB"|"group_en_US"|"group_es_ES"|"group_fr_FR"|"group_ja_JP"|"group_ko_KR"|"group_localized"|"group_nl_NL"|"group_pt_BR"|"group_pt_PT"|"group_ru_RU"|"group_zh_CN"|"group_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"libName_de_DE"|"libName_defaultValue"|"libName_en_GB"|"libName_en_US"|"libName_es_ES"|"libName_fr_FR"|"libName_ja_JP"|"libName_ko_KR"|"libName_localized"|"libName_nl_NL"|"libName_pt_BR"|"libName_pt_PT"|"libName_ru_RU"|"libName_zh_CN"|"libName_zh_TW"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"proLevel1_de_DE"|"proLevel1_defaultValue"|"proLevel1_en_GB"|"proLevel1_en_US"|"proLevel1_es_ES"|"proLevel1_fr_FR"|"proLevel1_ja_JP"|"proLevel1_ko_KR"|"proLevel1_localized"|"proLevel1_nl_NL"|"proLevel1_pt_BR"|"proLevel1_pt_PT"|"proLevel1_ru_RU"|"proLevel1_zh_CN"|"proLevel1_zh_TW"|"proLevel2_de_DE"|"proLevel2_defaultValue"|"proLevel2_en_GB"|"proLevel2_en_US"|"proLevel2_es_ES"|"proLevel2_fr_FR"|"proLevel2_ja_JP"|"proLevel2_ko_KR"|"proLevel2_localized"|"proLevel2_nl_NL"|"proLevel2_pt_BR"|"proLevel2_pt_PT"|"proLevel2_ru_RU"|"proLevel2_zh_CN"|"proLevel2_zh_TW"|"proLevel3_de_DE"|"proLevel3_defaultValue"|"proLevel3_en_GB"|"proLevel3_en_US"|"proLevel3_es_ES"|"proLevel3_fr_FR"|"proLevel3_ja_JP"|"proLevel3_ko_KR"|"proLevel3_localized"|"proLevel3_nl_NL"|"proLevel3_pt_BR"|"proLevel3_pt_PT"|"proLevel3_ru_RU"|"proLevel3_zh_CN"|"proLevel3_zh_TW"|"proLevel4_de_DE"|"proLevel4_defaultValue"|"proLevel4_en_GB"|"proLevel4_en_US"|"proLevel4_es_ES"|"proLevel4_fr_FR"|"proLevel4_ja_JP"|"proLevel4_ko_KR"|"proLevel4_localized"|"proLevel4_nl_NL"|"proLevel4_pt_BR"|"proLevel4_pt_PT"|"proLevel4_ru_RU"|"proLevel4_zh_CN"|"proLevel4_zh_TW"|"proLevel5_de_DE"|"proLevel5_defaultValue"|"proLevel5_en_GB"|"proLevel5_en_US"|"proLevel5_es_ES"|"proLevel5_fr_FR"|"proLevel5_ja_JP"|"proLevel5_ko_KR"|"proLevel5_localized"|"proLevel5_nl_NL"|"proLevel5_pt_BR"|"proLevel5_pt_PT"|"proLevel5_ru_RU"|"proLevel5_zh_CN"|"proLevel5_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ SelfReportSkillMapping record {
+public type ModifiedSelfReportSkillMapping record {
     SelfReportSkillMapping d?;
 };
 
@@ -1176,15 +1176,15 @@ public type GetJobProfileLocalizedDataQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"desc_de_DE"|"desc_defaultValue"|"desc_en_GB"|"desc_en_US"|"desc_es_ES"|"desc_fr_FR"|"desc_ja_JP"|"desc_ko_KR"|"desc_localized"|"desc_nl_NL"|"desc_pt_BR"|"desc_pt_PT"|"desc_ru_RU"|"desc_zh_CN"|"desc_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Collection\ of\ CertificationEntity record {
+public type CollectionofCertificationEntity record {
     CertificationEntity[] results?;
 };
 
 public type FamilyEntity record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.FamilyCompetencyMappingEntity competencies?;
-    Related\ CollectionSFOData\.FamilySkillMappingEntity skills?;
+    RelatedCollectionSFOData_FamilyCompetencyMappingEntity competencies?;
+    RelatedCollectionSFOData_FamilySkillMappingEntity skills?;
 };
 
 # Represents the Headers record for the operation: deletePositionEntity
@@ -1197,7 +1197,7 @@ public type FamilyEntity_1 record {
     FamilyEntity d?;
 };
 
-public type Related\ CollectionSFOData\.PositionSkillMappingEntity record {
+public type RelatedCollectionSFOData_PositionSkillMappingEntity record {
     PositionSkillMappingEntity[] results?;
 };
 
@@ -1205,7 +1205,7 @@ public type RoleCompetencyMappingEntity_1 record {
     RoleCompetencyMappingEntity d?;
 };
 
-public type Collection\ of\ RelevantIndustryEntity record {
+public type CollectionofRelevantIndustryEntity record {
     RelevantIndustryEntity[] results?;
 };
 
@@ -1213,12 +1213,12 @@ public type RoleSkillMappingEntity_1 record {
     RoleSkillMappingEntity d?;
 };
 
-public type Related\ CollectionSFOData\.JobDescSection record {
+public type RelatedCollectionSFOData_JobDescSection record {
     JobDescSection[] results?;
 };
 
 public type Wrapper_37 record {
-    Collection\ of\ PositionSkillMappingEntity d?;
+    CollectionofPositionSkillMappingEntity d?;
 };
 
 # Represents the Headers record for the operation: deleteRelevantIndustryContent
@@ -1228,7 +1228,7 @@ public type DeleteRelevantIndustryContentHeaders record {
 };
 
 public type Wrapper_35 record {
-    Collection\ of\ PositionEntity d?;
+    CollectionofPositionEntity d?;
 };
 
 # Represents the Queries record for the operation: listRoleEntities
@@ -1252,15 +1252,15 @@ public type ListRoleEntitiesQueries record {
 };
 
 public type Wrapper_36 record {
-    Collection\ of\ PositionCompetencyMappingEntity d?;
+    CollectionofPositionCompetencyMappingEntity d?;
 };
 
 public type Wrapper_33 record {
-    Collection\ of\ JobDescSection d?;
+    CollectionofJobDescSection d?;
 };
 
 public type Wrapper_34 record {
-    Collection\ of\ RelevantIndustryContent d?;
+    CollectionofRelevantIndustryContent d?;
 };
 
 public type EmploymentConditionContent_1 record {
@@ -1268,11 +1268,11 @@ public type EmploymentConditionContent_1 record {
 };
 
 public type Wrapper_31 record {
-    Collection\ of\ RoleTalentPoolMappingEntity d?;
+    CollectionofRoleTalentPoolMappingEntity d?;
 };
 
 public type Wrapper_32 record {
-    Collection\ of\ EmploymentConditionEntity d?;
+    CollectionofEmploymentConditionEntity d?;
 };
 
 public type JobResponsibilityContent_1 record {
@@ -1280,7 +1280,7 @@ public type JobResponsibilityContent_1 record {
 };
 
 public type Wrapper_30 record {
-    Collection\ of\ RelevantIndustryEntity d?;
+    CollectionofRelevantIndustryEntity d?;
 };
 
 # Represents the Headers record for the operation: deleteRoleTalentPoolMappingEntity
@@ -1298,7 +1298,7 @@ public type EmploymentConditionEntity record {
     string externalCode?;
 };
 
-public type Created\ EmploymentConditionContent record {
+public type CreatedEmploymentConditionContent record {
     EmploymentConditionContent d?;
 };
 
@@ -1310,15 +1310,15 @@ public type RoleSkillMappingEntity record {
     SkillEntity skillNav?;
 };
 
-public type Related\ CollectionSFOData\.FamilySkillMappingEntity record {
+public type RelatedCollectionSFOData_FamilySkillMappingEntity record {
     FamilySkillMappingEntity[] results?;
 };
 
-public type Collection\ of\ PhysicalReqContent record {
+public type CollectionofPhysicalReqContent record {
     PhysicalReqContent[] results?;
 };
 
-public type Related\ CollectionSFOData\.RoleCompetencyMappingEntity record {
+public type RelatedCollectionSFOData_RoleCompetencyMappingEntity record {
     RoleCompetencyMappingEntity[] results?;
 };
 
@@ -1344,7 +1344,7 @@ public type ListRoleTalentPoolMappingEntitiesQueries record {
     ("RoleEntity_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"description"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"mdfTalentPool"|"name"|"status"|"subModule"|"talentPoolId"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ RoleCompetencyMappingEntity record {
+public type CreatedRoleCompetencyMappingEntity record {
     RoleCompetencyMappingEntity d?;
 };
 
@@ -1356,22 +1356,22 @@ public type RoleEntity record {
     @constraint:String {maxLength: 128}
     string externalCode?;
     FamilyEntity familyNav?;
-    Related\ CollectionSFOData\.JobCodeMappingEntity jobCodeMappings?;
-    Related\ CollectionSFOData\.RoleCompetencyBehaviorMappingEntity roleCompetencyBehaviorMappings?;
-    Related\ CollectionSFOData\.RoleCompetencyMappingEntity roleCompetencyMappings?;
-    Related\ CollectionSFOData\.RoleSkillMappingEntity roleSkillMappings?;
-    Related\ CollectionSFOData\.RoleTalentPoolMappingEntity roleTalentPoolMappings?;
+    RelatedCollectionSFOData_JobCodeMappingEntity jobCodeMappings?;
+    RelatedCollectionSFOData_RoleCompetencyBehaviorMappingEntity roleCompetencyBehaviorMappings?;
+    RelatedCollectionSFOData_RoleCompetencyMappingEntity roleCompetencyMappings?;
+    RelatedCollectionSFOData_RoleSkillMappingEntity roleSkillMappings?;
+    RelatedCollectionSFOData_RoleTalentPoolMappingEntity roleTalentPoolMappings?;
 };
 
 public type RoleEntity_1 record {
     RoleEntity d?;
 };
 
-public type Created\ JobResponsibilityContent record {
+public type CreatedJobResponsibilityContent record {
     JobResponsibilityContent d?;
 };
 
-public type Created\ InterviewQuestionContent record {
+public type CreatedInterviewQuestionContent record {
     InterviewQuestionContent d?;
 };
 
@@ -1409,11 +1409,11 @@ public type GetPositionSkillMappingEntityQueries record {
     ("PositionEntity_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"proLevel_de_DE"|"proLevel_defaultValue"|"proLevel_en_GB"|"proLevel_en_US"|"proLevel_es_ES"|"proLevel_fr_FR"|"proLevel_ja_JP"|"proLevel_ko_KR"|"proLevel_localized"|"proLevel_nl_NL"|"proLevel_pt_BR"|"proLevel_pt_PT"|"proLevel_ru_RU"|"proLevel_zh_CN"|"proLevel_zh_TW"|"skill"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Collection\ of\ JobResponsibilityContent record {
+public type CollectionofJobResponsibilityContent record {
     JobResponsibilityContent[] results?;
 };
 
-public type Collection\ of\ InterviewQuestionContent record {
+public type CollectionofInterviewQuestionContent record {
     InterviewQuestionContent[] results?;
 };
 
@@ -1435,7 +1435,7 @@ public type ListPhysicalReqEntitiesQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"requirement_de_DE"|"requirement_defaultValue"|"requirement_en_GB"|"requirement_en_US"|"requirement_es_ES"|"requirement_fr_FR"|"requirement_ja_JP"|"requirement_ko_KR"|"requirement_localized"|"requirement_nl_NL"|"requirement_pt_BR"|"requirement_pt_PT"|"requirement_ru_RU"|"requirement_zh_CN"|"requirement_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ SkillProfile record {
+public type ModifiedSkillProfile record {
     SkillProfile d?;
 };
 
@@ -1445,15 +1445,15 @@ public type DeleteCompetencyTypeHeaders record {
     string If\-Match?;
 };
 
-public type Created\ RelevantIndustryEntity record {
+public type CreatedRelevantIndustryEntity record {
     RelevantIndustryEntity d?;
 };
 
-public type Modified\ RelevantIndustryContent record {
+public type ModifiedRelevantIndustryContent record {
     RelevantIndustryContent d?;
 };
 
-public type Modified\ CompetencyType record {
+public type ModifiedCompetencyType record {
     Competency d?;
 };
 
@@ -1464,8 +1464,8 @@ public type JDTemplateFamilyMapping_1 record {
 public type PositionEntity record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.PositionCompetencyMappingEntity positionCompetencyMappings?;
-    Related\ CollectionSFOData\.PositionSkillMappingEntity positionSkillMappings?;
+    RelatedCollectionSFOData_PositionCompetencyMappingEntity positionCompetencyMappings?;
+    RelatedCollectionSFOData_PositionSkillMappingEntity positionSkillMappings?;
 };
 
 # Represents the Queries record for the operation: listInterviewQuestionContents
@@ -1488,7 +1488,7 @@ public type ListInterviewQuestionContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.JobProfileLocalizedData record {
+public type RelatedCollectionSFOData_JobProfileLocalizedData record {
     JobProfileLocalizedData[] results?;
 };
 
@@ -1512,11 +1512,11 @@ public type ListCertificationContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ RoleSkillMappingEntity record {
+public type CreatedRoleSkillMappingEntity record {
     RoleSkillMappingEntity d?;
 };
 
-public type Collection\ of\ JobProfileLocalizedData record {
+public type CollectionofJobProfileLocalizedData record {
     JobProfileLocalizedData[] results?;
 };
 
@@ -1524,7 +1524,7 @@ public type JobProfileLocalizedData_1 record {
     JobProfileLocalizedData d?;
 };
 
-public type Modified\ RoleTalentPoolMappingEntity record {
+public type ModifiedRoleTalentPoolMappingEntity record {
     RoleTalentPoolMappingEntity d?;
 };
 
@@ -1574,11 +1574,11 @@ public type ListJobDescTemplatesQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"footer_de_DE"|"footer_defaultValue"|"footer_en_GB"|"footer_en_US"|"footer_es_ES"|"footer_fr_FR"|"footer_ja_JP"|"footer_ko_KR"|"footer_localized"|"footer_nl_NL"|"footer_pt_BR"|"footer_pt_PT"|"footer_ru_RU"|"footer_zh_CN"|"footer_zh_TW"|"header_de_DE"|"header_defaultValue"|"header_en_GB"|"header_en_US"|"header_es_ES"|"header_fr_FR"|"header_ja_JP"|"header_ko_KR"|"header_localized"|"header_nl_NL"|"header_pt_BR"|"header_pt_PT"|"header_ru_RU"|"header_zh_CN"|"header_zh_TW"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"title_de_DE"|"title_defaultValue"|"title_en_GB"|"title_en_US"|"title_es_ES"|"title_fr_FR"|"title_ja_JP"|"title_ko_KR"|"title_localized"|"title_nl_NL"|"title_pt_BR"|"title_pt_PT"|"title_ru_RU"|"title_zh_CN"|"title_zh_TW"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ CompetencyEntity record {
+public type ModifiedCompetencyEntity record {
     CompetencyEntity d?;
 };
 
-public type Created\ CertificationEntity record {
+public type CreatedCertificationEntity record {
     CertificationEntity d?;
 };
 
@@ -1620,28 +1620,28 @@ public type DeleteJobDescTemplateHeaders record {
     string If\-Match?;
 };
 
-public type Created\ RoleEntity record {
+public type CreatedRoleEntity record {
     RoleEntity d?;
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ RoleEntity d?;
+    CollectionofRoleEntity d?;
 };
 
 public type Wrapper_9 record {
-    Collection\ of\ JobProfileLocalizedData d?;
+    CollectionofJobProfileLocalizedData d?;
 };
 
-public type Related\ CollectionSFOData\.CompetencyEntity record {
+public type RelatedCollectionSFOData_CompetencyEntity record {
     CompetencyEntity[] results?;
 };
 
-public type Created\ CompetencyContent record {
+public type CreatedCompetencyContent record {
     CompetencyContent d?;
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ InterviewQuestionContent d?;
+    CollectionofInterviewQuestionContent d?;
 };
 
 # Represents the Queries record for the operation: getRoleSkillMappingEntity
@@ -1653,18 +1653,18 @@ public type GetRoleSkillMappingEntityQueries record {
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ JobResponsibilityEntity d?;
+    CollectionofJobResponsibilityEntity d?;
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ RatedSkillMapping d?;
+    CollectionofRatedSkillMapping d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ RoleCompetencyBehaviorMappingEntity d?;
+    CollectionofRoleCompetencyBehaviorMappingEntity d?;
 };
 
-public type Created\ JobProfileLocalizedData record {
+public type CreatedJobProfileLocalizedData record {
     JobProfileLocalizedData d?;
 };
 
@@ -1677,7 +1677,7 @@ public type GetPhysicalReqContentQueries record {
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ FamilyEntity d?;
+    CollectionofFamilyEntity d?;
 };
 
 # Represents the Queries record for the operation: listBehaviorMappingEntities
@@ -1699,7 +1699,7 @@ public type ListBehaviorMappingEntitiesQueries record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ CertificationEntity d?;
+    CollectionofCertificationEntity d?;
 };
 
 # Represents the Queries record for the operation: getFamilySkillMappingEntity
@@ -1710,12 +1710,12 @@ public type GetFamilySkillMappingEntityQueries record {
     ("FamilyEntity_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"proLevel_de_DE"|"proLevel_defaultValue"|"proLevel_en_GB"|"proLevel_en_US"|"proLevel_es_ES"|"proLevel_fr_FR"|"proLevel_ja_JP"|"proLevel_ko_KR"|"proLevel_localized"|"proLevel_nl_NL"|"proLevel_pt_BR"|"proLevel_pt_PT"|"proLevel_ru_RU"|"proLevel_zh_CN"|"proLevel_zh_TW"|"skill"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.SelfReportSkillMapping record {
+public type RelatedCollectionSFOData_SelfReportSkillMapping record {
     SelfReportSkillMapping[] results?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ JobResponsibilityContent d?;
+    CollectionofJobResponsibilityContent d?;
 };
 
 public type PositionCompetencyMappingEntity record {
@@ -1725,11 +1725,11 @@ public type PositionCompetencyMappingEntity record {
     string externalCode?;
 };
 
-public type Collection\ of\ SkillProfile record {
+public type CollectionofSkillProfile record {
     SkillProfile[] results?;
 };
 
-public type Collection\ of\ PositionCompetencyMappingEntity record {
+public type CollectionofPositionCompetencyMappingEntity record {
     PositionCompetencyMappingEntity[] results?;
 };
 
@@ -1759,7 +1759,7 @@ public type DeletePositionSkillMappingEntityHeaders record {
     string If\-Match?;
 };
 
-public type Related\ CollectionSFOData\.RoleCompetencyBehaviorMappingEntity record {
+public type RelatedCollectionSFOData_RoleCompetencyBehaviorMappingEntity record {
     RoleCompetencyBehaviorMappingEntity[] results?;
 };
 
@@ -1793,7 +1793,7 @@ public type ListRelevantIndustryContentsQueries record {
     ("JobProfile_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"entity"|"externalCode"|"jobProfileId"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"order"|"sectionId"|"sectionType"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ JobDescTemplate record {
+public type CreatedJobDescTemplate record {
     JobDescTemplate d?;
 };
 
@@ -1913,7 +1913,7 @@ public type DeleteRelevantIndustryEntityHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ EmploymentConditionContent record {
+public type ModifiedEmploymentConditionContent record {
     EmploymentConditionContent d?;
 };
 
@@ -1921,11 +1921,11 @@ public type BehaviorMappingEntity_1 record {
     BehaviorMappingEntity d?;
 };
 
-public type Modified\ PhysicalReqEntity record {
+public type ModifiedPhysicalReqEntity record {
     PhysicalReqEntity d?;
 };
 
-public type Created\ JobCodeMappingEntity record {
+public type CreatedJobCodeMappingEntity record {
     JobCodeMappingEntity d?;
 };
 
@@ -1935,15 +1935,15 @@ public type GetPhysicalReqEntityQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"requirement_de_DE"|"requirement_defaultValue"|"requirement_en_GB"|"requirement_en_US"|"requirement_es_ES"|"requirement_fr_FR"|"requirement_ja_JP"|"requirement_ko_KR"|"requirement_localized"|"requirement_nl_NL"|"requirement_pt_BR"|"requirement_pt_PT"|"requirement_ru_RU"|"requirement_zh_CN"|"requirement_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Collection\ of\ RoleCompetencyBehaviorMappingEntity record {
+public type CollectionofRoleCompetencyBehaviorMappingEntity record {
     RoleCompetencyBehaviorMappingEntity[] results?;
 };
 
-public type Modified\ FamilyCompetencyMappingEntity record {
+public type ModifiedFamilyCompetencyMappingEntity record {
     FamilyCompetencyMappingEntity d?;
 };
 
-public type Created\ SelfReportSkillMapping record {
+public type CreatedSelfReportSkillMapping record {
     SelfReportSkillMapping d?;
 };
 
@@ -1959,11 +1959,11 @@ public type DeleteJobProfileHeaders record {
     string If\-Match?;
 };
 
-public type Related\ CollectionSFOData\.RoleTalentPoolMappingEntity record {
+public type RelatedCollectionSFOData_RoleTalentPoolMappingEntity record {
     RoleTalentPoolMappingEntity[] results?;
 };
 
-public type Created\ EmploymentConditionEntity record {
+public type CreatedEmploymentConditionEntity record {
     EmploymentConditionEntity d?;
 };
 
@@ -1986,7 +1986,7 @@ public type GetPositionEntityQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"jobCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"position"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Modified\ CertificationEntity record {
+public type ModifiedCertificationEntity record {
     CertificationEntity d?;
 };
 
@@ -2007,11 +2007,11 @@ public type RoleCompetencyBehaviorMappingEntity record {
     CompetencyEntity competencyNav?;
 };
 
-public type Modified\ SkillContent record {
+public type ModifiedSkillContent record {
     SkillContent d?;
 };
 
-public type Collection\ of\ PhysicalReqEntity record {
+public type CollectionofPhysicalReqEntity record {
     PhysicalReqEntity[] results?;
 };
 
@@ -2021,19 +2021,19 @@ public type DeletePositionCompetencyMappingEntityHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ BehaviorMappingEntity record {
+public type ModifiedBehaviorMappingEntity record {
     BehaviorMappingEntity d?;
 };
 
-public type Collection\ of\ SkillContent record {
+public type CollectionofSkillContent record {
     SkillContent[] results?;
 };
 
-public type Created\ SkillProfile record {
+public type CreatedSkillProfile record {
     SkillProfile d?;
 };
 
-public type Modified\ JobProfileLocalizedData record {
+public type ModifiedJobProfileLocalizedData record {
     JobProfileLocalizedData d?;
 };
 
@@ -2045,7 +2045,7 @@ public type GetFamilyEntityQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"createdLocale"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Created\ BehaviorMappingEntity record {
+public type CreatedBehaviorMappingEntity record {
     BehaviorMappingEntity d?;
 };
 
@@ -2068,7 +2068,7 @@ public type JobResponsibilityEntity record {
     string externalCode?;
 };
 
-public type Collection\ of\ InterviewQuestionEntity record {
+public type CollectionofInterviewQuestionEntity record {
     InterviewQuestionEntity[] results?;
 };
 
@@ -2076,7 +2076,7 @@ public type JobDescTemplate_1 record {
     JobDescTemplate d?;
 };
 
-public type Created\ RatedSkillMapping record {
+public type CreatedRatedSkillMapping record {
     RatedSkillMapping d?;
 };
 
@@ -2086,7 +2086,7 @@ public type DeleteJobResponsibilityContentHeaders record {
     string If\-Match?;
 };
 
-public type Created\ CertificationContent record {
+public type CreatedCertificationContent record {
     CertificationContent d?;
 };
 
@@ -2102,7 +2102,7 @@ public type DeleteSelfReportSkillMappingHeaders record {
     string If\-Match?;
 };
 
-public type Related\ CollectionSFOData\.PositionCompetencyMappingEntity record {
+public type RelatedCollectionSFOData_PositionCompetencyMappingEntity record {
     PositionCompetencyMappingEntity[] results?;
 };
 
@@ -2110,7 +2110,7 @@ public type EmploymentConditionEntity_1 record {
     EmploymentConditionEntity d?;
 };
 
-public type Collection\ of\ RoleEntity record {
+public type CollectionofRoleEntity record {
     RoleEntity[] results?;
 };
 
@@ -2142,7 +2142,7 @@ public type ListJobCodeMappingEntitiesQueries record {
     ("RoleEntity_externalCode"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"jobCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence"|"type"|"usage")[] \$select?;
 };
 
-public type Collection\ of\ EmploymentConditionContent record {
+public type CollectionofEmploymentConditionContent record {
     EmploymentConditionContent[] results?;
 };
 
@@ -2184,7 +2184,7 @@ public type ListJobDescSectionsQueries record {
     ("JobDescTemplate_externalCode"|"bold"|"boldHeader"|"bulletType"|"contentType"|"createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"externalPosting"|"fontSizeHeader"|"internalPosting"|"italic"|"italicHeader"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"multiContents"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"onlyAdmin"|"order"|"removable"|"required"|"showInJobReq"|"smallIcon"|"status"|"subModule"|"transactionSequence"|"underline"|"underlineHeader")[] \$select?;
 };
 
-public type Collection\ of\ FamilyEntity record {
+public type CollectionofFamilyEntity record {
     FamilyEntity[] results?;
 };
 
@@ -2218,7 +2218,7 @@ public type CompetencyType record {
     Competency d?;
 };
 
-public type Modified\ FamilyEntity record {
+public type ModifiedFamilyEntity record {
     FamilyEntity d?;
 };
 
@@ -2230,7 +2230,7 @@ public type RatedSkillMapping record {
     SkillEntity skillNav?;
 };
 
-public type Created\ FamilyEntity record {
+public type CreatedFamilyEntity record {
     FamilyEntity d?;
 };
 
@@ -2272,7 +2272,7 @@ public type GetInterviewQuestionEntityQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"question_de_DE"|"question_defaultValue"|"question_en_GB"|"question_en_US"|"question_es_ES"|"question_fr_FR"|"question_ja_JP"|"question_ko_KR"|"question_localized"|"question_nl_NL"|"question_pt_BR"|"question_pt_PT"|"question_ru_RU"|"question_zh_CN"|"question_zh_TW"|"status"|"subModule"|"transactionSequence"|"type_de_DE"|"type_defaultValue"|"type_en_GB"|"type_en_US"|"type_es_ES"|"type_fr_FR"|"type_ja_JP"|"type_ko_KR"|"type_localized"|"type_nl_NL"|"type_pt_BR"|"type_pt_PT"|"type_ru_RU"|"type_zh_CN"|"type_zh_TW")[] \$select?;
 };
 
-public type Collection\ of\ RelevantIndustryContent record {
+public type CollectionofRelevantIndustryContent record {
     RelevantIndustryContent[] results?;
 };
 
@@ -2280,15 +2280,15 @@ public type InterviewQuestionEntity_1 record {
     InterviewQuestionEntity d?;
 };
 
-public type Modified\ InterviewQuestionEntity record {
+public type ModifiedInterviewQuestionEntity record {
     InterviewQuestionEntity d?;
 };
 
-public type Collection\ of\ PositionEntity record {
+public type CollectionofPositionEntity record {
     PositionEntity[] results?;
 };
 
-public type Collection\ of\ FamilySkillMappingEntity record {
+public type CollectionofFamilySkillMappingEntity record {
     FamilySkillMappingEntity[] results?;
 };
 
@@ -2296,7 +2296,7 @@ public type PositionSkillMappingEntity_1 record {
     PositionSkillMappingEntity d?;
 };
 
-public type Modified\ PhysicalReqContent record {
+public type ModifiedPhysicalReqContent record {
     PhysicalReqContent d?;
 };
 
@@ -2346,7 +2346,7 @@ public type ListCertificationEntitiesQueries record {
     ("certification_de_DE"|"certification_defaultValue"|"certification_en_GB"|"certification_en_US"|"certification_es_ES"|"certification_fr_FR"|"certification_ja_JP"|"certification_ko_KR"|"certification_localized"|"certification_nl_NL"|"certification_pt_BR"|"certification_pt_PT"|"certification_ru_RU"|"certification_zh_CN"|"certification_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.BehaviorMappingEntity record {
+public type RelatedCollectionSFOData_BehaviorMappingEntity record {
     BehaviorMappingEntity[] results?;
 };
 
@@ -2356,7 +2356,7 @@ public type DeleteFamilyCompetencyMappingEntityHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ SkillEntity record {
+public type ModifiedSkillEntity record {
     SkillEntity d?;
 };
 
@@ -2378,6 +2378,6 @@ public type ListJobResponsibilityEntitiesQueries record {
     ("category_de_DE"|"category_defaultValue"|"category_en_GB"|"category_en_US"|"category_es_ES"|"category_fr_FR"|"category_ja_JP"|"category_ko_KR"|"category_localized"|"category_nl_NL"|"category_pt_BR"|"category_pt_PT"|"category_ru_RU"|"category_zh_CN"|"category_zh_TW"|"createdBy"|"createdDate"|"createdDateTime"|"description_de_DE"|"description_defaultValue"|"description_en_GB"|"description_en_US"|"description_es_ES"|"description_fr_FR"|"description_ja_JP"|"description_ko_KR"|"description_localized"|"description_nl_NL"|"description_pt_BR"|"description_pt_PT"|"description_ru_RU"|"description_zh_CN"|"description_zh_TW"|"duty_de_DE"|"duty_defaultValue"|"duty_en_GB"|"duty_en_US"|"duty_es_ES"|"duty_fr_FR"|"duty_ja_JP"|"duty_ko_KR"|"duty_localized"|"duty_nl_NL"|"duty_pt_BR"|"duty_pt_PT"|"duty_ru_RU"|"duty_zh_CN"|"duty_zh_TW"|"effectiveEndDate"|"effectiveStartDate"|"externalCode"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"libName_de_DE"|"libName_defaultValue"|"libName_en_GB"|"libName_en_US"|"libName_es_ES"|"libName_fr_FR"|"libName_ja_JP"|"libName_ko_KR"|"libName_localized"|"libName_nl_NL"|"libName_pt_BR"|"libName_pt_PT"|"libName_ru_RU"|"libName_zh_CN"|"libName_zh_TW"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"name_de_DE"|"name_defaultValue"|"name_en_GB"|"name_en_US"|"name_es_ES"|"name_fr_FR"|"name_ja_JP"|"name_ko_KR"|"name_localized"|"name_nl_NL"|"name_pt_BR"|"name_pt_PT"|"name_ru_RU"|"name_zh_CN"|"name_zh_TW"|"status"|"subModule"|"transactionSequence")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.JobCodeMappingEntity record {
+public type RelatedCollectionSFOData_JobCodeMappingEntity record {
     JobCodeMappingEntity[] results?;
 };

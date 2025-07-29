@@ -33,7 +33,7 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -136,7 +136,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEducationDegreeContent(EducationDegreeContent payload, map<string|string[]> headers = {}) returns Created\ EducationDegreeContent|error {
+    remote isolated function createEducationDegreeContent(EducationDegreeContent payload, map<string|string[]> headers = {}) returns CreatedEducationDegreeContent|error {
         string resourcePath = string `/EducationDegreeContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -165,7 +165,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEducationDegreeContent(string JobProfile_externalCode, string externalCode, Modified\ EducationDegreeContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEducationDegreeContent(string JobProfile_externalCode, string externalCode, ModifiedEducationDegreeContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EducationDegreeContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -202,7 +202,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createCurrencyExchangeRate(CurrencyExchangeRate payload, map<string|string[]> headers = {}) returns Created\ CurrencyExchangeRate|error {
+    remote isolated function createCurrencyExchangeRate(CurrencyExchangeRate payload, map<string|string[]> headers = {}) returns CreatedCurrencyExchangeRate|error {
         string resourcePath = string `/CurrencyExchangeRate`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -231,7 +231,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateCurrencyExchangeRate(string effectiveStartDate, string externalCode, Modified\ CurrencyExchangeRate payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateCurrencyExchangeRate(string effectiveStartDate, string externalCode, ModifiedCurrencyExchangeRate payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/CurrencyExchangeRate(effectiveStartDate=${getEncodedUri(effectiveStartDate)},externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -293,7 +293,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEducationDegreeEntity(EducationDegreeEntity payload, map<string|string[]> headers = {}) returns Created\ EducationDegreeEntity|error {
+    remote isolated function createEducationDegreeEntity(EducationDegreeEntity payload, map<string|string[]> headers = {}) returns CreatedEducationDegreeEntity|error {
         string resourcePath = string `/EducationDegreeEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -320,7 +320,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEducationDegreeEntity(string externalCode, Modified\ EducationDegreeEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEducationDegreeEntity(string externalCode, ModifiedEducationDegreeEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EducationDegreeEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -356,7 +356,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createServiceDeskContactSupportInformation(ServiceDeskContactSupportInformation payload, map<string|string[]> headers = {}) returns Created\ ServiceDeskContactSupportInformation|error {
+    remote isolated function createServiceDeskContactSupportInformation(ServiceDeskContactSupportInformation payload, map<string|string[]> headers = {}) returns CreatedServiceDeskContactSupportInformation|error {
         string resourcePath = string `/ServiceDeskContactSupportInformation`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -383,7 +383,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateServiceDeskContactSupportInformation(int externalCode, Modified\ ServiceDeskContactSupportInformation payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateServiceDeskContactSupportInformation(int externalCode, ModifiedServiceDeskContactSupportInformation payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ServiceDeskContactSupportInformation(${getEncodedUri(externalCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -554,7 +554,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEducationMajorEntity(EducationMajorEntity payload, map<string|string[]> headers = {}) returns Created\ EducationMajorEntity|error {
+    remote isolated function createEducationMajorEntity(EducationMajorEntity payload, map<string|string[]> headers = {}) returns CreatedEducationMajorEntity|error {
         string resourcePath = string `/EducationMajorEntity`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -581,7 +581,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEducationMajorEntity(string externalCode, Modified\ EducationMajorEntity payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEducationMajorEntity(string externalCode, ModifiedEducationMajorEntity payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EducationMajorEntity('${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -671,7 +671,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createServiceDeskCountrySupportInformation(ServiceDeskCountrySupportInformation payload, map<string|string[]> headers = {}) returns Created\ ServiceDeskCountrySupportInformation|error {
+    remote isolated function createServiceDeskCountrySupportInformation(ServiceDeskCountrySupportInformation payload, map<string|string[]> headers = {}) returns CreatedServiceDeskCountrySupportInformation|error {
         string resourcePath = string `/ServiceDeskCountrySupportInformation`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -700,7 +700,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateServiceDeskCountrySupportInformation(int ServiceDeskContactSupportInformation_externalCode, int externalCode, Modified\ ServiceDeskCountrySupportInformation payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateServiceDeskCountrySupportInformation(int ServiceDeskContactSupportInformation_externalCode, int externalCode, ModifiedServiceDeskCountrySupportInformation payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ServiceDeskCountrySupportInformation(ServiceDeskContactSupportInformation_externalCode=${getEncodedUri(ServiceDeskContactSupportInformation_externalCode)},externalCode=${getEncodedUri(externalCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -737,7 +737,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createEducationMajorContent(EducationMajorContent payload, map<string|string[]> headers = {}) returns Created\ EducationMajorContent|error {
+    remote isolated function createEducationMajorContent(EducationMajorContent payload, map<string|string[]> headers = {}) returns CreatedEducationMajorContent|error {
         string resourcePath = string `/EducationMajorContent`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -766,7 +766,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function updateEducationMajorContent(string JobProfile_externalCode, string externalCode, Modified\ EducationMajorContent payload, map<string|string[]> headers = {}) returns error? {
+    remote isolated function updateEducationMajorContent(string JobProfile_externalCode, string externalCode, ModifiedEducationMajorContent payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/EducationMajorContent(JobProfile_externalCode='${getEncodedUri(JobProfile_externalCode)}',externalCode='${getEncodedUri(externalCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

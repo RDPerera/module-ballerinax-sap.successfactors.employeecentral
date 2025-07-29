@@ -38,15 +38,15 @@ public type GetTrendDataSysOverallCompetencyQueries record {
 public type EPCustomBackgroundPortletProperty record {
 };
 
-public type Collection\ of\ TrendData_SysOverallObjective record {
+public type CollectionofTrendData_SysOverallObjective record {
     TrendData_SysOverallObjective[] results?;
 };
 
-public type Created\ TrendData_SysOverallCompetency record {
+public type CreatedTrendData_SysOverallCompetency record {
     TrendData_SysOverallCompetency d?;
 };
 
-public type Collection\ of\ Background_VarPayEmpHistDataECSource record {
+public type CollectionofBackground_VarPayEmpHistDataECSource record {
     Background_VarPayEmpHistDataECSource[] results?;
 };
 
@@ -64,7 +64,7 @@ public type TrendData_SysOverallCustom2 record {
     string userId?;
 };
 
-public type Modified\ Background_Googledocs record {
+public type ModifiedBackground_Googledocs record {
     Background_Googledocs d?;
 };
 
@@ -72,7 +72,7 @@ public type UserBadges_1 record {
     UserBadges d?;
 };
 
-public type Collection\ of\ Background_Awards record {
+public type CollectionofBackground_Awards record {
     Background_Awards[] results?;
 };
 
@@ -93,7 +93,7 @@ public type ListUserBadgessQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("badgeCreatorName"|"badgeCreatorName desc"|"badgeId"|"badgeId desc"|"badgeInstanceId"|"badgeInstanceId desc"|"badgeTitle"|"badgeTitle desc"|"comment"|"comment desc"|"creatorUserID"|"creatorUserID desc"|"lastModified"|"lastModified desc"|"photo"|"photo desc"|"userId"|"userId desc")[] \$orderby?;
+    ("badgeCreatorName"|"badgeCreatorName desc"|"badgeId"|"badgeId desc"|"badgeInstanceId"|"badgeInstanceId desc"|"badgeTitle"|"badgeTitle desc"|"comment"|"comment desc"|"creatorUserID"|"creatorUserID desc"|"lastModified"|"lastModified$1"|"photo"|"photo desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
@@ -149,10 +149,10 @@ public type EPPublicProfile record {
 };
 
 public type Wrapper record {
-    Collection\ of\ Background_Community d?;
+    CollectionofBackground_Community d?;
 };
 
-public type Modified\ TrendData_SysOverallCompetency record {
+public type ModifiedTrendData_SysOverallCompetency record {
     TrendData_SysOverallCompetency d?;
 };
 
@@ -160,7 +160,7 @@ public type Background_Googledocs_1 record {
     Background_Googledocs d?;
 };
 
-public type Created\ Background_SpecialAssign record {
+public type CreatedBackground_SpecialAssign record {
     Background_SpecialAssign d?;
 };
 
@@ -175,27 +175,27 @@ public type BackgroundBenefitselection record {
 };
 
 public type Wrapper_19 record {
-    Collection\ of\ BadgeTemplates d?;
+    CollectionofBadgeTemplates d?;
 };
 
-public type Collection\ of\ Background_InsideWorkExperience record {
+public type CollectionofBackground_InsideWorkExperience record {
     Background_InsideWorkExperience[] results?;
 };
 
 public type Wrapper_17 record {
-    Collection\ of\ Background_InsideWorkExperience d?;
+    CollectionofBackground_InsideWorkExperience d?;
 };
 
-public type Collection\ of\ Background_TalentPool record {
+public type CollectionofBackground_TalentPool record {
     Background_TalentPool[] results?;
 };
 
-public type Created\ Background_VarPayEmpHistData record {
+public type CreatedBackground_VarPayEmpHistData record {
     Background_VarPayEmpHistData d?;
 };
 
 public type Wrapper_18 record {
-    Collection\ of\ Background_PreferredNextMove d?;
+    CollectionofBackground_PreferredNextMove d?;
 };
 
 # Represents the Queries record for the operation: getBackgroundFuncExperience
@@ -205,7 +205,7 @@ public type GetBackgroundFuncExperienceQueries record {
 };
 
 public type Wrapper_15 record {
-    Collection\ of\ Background_Mobility d?;
+    CollectionofBackground_Mobility d?;
 };
 
 public type Background_InsideWorkExperience record {
@@ -216,11 +216,11 @@ public type Background_InsideWorkExperience record {
 };
 
 public type Wrapper_16 record {
-    Collection\ of\ Background_VarPayEmpHistData d?;
+    CollectionofBackground_VarPayEmpHistData d?;
 };
 
 public type Wrapper_13 record {
-    Collection\ of\ Background_Awards d?;
+    CollectionofBackground_Awards d?;
 };
 
 public type BadgeTemplates record {
@@ -228,15 +228,15 @@ public type BadgeTemplates record {
 };
 
 public type Wrapper_14 record {
-    Collection\ of\ Background_Education d?;
+    CollectionofBackground_Education d?;
 };
 
 public type Wrapper_11 record {
-    Collection\ of\ UserBadges d?;
+    CollectionofUserBadges d?;
 };
 
 public type Wrapper_12 record {
-    Collection\ of\ Background_Googledocs d?;
+    CollectionofBackground_Googledocs d?;
 };
 
 public type TrendData_SysOverallPotential record {
@@ -246,12 +246,12 @@ public type TrendData_SysOverallPotential record {
     string userId?;
 };
 
-public type Created\ Background_Languages record {
+public type CreatedBackground_Languages record {
     Background_Languages d?;
 };
 
 public type Wrapper_10 record {
-    Collection\ of\ Background_TalentPool d?;
+    CollectionofBackground_TalentPool d?;
 };
 
 # Represents the Queries record for the operation: getBackgroundVarPayEmpHistData
@@ -289,14 +289,14 @@ public type ListTrendDataSysOverallPotentialsQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
     ("description"|"endDate"|"id"|"label"|"lastModified"|"max"|"min"|"module"|"name"|"rating"|"source"|"startDate"|"userId")[] \$select?;
 };
 
-public type Created\ Background_VarPayEmpHistDataECSource record {
+public type CreatedBackground_VarPayEmpHistDataECSource record {
     Background_VarPayEmpHistDataECSource d?;
 };
 
@@ -306,7 +306,7 @@ public type DeleteBackgroundCommunityHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ Background_SpecialAssign record {
+public type CollectionofBackground_SpecialAssign record {
     Background_SpecialAssign[] results?;
 };
 
@@ -336,11 +336,11 @@ public type Background_Fsaelection record {
     string userId?;
 };
 
-public type Modified\ Background_SysScoreCardDevelopmentObjectivesPortlet record {
+public type ModifiedBackground_SysScoreCardDevelopmentObjectivesPortlet record {
     Background_SysScoreCardDevelopmentObjectivesPortlet d?;
 };
 
-public type Created\ Background_Awards record {
+public type CreatedBackground_Awards record {
     Background_Awards d?;
 };
 
@@ -367,11 +367,11 @@ public type EPCustomBackgroundPortlet record {
     EPCustomBackgroundPortletProperty backgroundPropertyLists?;
 };
 
-public type Created\ Background_Fsaelection record {
+public type CreatedBackground_Fsaelection record {
     Background_Fsaelection d?;
 };
 
-public type Created\ Background_PreferredNextMove record {
+public type CreatedBackground_PreferredNextMove record {
     Background_PreferredNextMove d?;
 };
 
@@ -387,11 +387,11 @@ public type DeleteBackgroundLanguagesHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ Background_Benefitselection record {
+public type CollectionofBackground_Benefitselection record {
     Background_Benefitselection[] results?;
 };
 
-public type Created\ Background_Certificates record {
+public type CreatedBackground_Certificates record {
     Background_Certificates d?;
 };
 
@@ -410,7 +410,7 @@ public type DeleteBackgroundMobilityHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ Background_Promotability record {
+public type CollectionofBackground_Promotability record {
     Background_Promotability[] results?;
 };
 
@@ -442,7 +442,7 @@ public type ListBackgroundPreferredNextMovesQueries record {
     ("backgroundElementId"|"bgOrderPos"|"comments"|"function"|"lastModifiedDate"|"level"|"timeframe"|"title"|"userId")[] \$select?;
 };
 
-public type Created\ TrendData_SysOverallObjective record {
+public type CreatedTrendData_SysOverallObjective record {
     TrendData_SysOverallObjective d?;
 };
 
@@ -452,7 +452,7 @@ public type DeleteTrendDataSysOverallObjectiveHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ Background_Education record {
+public type ModifiedBackground_Education record {
     Background_Education d?;
 };
 
@@ -503,7 +503,7 @@ public type DeleteBackgroundTalentPoolHeaders record {
     string If\-Match?;
 };
 
-public type Created\ TrendData_SysOverallPerformance record {
+public type CreatedTrendData_SysOverallPerformance record {
     TrendData_SysOverallPerformance d?;
 };
 
@@ -521,7 +521,7 @@ public type DeleteTrendDataSysOverallCustom2Headers record {
     string If\-Match?;
 };
 
-public type Modified\ TrendData_SysOverallObjective record {
+public type ModifiedTrendData_SysOverallObjective record {
     TrendData_SysOverallObjective d?;
 };
 
@@ -531,7 +531,7 @@ public type GetBackgroundCompensationQueries record {
     ("backgroundElementId"|"bgOrderPos"|"compaRatio"|"curSalary"|"finSalary"|"jobTitle"|"lastModifiedDate"|"lumpSum"|"merit"|"options"|"pmRating"|"stock"|"sysCompTemplateName"|"sysReviewEndDate"|"sysReviewStartDate"|"totalComp"|"userId")[] \$select?;
 };
 
-public type Created\ Background_Benefitselection record {
+public type CreatedBackground_Benefitselection record {
     Background_Benefitselection d?;
 };
 
@@ -620,7 +620,7 @@ public type Background_Benefitselection record {
     string userId?;
 };
 
-public type Modified\ Background_Documents record {
+public type ModifiedBackground_Documents record {
     Background_Documents d?;
 };
 
@@ -630,7 +630,7 @@ public type GetBackgroundFsaelectionQueries record {
     ("backgroundElementId"|"bgOrderPos"|"fsabalance"|"fsacontributions"|"fsaelectionamount"|"fsafundsout"|"fsaplan"|"fsarepayment"|"lastModifiedDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ Background_OutsideWorkExperience record {
+public type CollectionofBackground_OutsideWorkExperience record {
     Background_OutsideWorkExperience[] results?;
 };
 
@@ -662,7 +662,7 @@ public type ListBackgroundInsideWorkExperiencesQueries record {
     ("backgroundElementId"|"bgOrderPos"|"department"|"endDate"|"lastModifiedDate"|"startDate"|"title"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ TrendData_SysOverallCustom1 record {
+public type CollectionofTrendData_SysOverallCustom1 record {
     TrendData_SysOverallCustom1[] results?;
 };
 
@@ -684,15 +684,15 @@ public type ListBackgroundTalentPoolsQueries record {
     ("backgroundElementId"|"bgOrderPos"|"lastModifiedDate"|"startDate"|"talentPoolComments"|"talentPoolStatus"|"talentPoolitem"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ TrendData_SysOverallCompetency record {
+public type CollectionofTrendData_SysOverallCompetency record {
     TrendData_SysOverallCompetency[] results?;
 };
 
-public type Collection\ of\ TrendData_SysOverallCustom2 record {
+public type CollectionofTrendData_SysOverallCustom2 record {
     TrendData_SysOverallCustom2[] results?;
 };
 
-public type Created\ Background_OutsideWorkExperience record {
+public type CreatedBackground_OutsideWorkExperience record {
     Background_OutsideWorkExperience d?;
 };
 
@@ -707,14 +707,14 @@ public type ListTrendDataSysOverallObjectivesQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
     ("description"|"endDate"|"id"|"label"|"lastModified"|"max"|"min"|"module"|"name"|"rating"|"source"|"startDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ TrendData_SysOverallPotential record {
+public type CollectionofTrendData_SysOverallPotential record {
     TrendData_SysOverallPotential[] results?;
 };
 
@@ -741,11 +741,11 @@ public type DeleteBackgroundEducationHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ Background_Languages record {
+public type ModifiedBackground_Languages record {
     Background_Languages d?;
 };
 
-public type Modified\ Background_PreferredNextMove record {
+public type ModifiedBackground_PreferredNextMove record {
     Background_PreferredNextMove d?;
 };
 
@@ -755,7 +755,7 @@ public type GetBackgroundSpecialAssignQueries record {
     ("backgroundElementId"|"bgOrderPos"|"description"|"endDate"|"lastModifiedDate"|"project"|"startDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ EPCustomBackgroundPortlet record {
+public type CollectionofEPCustomBackgroundPortlet record {
     EPCustomBackgroundPortlet[] results?;
 };
 
@@ -799,11 +799,11 @@ public type Background_TalentPool record {
 };
 
 public type Wrapper_28 record {
-    Collection\ of\ Background_LeadExperience d?;
+    CollectionofBackground_LeadExperience d?;
 };
 
 public type Wrapper_29 record {
-    Collection\ of\ TrendData_SysOverallObjective d?;
+    CollectionofTrendData_SysOverallObjective d?;
 };
 
 public type Background_FuncExperience record {
@@ -822,10 +822,10 @@ public type DeleteBackgroundAwardsHeaders record {
 };
 
 public type Wrapper_26 record {
-    Collection\ of\ Background_Certificates d?;
+    CollectionofBackground_Certificates d?;
 };
 
-public type Modified\ EPPublicProfile record {
+public type ModifiedEPPublicProfile record {
     EPPublicProfile d?;
 };
 
@@ -836,7 +836,7 @@ public type GetBackgroundSysScoreCardDevelopmentObjectivesPortletQueries record 
 };
 
 public type Wrapper_27 record {
-    Collection\ of\ Background_VarPayEmpHistDataECSource d?;
+    CollectionofBackground_VarPayEmpHistDataECSource d?;
 };
 
 # Represents the Headers record for the operation: deleteBackgroundMemberships
@@ -852,27 +852,27 @@ public type GetBackgroundPreferredNextMoveQueries record {
 };
 
 public type Wrapper_24 record {
-    Collection\ of\ EPCustomBackgroundPortlet d?;
+    CollectionofEPCustomBackgroundPortlet d?;
 };
 
 public type Wrapper_25 record {
-    Collection\ of\ Background_SpecialAssign d?;
+    CollectionofBackground_SpecialAssign d?;
 };
 
 public type Wrapper_22 record {
-    Collection\ of\ Background_SysScoreCardDevelopmentObjectivesPortlet d?;
+    CollectionofBackground_SysScoreCardDevelopmentObjectivesPortlet d?;
 };
 
 public type Wrapper_23 record {
-    Collection\ of\ Background_TalentPoolcorp d?;
+    CollectionofBackground_TalentPoolcorp d?;
 };
 
 public type Wrapper_20 record {
-    Collection\ of\ EPPublicProfile d?;
+    CollectionofEPPublicProfile d?;
 };
 
 public type Wrapper_21 record {
-    Collection\ of\ Background_Languages d?;
+    CollectionofBackground_Languages d?;
 };
 
 # Represents the Queries record for the operation: listTrendDataSysOverallCustom2s
@@ -886,7 +886,7 @@ public type ListTrendDataSysOverallCustom2sQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
@@ -929,7 +929,7 @@ public type TrendData_SysOverallCompetency_1 record {
     TrendData_SysOverallCompetency d?;
 };
 
-public type Created\ Background_Compensation record {
+public type CreatedBackground_Compensation record {
     Background_Compensation d?;
 };
 
@@ -955,19 +955,19 @@ public type Background_Mobility_1 record {
     Background_Mobility d?;
 };
 
-public type Collection\ of\ Background_SysScoreCardDevelopmentObjectivesPortlet record {
+public type CollectionofBackground_SysScoreCardDevelopmentObjectivesPortlet record {
     Background_SysScoreCardDevelopmentObjectivesPortlet[] results?;
 };
 
-public type Modified\ TrendData_SysOverallPerformance record {
+public type ModifiedTrendData_SysOverallPerformance record {
     TrendData_SysOverallPerformance d?;
 };
 
-public type Created\ Background_Documents record {
+public type CreatedBackground_Documents record {
     Background_Documents d?;
 };
 
-public type Modified\ Background_Mobility record {
+public type ModifiedBackground_Mobility record {
     Background_Mobility d?;
 };
 
@@ -986,15 +986,15 @@ public type DeleteBackgroundGoogledocsHeaders record {
 };
 
 public type Wrapper_33 record {
-    Collection\ of\ TrendData_SysOverallCustom1 d?;
+    CollectionofTrendData_SysOverallCustom1 d?;
 };
 
-public type Modified\ Background_VarPayEmpHistData record {
+public type ModifiedBackground_VarPayEmpHistData record {
     Background_VarPayEmpHistData d?;
 };
 
 public type Wrapper_34 record {
-    Collection\ of\ TrendData_SysOverallCustom2 d?;
+    CollectionofTrendData_SysOverallCustom2 d?;
 };
 
 # Represents the Queries record for the operation: listBackgroundCoursess
@@ -1022,7 +1022,7 @@ public type GetBackgroundInsideWorkExperienceQueries record {
 };
 
 public type Wrapper_31 record {
-    Collection\ of\ TrendData_SysOverallPotential d?;
+    CollectionofTrendData_SysOverallPotential d?;
 };
 
 # Represents the Headers record for the operation: deleteBackgroundVarPayEmpHistDataECSource
@@ -1032,19 +1032,19 @@ public type DeleteBackgroundVarPayEmpHistDataECSourceHeaders record {
 };
 
 public type Wrapper_32 record {
-    Collection\ of\ TrendData_SysOverallPerformance d?;
+    CollectionofTrendData_SysOverallPerformance d?;
 };
 
-public type Modified\ Background_Memberships record {
+public type ModifiedBackground_Memberships record {
     Background_Memberships d?;
 };
 
-public type Collection\ of\ Background_Community record {
+public type CollectionofBackground_Community record {
     Background_Community[] results?;
 };
 
 public type Wrapper_30 record {
-    Collection\ of\ TrendData_SysOverallCompetency d?;
+    CollectionofTrendData_SysOverallCompetency d?;
 };
 
 public type Background_SysScoreCardDevelopmentObjectivesPortlet record {
@@ -1092,11 +1092,11 @@ public type Background_SpecialAssign_1 record {
     Background_SpecialAssign d?;
 };
 
-public type Created\ UserBadges record {
+public type CreatedUserBadges record {
     UserBadges d?;
 };
 
-public type Collection\ of\ Background_VarPayEmpHistData record {
+public type CollectionofBackground_VarPayEmpHistData record {
     Background_VarPayEmpHistData[] results?;
 };
 
@@ -1106,19 +1106,19 @@ public type DeleteBackgroundDocumentsHeaders record {
     string If\-Match?;
 };
 
-public type Created\ Background_InsideWorkExperience record {
+public type CreatedBackground_InsideWorkExperience record {
     Background_InsideWorkExperience d?;
 };
 
-public type Created\ TrendData_SysOverallCustom1 record {
+public type CreatedTrendData_SysOverallCustom1 record {
     TrendData_SysOverallCustom1 d?;
 };
 
-public type Created\ TrendData_SysOverallCustom2 record {
+public type CreatedTrendData_SysOverallCustom2 record {
     TrendData_SysOverallCustom2 d?;
 };
 
-public type Collection\ of\ Background_Memberships record {
+public type CollectionofBackground_Memberships record {
     Background_Memberships[] results?;
 };
 
@@ -1128,7 +1128,7 @@ public type GetBackgroundEducationQueries record {
     ("backgroundElementId"|"bgOrderPos"|"degree"|"degreeDate"|"endDate"|"lastModifiedDate"|"major"|"school"|"schoolAddress"|"schoolCity"|"schoolCountry"|"schoolState"|"schoolType"|"schoolZip"|"startDate"|"userId")[] \$select?;
 };
 
-public type Modified\ Background_TalentPoolcorp record {
+public type ModifiedBackground_TalentPoolcorp record {
     Background_TalentPoolcorp d?;
 };
 
@@ -1150,7 +1150,7 @@ public type ListBackgroundMembershipssQueries record {
     ("backgroundElementId"|"bgOrderPos"|"endDate"|"lastModifiedDate"|"organization"|"role"|"startDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ Background_Mobility record {
+public type CollectionofBackground_Mobility record {
     Background_Mobility[] results?;
 };
 
@@ -1160,19 +1160,19 @@ public type DeleteBackgroundLeadExperienceHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ TrendData_SysOverallPotential record {
+public type ModifiedTrendData_SysOverallPotential record {
     TrendData_SysOverallPotential d?;
 };
 
-public type Collection\ of\ EPPublicProfile record {
+public type CollectionofEPPublicProfile record {
     EPPublicProfile[] results?;
 };
 
-public type Modified\ Background_InsideWorkExperience record {
+public type ModifiedBackground_InsideWorkExperience record {
     Background_InsideWorkExperience d?;
 };
 
-public type Modified\ Background_Certificates record {
+public type ModifiedBackground_Certificates record {
     Background_Certificates d?;
 };
 
@@ -1208,7 +1208,7 @@ public type Background_Fsaelection_1 record {
     Background_Fsaelection d?;
 };
 
-public type Collection\ of\ Background_FuncExperience record {
+public type CollectionofBackground_FuncExperience record {
     Background_FuncExperience[] results?;
 };
 
@@ -1236,7 +1236,7 @@ public type Background_FuncExperience_1 record {
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ Background_Documents d?;
+    CollectionofBackground_Documents d?;
 };
 
 # Represents the Headers record for the operation: deleteTrendDataSysOverallPerformance
@@ -1246,15 +1246,15 @@ public type DeleteTrendDataSysOverallPerformanceHeaders record {
 };
 
 public type Wrapper_9 record {
-    Collection\ of\ Background_FuncExperience d?;
+    CollectionofBackground_FuncExperience d?;
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ Background_Promotability d?;
+    CollectionofBackground_Promotability d?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ Background_Fsaelection d?;
+    CollectionofBackground_Fsaelection d?;
 };
 
 # Represents the Queries record for the operation: listBackgroundCertificatess
@@ -1276,7 +1276,7 @@ public type ListBackgroundCertificatessQueries record {
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ Background_Compensation d?;
+    CollectionofBackground_Compensation d?;
 };
 
 public type Background_Compensation_1 record {
@@ -1302,10 +1302,10 @@ public type ListEPCustomBackgroundPortletsQueries record {
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ Background_Memberships d?;
+    CollectionofBackground_Memberships d?;
 };
 
-public type Modified\ Background_Courses record {
+public type ModifiedBackground_Courses record {
     Background_Courses d?;
 };
 
@@ -1323,11 +1323,11 @@ public type UserBadges record {
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ Background_Courses d?;
+    CollectionofBackground_Courses d?;
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ Background_Benefitselection d?;
+    CollectionofBackground_Benefitselection d?;
 };
 
 public type Background_InsideWorkExperience_1 record {
@@ -1335,10 +1335,10 @@ public type Background_InsideWorkExperience_1 record {
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ Background_OutsideWorkExperience d?;
+    CollectionofBackground_OutsideWorkExperience d?;
 };
 
-public type Collection\ of\ Background_Education record {
+public type CollectionofBackground_Education record {
     Background_Education[] results?;
 };
 
@@ -1350,7 +1350,7 @@ public type Background_Community record {
     string userId?;
 };
 
-public type Created\ Background_LeadExperience record {
+public type CreatedBackground_LeadExperience record {
     Background_LeadExperience d?;
 };
 
@@ -1358,11 +1358,11 @@ public type TrendData_SysOverallPerformance_1 record {
     TrendData_SysOverallPerformance d?;
 };
 
-public type Modified\ Background_Fsaelection record {
+public type ModifiedBackground_Fsaelection record {
     Background_Fsaelection d?;
 };
 
-public type Modified\ Background_Benefitselection record {
+public type ModifiedBackground_Benefitselection record {
     Background_Benefitselection d?;
 };
 
@@ -1402,11 +1402,11 @@ public type ListBackgroundSpecialAssignsQueries record {
     ("backgroundElementId"|"bgOrderPos"|"description"|"endDate"|"lastModifiedDate"|"project"|"startDate"|"userId")[] \$select?;
 };
 
-public type Created\ Background_Education record {
+public type CreatedBackground_Education record {
     Background_Education d?;
 };
 
-public type Modified\ Background_LeadExperience record {
+public type ModifiedBackground_LeadExperience record {
     Background_LeadExperience d?;
 };
 
@@ -1452,7 +1452,7 @@ public type Background_Awards record {
     string userId?;
 };
 
-public type Collection\ of\ BadgeTemplates record {
+public type CollectionofBadgeTemplates record {
     BadgeTemplates[] results?;
 };
 
@@ -1462,7 +1462,7 @@ public type DeleteTrendDataSysOverallPotentialHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ Background_Compensation record {
+public type CollectionofBackground_Compensation record {
     Background_Compensation[] results?;
 };
 
@@ -1472,19 +1472,19 @@ public type DeleteBackgroundSpecialAssignHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ Background_TalentPool record {
+public type ModifiedBackground_TalentPool record {
     Background_TalentPool d?;
 };
 
-public type Created\ TrendData_SysOverallPotential record {
+public type CreatedTrendData_SysOverallPotential record {
     TrendData_SysOverallPotential d?;
 };
 
-public type Created\ Background_Community record {
+public type CreatedBackground_Community record {
     Background_Community d?;
 };
 
-public type Created\ Background_Mobility record {
+public type CreatedBackground_Mobility record {
     Background_Mobility d?;
 };
 
@@ -1550,7 +1550,7 @@ public type GetTrendDataSysOverallCustom1Queries record {
     ("description"|"endDate"|"id"|"label"|"lastModified"|"max"|"min"|"module"|"name"|"rating"|"source"|"startDate"|"userId")[] \$select?;
 };
 
-public type Created\ Background_TalentPoolcorp record {
+public type CreatedBackground_TalentPoolcorp record {
     Background_TalentPoolcorp d?;
 };
 
@@ -1561,7 +1561,7 @@ public type TrendData_SysOverallCompetency record {
     string userId?;
 };
 
-public type Modified\ Background_OutsideWorkExperience record {
+public type ModifiedBackground_OutsideWorkExperience record {
     Background_OutsideWorkExperience d?;
 };
 
@@ -1576,7 +1576,7 @@ public type ListTrendDataSysOverallCustom1sQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
@@ -1601,7 +1601,7 @@ public type DeleteBackgroundVarPayEmpHistDataHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ UserBadges record {
+public type CollectionofUserBadges record {
     UserBadges[] results?;
 };
 
@@ -1609,11 +1609,11 @@ public type EPPublicProfile_1 record {
     EPPublicProfile d?;
 };
 
-public type Collection\ of\ Background_TalentPoolcorp record {
+public type CollectionofBackground_TalentPoolcorp record {
     Background_TalentPoolcorp[] results?;
 };
 
-public type Collection\ of\ Background_Googledocs record {
+public type CollectionofBackground_Googledocs record {
     Background_Googledocs[] results?;
 };
 
@@ -1631,15 +1631,15 @@ public type GetEPPublicProfileQueries record {
     ("aboutMeVideoToken"|"aboutMeVideoUploadId"|"applicationId"|"hasAboutMeVideo"|"hasIntroduction"|"hasMyName"|"hasMyNameAudio"|"introduction"|"isAddBadgeAllowed"|"isBadgesSectionEnabled"|"isExpressiveMode"|"isExpressivePhotoEditable"|"mediaServiceBaseUrl"|"myNameAudioToken"|"myNameAudioUploadId"|"myNameText"|"liveProfilePhotoPermission"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ Background_Languages record {
+public type CollectionofBackground_Languages record {
     Background_Languages[] results?;
 };
 
-public type Created\ EPPublicProfile record {
+public type CreatedEPPublicProfile record {
     EPPublicProfile d?;
 };
 
-public type Modified\ Background_VarPayEmpHistDataECSource record {
+public type ModifiedBackground_VarPayEmpHistDataECSource record {
     Background_VarPayEmpHistDataECSource d?;
 };
 
@@ -1654,7 +1654,7 @@ public type ListTrendDataSysOverallCompetenciesQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
@@ -1667,11 +1667,11 @@ public type GetBackgroundLanguagesQueries record {
     ("backgroundElementId"|"bgOrderPos"|"language"|"lastModifiedDate"|"readingProf"|"speakingProf"|"userId"|"variant"|"writingProf")[] \$select?;
 };
 
-public type Modified\ Background_Compensation record {
+public type ModifiedBackground_Compensation record {
     Background_Compensation d?;
 };
 
-public type Collection\ of\ Background_Courses record {
+public type CollectionofBackground_Courses record {
     Background_Courses[] results?;
 };
 
@@ -1679,7 +1679,7 @@ public type Background_Languages_1 record {
     Background_Languages d?;
 };
 
-public type Created\ Background_SysScoreCardDevelopmentObjectivesPortlet record {
+public type CreatedBackground_SysScoreCardDevelopmentObjectivesPortlet record {
     Background_SysScoreCardDevelopmentObjectivesPortlet d?;
 };
 
@@ -1701,11 +1701,11 @@ public type ListBackgroundCompensationsQueries record {
     ("backgroundElementId"|"bgOrderPos"|"compaRatio"|"curSalary"|"finSalary"|"jobTitle"|"lastModifiedDate"|"lumpSum"|"merit"|"options"|"pmRating"|"stock"|"sysCompTemplateName"|"sysReviewEndDate"|"sysReviewStartDate"|"totalComp"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ Background_Certificates record {
+public type CollectionofBackground_Certificates record {
     Background_Certificates[] results?;
 };
 
-public type Modified\ TrendData_SysOverallCustom1 record {
+public type ModifiedTrendData_SysOverallCustom1 record {
     TrendData_SysOverallCustom1 d?;
 };
 
@@ -1715,15 +1715,15 @@ public type GetEPCustomBackgroundPortletQueries record {
     ("backgroundElementId"|"backgroundPropertyLists"|"editable"|"userId"|"viewable")[] \$select?;
 };
 
-public type Collection\ of\ TrendData_SysOverallPerformance record {
+public type CollectionofTrendData_SysOverallPerformance record {
     TrendData_SysOverallPerformance[] results?;
 };
 
-public type Modified\ Background_Promotability record {
+public type ModifiedBackground_Promotability record {
     Background_Promotability d?;
 };
 
-public type Modified\ TrendData_SysOverallCustom2 record {
+public type ModifiedTrendData_SysOverallCustom2 record {
     TrendData_SysOverallCustom2 d?;
 };
 
@@ -1735,7 +1735,7 @@ public type Background_Memberships record {
     string userId?;
 };
 
-public type Collection\ of\ Background_Fsaelection record {
+public type CollectionofBackground_Fsaelection record {
     Background_Fsaelection[] results?;
 };
 
@@ -1769,11 +1769,11 @@ public type Background_OutsideWorkExperience record {
     string userId?;
 };
 
-public type Collection\ of\ Background_LeadExperience record {
+public type CollectionofBackground_LeadExperience record {
     Background_LeadExperience[] results?;
 };
 
-public type Created\ Background_Promotability record {
+public type CreatedBackground_Promotability record {
     Background_Promotability d?;
 };
 
@@ -1801,7 +1801,7 @@ public type GetBackgroundMobilityQueries record {
     ("backgroundElementId"|"bgOrderPos"|"lastModifiedDate"|"location"|"userId"|"willingness")[] \$select?;
 };
 
-public type Collection\ of\ Background_Documents record {
+public type CollectionofBackground_Documents record {
     Background_Documents[] results?;
 };
 
@@ -1832,7 +1832,7 @@ public type ListTrendDataSysOverallPerformancesQueries record {
     # Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374633)
     string \$search?;
     # Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)
-    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified desc"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
+    ("description"|"description desc"|"endDate"|"endDate desc"|"id"|"id desc"|"label"|"label desc"|"lastModified"|"lastModified$1"|"max"|"max desc"|"min"|"min desc"|"module"|"module desc"|"name"|"name desc"|"rating"|"rating desc"|"source"|"source desc"|"startDate"|"startDate desc"|"userId"|"userId desc")[] \$orderby?;
     # Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374632)
     boolean \$count?;
     # Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)
@@ -1871,7 +1871,7 @@ public type DeleteBackgroundCertificatesHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ Background_PreferredNextMove record {
+public type CollectionofBackground_PreferredNextMove record {
     Background_PreferredNextMove[] results?;
 };
 
@@ -1881,7 +1881,7 @@ public type GetTrendDataSysOverallPotentialQueries record {
     ("description"|"endDate"|"id"|"label"|"lastModified"|"max"|"min"|"module"|"name"|"rating"|"source"|"startDate"|"userId")[] \$select?;
 };
 
-public type Created\ Background_Courses record {
+public type CreatedBackground_Courses record {
     Background_Courses d?;
 };
 
@@ -1903,11 +1903,11 @@ public type ListBackgroundTalentPoolcorpsQueries record {
     ("backgroundElementId"|"bgOrderPos"|"lastModifiedDate"|"startDate"|"talentPoolComments"|"talentPoolStatus"|"talentPoolitemCorp"|"userId")[] \$select?;
 };
 
-public type Modified\ Background_Community record {
+public type ModifiedBackground_Community record {
     Background_Community d?;
 };
 
-public type Modified\ Background_SpecialAssign record {
+public type ModifiedBackground_SpecialAssign record {
     Background_SpecialAssign d?;
 };
 
@@ -1953,7 +1953,7 @@ public type DeleteBackgroundFuncExperienceHeaders record {
     string If\-Match?;
 };
 
-public type Created\ Background_Googledocs record {
+public type CreatedBackground_Googledocs record {
     Background_Googledocs d?;
 };
 
@@ -1981,7 +1981,7 @@ public type ListBackgroundAwardssQueries record {
     ("backgroundElementId"|"bgOrderPos"|"description"|"institution"|"issueDate"|"lastModifiedDate"|"name"|"userId")[] \$select?;
 };
 
-public type Modified\ Background_FuncExperience record {
+public type ModifiedBackground_FuncExperience record {
     Background_FuncExperience d?;
 };
 
@@ -1989,7 +1989,7 @@ public type Background_Memberships_1 record {
     Background_Memberships d?;
 };
 
-public type Created\ Background_FuncExperience record {
+public type CreatedBackground_FuncExperience record {
     Background_FuncExperience d?;
 };
 
@@ -2023,11 +2023,11 @@ public type DeleteBackgroundOutsideWorkExperienceHeaders record {
     string If\-Match?;
 };
 
-public type Created\ Background_Memberships record {
+public type CreatedBackground_Memberships record {
     Background_Memberships d?;
 };
 
-public type Created\ Background_TalentPool record {
+public type CreatedBackground_TalentPool record {
     Background_TalentPool d?;
 };
 
@@ -2038,7 +2038,7 @@ public type Background_Education record {
     string userId?;
 };
 
-public type Modified\ Background_Awards record {
+public type ModifiedBackground_Awards record {
     Background_Awards d?;
 };
 

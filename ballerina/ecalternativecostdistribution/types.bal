@@ -19,12 +19,12 @@
 
 import ballerina/http;
 
-public type Collection\ of\ EmpCostDistribution record {
+public type CollectionofEmpCostDistribution record {
     SFOData\.EmpCostDistribution[] results?;
 };
 
 public type Wrapper record {
-    Collection\ of\ EmpCostDistribution d?;
+    CollectionofEmpCostDistribution d?;
 };
 
 # Represents the Queries record for the operation: listEmpCostDistributions
@@ -47,7 +47,7 @@ public type ListEmpCostDistributionsQueries record {
     ("createdBy"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemCreatedBy"|"mdfSystemCreatedDate"|"mdfSystemEntityId"|"mdfSystemLastModifiedBy"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"usersSysId")[] \$select?;
 };
 
-public type Created\ EmpCostDistribution record {
+public type CreatedEmpCostDistribution record {
     SFOData\.EmpCostDistribution d?;
 };
 
@@ -61,7 +61,7 @@ public type EmpCostDistribution record {
     SFOData\.EmpCostDistribution d?;
 };
 
-public type Created\ EmpCostDistributionItem record {
+public type CreatedEmpCostDistributionItem record {
     SFOData\.EmpCostDistributionItem d?;
 };
 
@@ -79,7 +79,7 @@ public type GetEmpCostDistributionQueries record {
     ("createdBy"|"createdDateTime"|"effectiveEndDate"|"effectiveStartDate"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"mdfSystemCreatedBy"|"mdfSystemCreatedDate"|"mdfSystemEntityId"|"mdfSystemLastModifiedBy"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"usersSysId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmpCostDistributionItem record {
+public type RelatedCollectionSFOData_EmpCostDistributionItem record {
     SFOData\.EmpCostDistributionItem[] results?;
 };
 
@@ -101,11 +101,11 @@ public type ListEmpCostDistributionItemsQueries record {
     ("EmpCostDistribution_effectiveStartDate"|"EmpCostDistribution_usersSysId"|"costCenter"|"createdBy"|"createdDateTime"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemCreatedBy"|"mdfSystemCreatedDate"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemLastModifiedBy"|"mdfSystemLastModifiedDate"|"mdfSystemLastModifiedDateWithTZ"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"percentage")[] \$select?;
 };
 
-public type Modified\ EmpCostDistribution record {
+public type ModifiedEmpCostDistribution record {
     SFOData\.EmpCostDistribution d?;
 };
 
-public type Collection\ of\ EmpCostDistributionItem record {
+public type CollectionofEmpCostDistributionItem record {
     SFOData\.EmpCostDistributionItem[] results?;
 };
 
@@ -116,16 +116,16 @@ public type DeleteEmpCostDistributionHeaders record {
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ EmpCostDistributionItem d?;
+    CollectionofEmpCostDistributionItem d?;
 };
 
 public type SFOData\.EmpCostDistribution record {
     string effectiveStartDate?;
     string usersSysId?;
-    Related\ CollectionSFOData\.EmpCostDistributionItem items?;
+    RelatedCollectionSFOData_EmpCostDistributionItem items?;
 };
 
-public type Modified\ EmpCostDistributionItem record {
+public type ModifiedEmpCostDistributionItem record {
     SFOData\.EmpCostDistributionItem d?;
 };
 

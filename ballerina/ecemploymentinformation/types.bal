@@ -20,11 +20,11 @@
 import ballerina/constraint;
 import ballerina/http;
 
-public type Collection\ of\ PersonEmpTerminationInfo record {
+public type CollectionofPersonEmpTerminationInfo record {
     PersonEmpTerminationInfo[] results?;
 };
 
-public type Collection\ of\ EmpEmployment record {
+public type CollectionofEmpEmployment record {
     EmpEmployment[] results?;
 };
 
@@ -63,7 +63,7 @@ public type EmpEmploymentTermination record {
     EmpJob jobInfoNav?;
 };
 
-public type Collection\ of\ EmpWorkPermit record {
+public type CollectionofEmpWorkPermit record {
     EmpWorkPermit[] results?;
 };
 
@@ -75,11 +75,11 @@ public type EmpBeneficiary record {
     string userId?;
 };
 
-public type Created\ HireDateChange record {
+public type CreatedHireDateChange record {
     HireDateChange d?;
 };
 
-public type Collection\ of\ EmpBeneficiary record {
+public type CollectionofEmpBeneficiary record {
     EmpBeneficiary[] results?;
 };
 
@@ -149,7 +149,7 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-public type Collection\ of\ EmpJobRelationships record {
+public type CollectionofEmpJobRelationships record {
     EmpJobRelationships[] results?;
 };
 
@@ -174,7 +174,7 @@ public type ListEmpBeneficiariesQueries record {
 };
 
 public type Wrapper record {
-    Collection\ of\ EmpBeneficiary d?;
+    CollectionofEmpBeneficiary d?;
 };
 
 # Represents the Queries record for the operation: listEmpEmploymentTerminations
@@ -233,11 +233,11 @@ public type HireDateChange_1 record {
     HireDateChange d?;
 };
 
-public type Related\ CollectionSFOData\.EmpWorkPermit record {
+public type RelatedCollectionSFOData_EmpWorkPermit record {
     EmpWorkPermit[] results?;
 };
 
-public type Collection\ of\ EmpEmploymentTermination record {
+public type CollectionofEmpEmploymentTermination record {
     EmpEmploymentTermination[] results?;
 };
 
@@ -316,7 +316,7 @@ public type GetPersonEmpTerminationInfoQueries record {
     ("activeEmploymentsCount"|"latestTerminationDate"|"personIdExternal")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmpJob record {
+public type RelatedCollectionSFOData_EmpJob record {
     EmpJob[] results?;
 };
 
@@ -330,7 +330,7 @@ public type HireDateChange record {
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ HireDateChange d?;
+    CollectionofHireDateChange d?;
 };
 
 # Represents the Queries record for the operation: getEmpEmployment
@@ -356,23 +356,23 @@ public type GetHireDateChangeQueries record {
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ EmpWorkPermit d?;
+    CollectionofEmpWorkPermit d?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ EmpJobRelationships d?;
+    CollectionofEmpJobRelationships d?;
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ EmpJob d?;
+    CollectionofEmpJob d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ PersonEmpTerminationInfo d?;
+    CollectionofPersonEmpTerminationInfo d?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ EmpEmployment d?;
+    CollectionofEmpEmployment d?;
 };
 
 # Represents the Headers record for the operation: deleteHireDateChange
@@ -382,11 +382,11 @@ public type DeleteHireDateChangeHeaders record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ EmpEmploymentTermination d?;
+    CollectionofEmpEmploymentTermination d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ EmpPensionPayout d?;
+    CollectionofEmpPensionPayout d?;
 };
 
 # Represents the Queries record for the operation: getEmpJob
@@ -423,7 +423,7 @@ public type GetEmpEmploymentTerminationQueries record {
     ("StockEndDate"|"attachmentId"|"benefitsEndDate"|"bonusPayExpirationDate"|"createdBy"|"createdDateTime"|"createdOn"|"eligibleForSalContinuation"|"endDate"|"eventReason"|"lastDateWorked"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"newMainEmploymentId"|"notes"|"okToRehire"|"payrollEndDate"|"personIdExternal"|"regretTermination"|"salaryEndDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ EmpJob record {
+public type CollectionofEmpJob record {
     EmpJob[] results?;
 };
 
@@ -437,10 +437,10 @@ public type EmpEmployment record {
     @constraint:String {maxLength: 100}
     string userId?;
     EmpBeneficiary empBeneficiaryNav?;
-    Related\ CollectionSFOData\.EmpJobRelationships empJobRelationshipNav?;
+    RelatedCollectionSFOData_EmpJobRelationships empJobRelationshipNav?;
     EmpPensionPayout empPensionPayoutNav?;
-    Related\ CollectionSFOData\.EmpWorkPermit empWorkPermitNav?;
-    Related\ CollectionSFOData\.EmpJob jobInfoNav?;
+    RelatedCollectionSFOData_EmpWorkPermit empWorkPermitNav?;
+    RelatedCollectionSFOData_EmpJob jobInfoNav?;
 };
 
 # Represents the Queries record for the operation: listEmpJobs
@@ -463,7 +463,7 @@ public type ListEmpJobsQueries record {
     ("assedicCertInitialStateNum"|"assedicCertObjectNum"|"businessUnit"|"calcMethodIndicator"|"commitmentIndicator"|"company"|"contractReferenceForAed"|"contractType"|"costCenter"|"countryOfCompany"|"createdBy"|"createdDateTime"|"createdOn"|"defaultOvertimeCompensationVariant"|"department"|"division"|"eeo1JobCategory"|"eeo4JobCategory"|"eeo5JobCategory"|"eeo6JobCategory"|"eeoClass"|"electoralCollegeForWorkersRepresentatives"|"electoralCollegeForWorksCouncil"|"empRelationship"|"emplStatus"|"employeeClass"|"employeeWorkgroupMembership"|"employmentType"|"endDate"|"event"|"eventReason"|"exclExecutiveSector"|"expectedReturnDate"|"familyRelationshipWithEmployer"|"fgtsDate"|"fgtsOptant"|"fgtsPercent"|"flsaStatus"|"fte"|"harmfulAgentExposure"|"hazard"|"healthRisk"|"holidayCalendarCode"|"isCompetitionClauseActive"|"isFulltimeEmployee"|"isSideLineJobAllowed"|"jobCode"|"jobTitle"|"laborProtection"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"location"|"managerId"|"mandatoryWorkBreakRecord"|"municipalInseeCode"|"notes"|"operation"|"payGrade"|"payScaleArea"|"payScaleGroup"|"payScaleLevel"|"payScaleType"|"pcfm"|"pensionProtection"|"permitIndicator"|"position"|"positionEntryDate"|"probationPeriodEndDate"|"regularTemp"|"residentVote"|"retired"|"seqNumber"|"sickPaySupplement"|"standardHours"|"startDate"|"teachersPension"|"timeRecordingAdmissibilityCode"|"timeRecordingProfileCode"|"timeRecordingVariant"|"timeTypeProfileCode"|"timezone"|"travelDistance"|"tupeOrgNumber"|"userId"|"workLocation"|"workerCategory"|"workingDaysPerWeek"|"workingTimeDirective"|"workscheduleCode"|"wtdHoursLimit")[] \$select?;
 };
 
-public type Collection\ of\ HireDateChange record {
+public type CollectionofHireDateChange record {
     HireDateChange[] results?;
 };
 
@@ -485,7 +485,7 @@ public type ListPersonEmpTerminationInfosQueries record {
     ("activeEmploymentsCount"|"latestTerminationDate"|"personIdExternal")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmpJobRelationships record {
+public type RelatedCollectionSFOData_EmpJobRelationships record {
     EmpJobRelationships[] results?;
 };
 
@@ -509,7 +509,7 @@ public type ListEmpPensionPayoutsQueries record {
     ("createdBy"|"createdDateTime"|"createdOn"|"endDate"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"payrollEndDate"|"personIdExternal"|"plannedEndDate"|"startDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ EmpPensionPayout record {
+public type CollectionofEmpPensionPayout record {
     EmpPensionPayout[] results?;
 };
 

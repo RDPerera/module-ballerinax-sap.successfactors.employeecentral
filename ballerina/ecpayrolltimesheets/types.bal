@@ -35,9 +35,9 @@ public type AvailableAllowance record {
 public type EmployeeTimeSheet record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.Allowance allowance?;
-    Related\ CollectionSFOData\.EmployeeTimeSheetEntry employeeTimeSheetEntry?;
-    Related\ CollectionSFOData\.EmployeeTimeValuationResult employeeTimeValuationResult?;
+    RelatedCollectionSFOData_Allowance allowance?;
+    RelatedCollectionSFOData_EmployeeTimeSheetEntry employeeTimeSheetEntry?;
+    RelatedCollectionSFOData_EmployeeTimeValuationResult employeeTimeValuationResult?;
     EmployeeTimeSheet replacedByNav?;
     EmployeeTimeSheet replacesNav?;
 };
@@ -98,7 +98,7 @@ public type ListAllowanceRecordingsQueries record {
     ("allowanceType"|"approvalPeriodStatus"|"correctionScenario"|"costCenter"|"createdBy"|"createdDateTime"|"date"|"entityUUID"|"externalAllowanceCode"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"pendingCancellation"|"userId"|"value")[] \$select?;
 };
 
-public type Collection\ of\ ExternalAllowance record {
+public type CollectionofExternalAllowance record {
     ExternalAllowance[] results?;
 };
 
@@ -112,7 +112,7 @@ public type TimeCollector_1 record {
     TimeCollector d?;
 };
 
-public type Related\ CollectionSFOData\.ExternalTimeSegment record {
+public type RelatedCollectionSFOData_ExternalTimeSegment record {
     ExternalTimeSegment[] results?;
 };
 
@@ -120,11 +120,11 @@ public type EmployeeTimeSheetEntry_1 record {
     EmployeeTimeSheetEntry d?;
 };
 
-public type Created\ ExternalAllowance record {
+public type CreatedExternalAllowance record {
     ExternalAllowance d?;
 };
 
-public type Collection\ of\ EmployeeTimeSheetEntry record {
+public type CollectionofEmployeeTimeSheetEntry record {
     EmployeeTimeSheetEntry[] results?;
 };
 
@@ -204,12 +204,12 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-public type Collection\ of\ Allowance record {
+public type CollectionofAllowance record {
     Allowance[] results?;
 };
 
 public type Wrapper record {
-    Collection\ of\ EmployeeTimeSheet d?;
+    CollectionofEmployeeTimeSheet d?;
 };
 
 # Represents the Queries record for the operation: getEmployeeTimeSheet
@@ -304,32 +304,32 @@ public type DeleteExternalTimeSegmentHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ TimeRecording record {
+public type CollectionofTimeRecording record {
     TimeRecording[] results?;
 };
 
 public type Wrapper_11 record {
-    Collection\ of\ TimeRecording d?;
+    CollectionofTimeRecording d?;
 };
 
 public type Wrapper_12 record {
-    Collection\ of\ Allowance d?;
+    CollectionofAllowance d?;
 };
 
 public type EmployeeTimeSheet_1 record {
     EmployeeTimeSheet d?;
 };
 
-public type Collection\ of\ DataReplicationProxy record {
+public type CollectionofDataReplicationProxy record {
     DataReplicationProxy[] results?;
 };
 
-public type Collection\ of\ EmployeeTimeValuationResult record {
+public type CollectionofEmployeeTimeValuationResult record {
     EmployeeTimeValuationResult[] results?;
 };
 
 public type Wrapper_10 record {
-    Collection\ of\ ExternalTimeSegment d?;
+    CollectionofExternalTimeSegment d?;
 };
 
 # Represents the Queries record for the operation: getEmployeeTimeValuationResult
@@ -372,11 +372,11 @@ public type GetTimeCollectorQueries record {
     ("bookingDate"|"changeValue"|"collectorValue"|"createdBy"|"createdDateTime"|"endDate"|"entityUUID"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"startDate"|"timeCollectorType"|"userId")[] \$select?;
 };
 
-public type Created\ ExternalTimeRecord record {
+public type CreatedExternalTimeRecord record {
     ExternalTimeRecord d?;
 };
 
-public type Related\ CollectionSFOData\.EmployeeTimeValuationResult record {
+public type RelatedCollectionSFOData_EmployeeTimeValuationResult record {
     EmployeeTimeValuationResult[] results?;
 };
 
@@ -386,7 +386,7 @@ public type GetAvailableAllowanceTypeQueries record {
     ("TimeTypeProfile_externalCode"|"TimeTypeProfile_mdfSystemEffectiveStartDate"|"allowanceType"|"allowanceTypeFilterRule"|"copyableInTimesheet"|"createdBy"|"createdDateTime"|"enabledInEssScenario"|"entityUUID"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus")[] \$select?;
 };
 
-public type Modified\ ExternalTimeData record {
+public type ModifiedExternalTimeData record {
     ExternalTimeData d?;
 };
 
@@ -404,10 +404,10 @@ public type GetExternalTimeSegmentQueries record {
 public type ExternalTimeRecord record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.ExternalTimeSegment externalTimeSegments?;
+    RelatedCollectionSFOData_ExternalTimeSegment externalTimeSegments?;
 };
 
-public type Created\ ExternalTimeData record {
+public type CreatedExternalTimeData record {
     ExternalTimeData d?;
 };
 
@@ -447,22 +447,22 @@ public type AllowanceRecording record {
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ AllowanceRecording d?;
+    CollectionofAllowanceRecording d?;
 };
 
-public type Collection\ of\ EmployeeTimeSheet record {
+public type CollectionofEmployeeTimeSheet record {
     EmployeeTimeSheet[] results?;
 };
 
-public type Collection\ of\ AvailableAllowanceType record {
+public type CollectionofAvailableAllowanceType record {
     AvailableAllowance[] results?;
 };
 
 public type Wrapper_9 record {
-    Collection\ of\ AvailableAllowanceType d?;
+    CollectionofAvailableAllowanceType d?;
 };
 
-public type Created\ ExternalTimeSegment record {
+public type CreatedExternalTimeSegment record {
     ExternalTimeSegment d?;
 };
 
@@ -475,14 +475,14 @@ public type GetExternalTimeRecordQueries record {
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ ExternalTimeData d?;
+    CollectionofExternalTimeData d?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ DataReplicationProxy d?;
+    CollectionofDataReplicationProxy d?;
 };
 
-public type Collection\ of\ ExternalTimeSegment record {
+public type CollectionofExternalTimeSegment record {
     ExternalTimeSegment[] results?;
 };
 
@@ -494,11 +494,11 @@ public type ExternalTimeSegment record {
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ EmployeeTimeSheetEntry d?;
+    CollectionofEmployeeTimeSheetEntry d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ EmployeeTimeValuationResult d?;
+    CollectionofEmployeeTimeValuationResult d?;
 };
 
 # Represents the Queries record for the operation: listEmployeeTimeSheets
@@ -522,7 +522,7 @@ public type ListEmployeeTimeSheetsQueries record {
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ ExternalAllowance d?;
+    CollectionofExternalAllowance d?;
 };
 
 # Represents the Queries record for the operation: getExternalTimeData
@@ -532,11 +532,11 @@ public type GetExternalTimeDataQueries record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ TimeCollector d?;
+    CollectionofTimeCollector d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ ExternalTimeRecord d?;
+    CollectionofExternalTimeRecord d?;
 };
 
 public type TimeRecording record {
@@ -551,7 +551,7 @@ public type Allowance record {
     string externalCode?;
 };
 
-public type Modified\ ExternalTimeRecord record {
+public type ModifiedExternalTimeRecord record {
     ExternalTimeRecord d?;
 };
 
@@ -575,7 +575,7 @@ public type GetDataReplicationProxyQueries record {
     ("allowReplicationInCorrectionPhase"|"confirmationDateTime"|"createdBy"|"createdDateTime"|"dataReplicationProxyStatus"|"earliestReplicationDateTime"|"effectiveStatus"|"employeeTime"|"employeeTimeValuationResult"|"employeeTimeWithAccountDetail"|"externalCode"|"isSubsequentChange"|"lastModifiedBy"|"lastModifiedDateTime"|"legalEntity"|"mdfSystemRecordStatus"|"plannedWorkingTimeEndDate"|"plannedWorkingTimeStartDate"|"replicationContentType"|"replicationScenarioObject"|"replicationTargetSystem"|"sourceGenericObjectExternalCode"|"sourceGenericObjectInternalId"|"timeAccount"|"timeAccountPayout"|"timeAccountSnapshot"|"timeContainer"|"useCostCenterExternalObjectId"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ TimeCollector record {
+public type CollectionofTimeCollector record {
     TimeCollector[] results?;
 };
 
@@ -602,11 +602,11 @@ public type ListAvailableAllowanceTypesQueries record {
     ("TimeTypeProfile_externalCode"|"TimeTypeProfile_mdfSystemEffectiveStartDate"|"allowanceType"|"allowanceTypeFilterRule"|"copyableInTimesheet"|"createdBy"|"createdDateTime"|"enabledInEssScenario"|"entityUUID"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus")[] \$select?;
 };
 
-public type Collection\ of\ AllowanceRecording record {
+public type CollectionofAllowanceRecording record {
     AllowanceRecording[] results?;
 };
 
-public type Modified\ ExternalTimeSegment record {
+public type ModifiedExternalTimeSegment record {
     ExternalTimeSegment d?;
 };
 
@@ -614,11 +614,11 @@ public type TimeRecording_1 record {
     TimeRecording d?;
 };
 
-public type Related\ CollectionSFOData\.Allowance record {
+public type RelatedCollectionSFOData_Allowance record {
     Allowance[] results?;
 };
 
-public type Collection\ of\ ExternalTimeRecord record {
+public type CollectionofExternalTimeRecord record {
     ExternalTimeRecord[] results?;
 };
 
@@ -651,7 +651,7 @@ public type EmployeeTimeValuationResult record {
     string externalCode?;
 };
 
-public type Modified\ ExternalAllowance record {
+public type ModifiedExternalAllowance record {
     ExternalAllowance d?;
 };
 
@@ -669,11 +669,11 @@ public type AvailableAllowanceType record {
     AvailableAllowance d?;
 };
 
-public type Related\ CollectionSFOData\.EmployeeTimeSheetEntry record {
+public type RelatedCollectionSFOData_EmployeeTimeSheetEntry record {
     EmployeeTimeSheetEntry[] results?;
 };
 
-public type Collection\ of\ ExternalTimeData record {
+public type CollectionofExternalTimeData record {
     ExternalTimeData[] results?;
 };
 

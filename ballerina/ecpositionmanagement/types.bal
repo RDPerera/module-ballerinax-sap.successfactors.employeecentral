@@ -20,15 +20,15 @@
 import ballerina/constraint;
 import ballerina/http;
 
-public type Modified\ PositionRequisitionStatus record {
+public type ModifiedPositionRequisitionStatus record {
     PositionRequisitionStatus d?;
 };
 
-public type Created\ PositionRequisitionStatus record {
+public type CreatedPositionRequisitionStatus record {
     PositionRequisitionStatus d?;
 };
 
-public type Collection\ of\ PositionMatrixRelationship record {
+public type CollectionofPositionMatrixRelationship record {
     PositionMatrixRelationship[] results?;
 };
 
@@ -52,7 +52,7 @@ public type ListPositionsQueries record {
     ("businessUnit"|"changeReason"|"code"|"comment"|"company"|"costCenter"|"createdBy"|"createdDate"|"createdDateTime"|"creationSource"|"criticality"|"department"|"description"|"division"|"effectiveEndDate"|"effectiveStartDate"|"effectiveStatus"|"employeeClass"|"externalName_de_DE"|"externalName_defaultValue"|"externalName_en_GB"|"externalName_en_US"|"externalName_es_ES"|"externalName_fr_FR"|"externalName_ja_JP"|"externalName_ko_KR"|"externalName_localized"|"externalName_nl_NL"|"externalName_pt_BR"|"externalName_pt_PT"|"externalName_ru_RU"|"externalName_zh_CN"|"externalName_zh_TW"|"incumbent"|"jobCode"|"jobLevel"|"jobTitle"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"legacyPositionId"|"location"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemOptimisticLockUUID"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemVersionId"|"multipleIncumbentsAllowed"|"payGrade"|"payRange"|"positionControlled"|"positionCriticality"|"positionTitle"|"regularTemporary"|"standardHours"|"targetFTE"|"technicalParameters"|"transactionSequence"|"type"|"vacant")[] \$select?;
 };
 
-public type Modified\ PositionMatrixRelationship record {
+public type ModifiedPositionMatrixRelationship record {
     PositionMatrixRelationship d?;
 };
 
@@ -74,7 +74,7 @@ public type ListPositionRequisitionStatusesQueries record {
     ("code"|"createdBy"|"createdDateTime"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"positionId"|"processingStatus"|"requisitionId")[] \$select?;
 };
 
-public type Collection\ of\ PositionRightToReturn record {
+public type CollectionofPositionRightToReturn record {
     PositionRightToReturn[] results?;
 };
 
@@ -108,12 +108,12 @@ public type PositionRightToReturn record {
 public type RuleFieldMappingBean record {
 };
 
-public type Related\ CollectionSFOData\.PositionMatrixRelationship record {
+public type RelatedCollectionSFOData_PositionMatrixRelationship record {
     PositionMatrixRelationship[] results?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ PositionMatrixRelationship d?;
+    CollectionofPositionMatrixRelationship d?;
 };
 
 public type Position_1 record {
@@ -121,11 +121,11 @@ public type Position_1 record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ Position d?;
+    CollectionofPosition d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ PositionRightToReturn d?;
+    CollectionofPositionRightToReturn d?;
 };
 
 # Represents the Headers record for the operation: deletePositionMatrixRelationship
@@ -186,16 +186,16 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-public type Created\ PositionMatrixRelationship record {
+public type CreatedPositionMatrixRelationship record {
     PositionMatrixRelationship d?;
 };
 
-public type Modified\ Position record {
+public type ModifiedPosition record {
     Position d?;
 };
 
 public type Wrapper record {
-    Collection\ of\ PositionRequisitionStatus d?;
+    CollectionofPositionRequisitionStatus d?;
 };
 
 public type PositionRequisitionStatus record {
@@ -213,10 +213,10 @@ public type Position record {
     string code?;
     string effectiveStartDate?;
     Position parentPosition?;
-    Related\ CollectionSFOData\.PositionMatrixRelationship positionMatrixRelationship?;
+    RelatedCollectionSFOData_PositionMatrixRelationship positionMatrixRelationship?;
 };
 
-public type Collection\ of\ Position record {
+public type CollectionofPosition record {
     Position[] results?;
 };
 
@@ -248,11 +248,11 @@ public type PositionRightToReturn_1 record {
     PositionRightToReturn d?;
 };
 
-public type Collection\ of\ PositionRequisitionStatus record {
+public type CollectionofPositionRequisitionStatus record {
     PositionRequisitionStatus[] results?;
 };
 
-public type Created\ Position record {
+public type CreatedPosition record {
     Position d?;
 };
 
@@ -262,7 +262,7 @@ public type GetPositionRequisitionStatusQueries record {
     ("code"|"createdBy"|"createdDateTime"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"positionId"|"processingStatus"|"requisitionId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.Position record {
+public type RelatedCollectionSFOData_Position record {
     Position[] results?;
 };
 
@@ -272,7 +272,7 @@ public type PositionMatrixRelationship record {
     string Position_effectiveStartDate?;
     @constraint:String {maxLength: 128}
     string matrixRelationshipType?;
-    Related\ CollectionSFOData\.Position relatedPositionNav?;
+    RelatedCollectionSFOData_Position relatedPositionNav?;
 };
 
 # Represents the Queries record for the operation: listPositionMatrixRelationships

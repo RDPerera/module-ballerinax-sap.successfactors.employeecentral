@@ -26,7 +26,7 @@ public type CreatewithdrawWfRequestQueries record {
     string wfRequestId;
 };
 
-public type Collection\ of\ AlertMessage record {
+public type CollectionofAlertMessage record {
     AlertMessage[] results?;
 };
 
@@ -34,23 +34,23 @@ public type AutoDelegateDetail_1 record {
     AutoDelegateDetail d?;
 };
 
-public type Related\ CollectionSFOData\.WfRequestActionResponse record {
+public type RelatedCollectionSFOData_WfRequestActionResponse record {
     WfRequestActionResponse[] results?;
 };
 
-public type Related\ CollectionSFOData\.WfRequestComments record {
+public type RelatedCollectionSFOData_WfRequestComments record {
     WfRequestComments[] results?;
 };
 
 public type Result record {
-    Related\ CollectionSFOData\.WfRequestActionResponse d?;
+    RelatedCollectionSFOData_WfRequestActionResponse d?;
 };
 
-public type Related\ CollectionSFOData\.WfRequestParticipator record {
+public type RelatedCollectionSFOData_WfRequestParticipator record {
     WfRequestParticipator[] results?;
 };
 
-public type Related\ CollectionSFOData\.WfRequestStep record {
+public type RelatedCollectionSFOData_WfRequestStep record {
     WfRequestStep[] results?;
 };
 
@@ -67,7 +67,7 @@ public type WfRequestPendingDataResponse record {
     EssMssWorkflowAttributeGroupBean[] workflowAttributeGroups?;
 };
 
-public type Collection\ of\ WfRequestStep record {
+public type CollectionofWfRequestStep record {
     WfRequestStep[] results?;
 };
 
@@ -92,7 +92,7 @@ public type EssMssWorkflowAttributeGroupBean record {
     string title?;
 };
 
-public type Created\ AutoDelegateDetail record {
+public type CreatedAutoDelegateDetail record {
     AutoDelegateDetail d?;
 };
 
@@ -119,10 +119,10 @@ public type ListAutoDelegateConfigsQueries record {
 public type AlertMessage record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.WfRequest wfRequestNav?;
+    RelatedCollectionSFOData_WfRequest wfRequestNav?;
 };
 
-public type Collection\ of\ WfRequestComments record {
+public type CollectionofWfRequestComments record {
     WfRequestComments[] results?;
 };
 
@@ -190,17 +190,17 @@ public type EssMssWorkflowSubAttributeBean record {
 };
 
 public type Wrapper record {
-    Collection\ of\ MyPendingWorkflow d?;
+    CollectionofMyPendingWorkflow d?;
 };
 
 public type WfRequest record {
     string wfRequestId?;
     EmpWfRequest empWfRequestNav?;
     WfRequest parentWfRequestNav?;
-    Related\ CollectionSFOData\.WfRequestComments wfRequestCommentsNav?;
-    Related\ CollectionSFOData\.WfRequestParticipator wfRequestParticipatorNav?;
-    Related\ CollectionSFOData\.WfRequestStep wfRequestStepNav?;
-    Related\ CollectionSFOData\.WorkflowAllowedActionList workflowAllowedActionListNav?;
+    RelatedCollectionSFOData_WfRequestComments wfRequestCommentsNav?;
+    RelatedCollectionSFOData_WfRequestParticipator wfRequestParticipatorNav?;
+    RelatedCollectionSFOData_WfRequestStep wfRequestStepNav?;
+    RelatedCollectionSFOData_WorkflowAllowedActionList workflowAllowedActionListNav?;
 };
 
 # Represents the Queries record for the operation: createsendbackWfRequest
@@ -217,7 +217,7 @@ public type GetAlertMessageQueries record {
     ("alertDescription"|"alertDescriptionLocalized_de_DE"|"alertDescriptionLocalized_defaultValue"|"alertDescriptionLocalized_en_GB"|"alertDescriptionLocalized_en_US"|"alertDescriptionLocalized_es_ES"|"alertDescriptionLocalized_fr_FR"|"alertDescriptionLocalized_ja_JP"|"alertDescriptionLocalized_ko_KR"|"alertDescriptionLocalized_localized"|"alertDescriptionLocalized_nl_NL"|"alertDescriptionLocalized_pt_BR"|"alertDescriptionLocalized_pt_PT"|"alertDescriptionLocalized_ru_RU"|"alertDescriptionLocalized_zh_CN"|"alertDescriptionLocalized_zh_TW"|"alertHeader"|"alertHeaderLocalized_de_DE"|"alertHeaderLocalized_defaultValue"|"alertHeaderLocalized_en_GB"|"alertHeaderLocalized_en_US"|"alertHeaderLocalized_es_ES"|"alertHeaderLocalized_fr_FR"|"alertHeaderLocalized_ja_JP"|"alertHeaderLocalized_ko_KR"|"alertHeaderLocalized_localized"|"alertHeaderLocalized_nl_NL"|"alertHeaderLocalized_pt_BR"|"alertHeaderLocalized_pt_PT"|"alertHeaderLocalized_ru_RU"|"alertHeaderLocalized_zh_CN"|"alertHeaderLocalized_zh_TW"|"createdBy"|"createdDateTime"|"effectiveStatus"|"externalCode"|"externalName"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemCreatedBy"|"mdfSystemCreatedDate"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemLastModifiedBy"|"mdfSystemLastModifiedDate"|"mdfSystemLastModifiedDateWithTZ"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId")[] \$select?;
 };
 
-public type Created\ AlertMessage record {
+public type CreatedAlertMessage record {
     AlertMessage d?;
 };
 
@@ -365,7 +365,7 @@ public type CreateapproveWfRequestQueries record {
     string wfRequestId;
 };
 
-public type Collection\ of\ WfRequestParticipator record {
+public type CollectionofWfRequestParticipator record {
     WfRequestParticipator[] results?;
 };
 
@@ -408,7 +408,7 @@ public type DeleteAutoDelegateConfigHeaders record {
     string If\-Match?;
 };
 
-public type Related\ CollectionSFOData\.WorkflowAllowedActionList record {
+public type RelatedCollectionSFOData_WorkflowAllowedActionList record {
     WorkflowAllowedActionList[] results?;
 };
 
@@ -453,14 +453,14 @@ public type WfRequestParticipator record {
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ EmpWfRequest d?;
+    CollectionofEmpWfRequest d?;
 };
 
 public type Wrapper_9 record {
-    Collection\ of\ WfRequest d?;
+    CollectionofWfRequest d?;
 };
 
-public type Collection\ of\ WorkflowAllowedActionList record {
+public type CollectionofWorkflowAllowedActionList record {
     WorkflowAllowedActionList[] results?;
 };
 
@@ -483,19 +483,19 @@ public type ListEmpWfRequestsQueries record {
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ WfRequestComments d?;
+    CollectionofWfRequestComments d?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ WfRequestStep d?;
+    CollectionofWfRequestStep d?;
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ AutoDelegateDetail d?;
+    CollectionofAutoDelegateDetail d?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ WfRequestParticipator d?;
+    CollectionofWfRequestParticipator d?;
 };
 
 public type PendDataGroupBean record {
@@ -506,11 +506,11 @@ public type PendDataGroupBean record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ WorkflowAllowedActionList d?;
+    CollectionofWorkflowAllowedActionList d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ AlertMessage d?;
+    CollectionofAlertMessage d?;
 };
 
 public type WfRequestComments_1 record {
@@ -529,7 +529,7 @@ public type GetWfRequestCommentsQueries record {
     ("actionType"|"comments"|"createdBy"|"createdDateTime"|"createdOn"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"userId"|"wfRequestCommentId"|"wfRequestId"|"wfRequestStepId")[] \$select?;
 };
 
-public type Collection\ of\ AutoDelegateDetail record {
+public type CollectionofAutoDelegateDetail record {
     AutoDelegateDetail[] results?;
 };
 
@@ -563,23 +563,23 @@ public type GetMyPendingWorkflowQueries record {
     ("desc"|"subject"|"url"|"wfRequestId")[] \$select?;
 };
 
-public type Collection\ of\ WfRequest record {
+public type CollectionofWfRequest record {
     WfRequest[] results?;
 };
 
-public type Modified\ AlertMessage record {
+public type ModifiedAlertMessage record {
     AlertMessage d?;
 };
 
-public type Modified\ AutoDelegateDetail record {
+public type ModifiedAutoDelegateDetail record {
     AutoDelegateDetail d?;
 };
 
-public type Related\ CollectionSFOData\.AutoDelegateDetail record {
+public type RelatedCollectionSFOData_AutoDelegateDetail record {
     AutoDelegateDetail[] results?;
 };
 
-public type Collection\ of\ EmpWfRequest record {
+public type CollectionofEmpWfRequest record {
     EmpWfRequest[] results?;
 };
 
@@ -589,15 +589,15 @@ public type GetWorkflowAllowedActionListQueries record {
     ("allowApprove"|"allowDelegateDecline"|"allowDelegateGrant"|"allowDelegateRevoke"|"allowPostComment"|"allowReject"|"allowResubmit"|"allowSendback"|"allowUpdateRequest"|"allowWithdraw"|"wfRequestId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.WfRequestPendingDataResponse record {
+public type RelatedCollectionSFOData_WfRequestPendingDataResponse record {
     WfRequestPendingDataResponse[] results?;
 };
 
-public type Collection\ of\ MyPendingWorkflow record {
+public type CollectionofMyPendingWorkflow record {
     MyPendingWorkflow[] results?;
 };
 
-public type Related\ CollectionSFOData\.WfRequest record {
+public type RelatedCollectionSFOData_WfRequest record {
     WfRequest[] results?;
 };
 
@@ -640,7 +640,7 @@ public type WorkflowAllowedActionList record {
 };
 
 public type Result_1 record {
-    Related\ CollectionSFOData\.WfRequestPendingDataResponse d?;
+    RelatedCollectionSFOData_WfRequestPendingDataResponse d?;
 };
 
 # Represents the Queries record for the operation: createcommentWfRequest

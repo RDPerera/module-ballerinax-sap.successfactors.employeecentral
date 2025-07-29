@@ -90,11 +90,11 @@ public type EmpPayCompRecurring_1 record {
     EmpPayCompRecurring d?;
 };
 
-public type Collection\ of\ OneTimeDeduction record {
+public type CollectionofOneTimeDeduction record {
     OneTimeDeduction[] results?;
 };
 
-public type Collection\ of\ DeductionScreenId record {
+public type CollectionofDeductionScreenId record {
     DeductionScreenId[] results?;
 };
 
@@ -124,7 +124,7 @@ public type OneTimeDeduction_1 record {
     OneTimeDeduction d?;
 };
 
-public type Collection\ of\ RecurringDeductionItem record {
+public type CollectionofRecurringDeductionItem record {
     RecurringDeductionItem[] results?;
 };
 
@@ -186,7 +186,7 @@ public type GetOneTimeDeductionQueries record {
 };
 
 public type Wrapper record {
-    Collection\ of\ OneTimeDeduction d?;
+    CollectionofOneTimeDeduction d?;
 };
 
 public type EmpPayCompRecurring record {
@@ -204,7 +204,7 @@ public type GetEmpCompensationGroupSumCalculatedQueries record {
     ("amount"|"currencyCode"|"errorCode"|"errorMessage"|"payComponentGroupId"|"seqNumber"|"startDate"|"userId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.RecurringDeductionItem record {
+public type RelatedCollectionSFOData_RecurringDeductionItem record {
     RecurringDeductionItem[] results?;
 };
 
@@ -234,7 +234,7 @@ public type GetEmpPayCompRecurringQueries record {
     ("createdBy"|"createdDateTime"|"createdOn"|"currencyCode"|"endDate"|"frequency"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"notes"|"operation"|"payComponent"|"paycompvalue"|"seqNumber"|"startDate"|"userId")[] \$select?;
 };
 
-public type Collection\ of\ EmpPayCompRecurring record {
+public type CollectionofEmpPayCompRecurring record {
     EmpPayCompRecurring[] results?;
 };
 
@@ -280,11 +280,11 @@ public type ListEmpCompensationExpandEmpCompensationCalculatedNavsQueries record
     ("compaRatio"|"currency"|"errorCode"|"errorMessage"|"payRange"|"proratedMaxPointOfPayRange"|"proratedMidPointOfPayRange"|"proratedMinPointOfPayRange"|"rangePenetration"|"seqNumber"|"startDate"|"userId"|"yearlyBaseSalary")[] \$select?;
 };
 
-public type Collection\ of\ EmpPayCompNonRecurring record {
+public type CollectionofEmpPayCompNonRecurring record {
     EmpPayCompNonRecurring[] results?;
 };
 
-public type Collection\ of\ RecurringDeduction record {
+public type CollectionofRecurringDeduction record {
     RecurringDeduction[] results?;
 };
 
@@ -328,7 +328,7 @@ public type EmpPayCompNonRecurring_1 record {
 };
 
 public type Wrapper_8 record {
-    Collection\ of\ EmpCompensationGroupSumCalculated d?;
+    CollectionofEmpCompensationGroupSumCalculated d?;
 };
 
 # Represents the Queries record for the operation: getEmpCompensationCalculated
@@ -338,30 +338,30 @@ public type GetEmpCompensationCalculatedQueries record {
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ DeductionScreenId d?;
+    CollectionofDeductionScreenId d?;
 };
 
 public type RecurringDeduction record {
     string effectiveStartDate?;
     @constraint:String {maxLength: 100}
     string userSysId?;
-    Related\ CollectionSFOData\.RecurringDeductionItem recurringItems?;
+    RelatedCollectionSFOData_RecurringDeductionItem recurringItems?;
 };
 
 public type Wrapper_5 record {
-    Collection\ of\ RecurringDeduction d?;
+    CollectionofRecurringDeduction d?;
 };
 
 public type Wrapper_6 record {
-    Collection\ of\ EmpCompensation d?;
+    CollectionofEmpCompensation d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ EmpPayCompNonRecurring d?;
+    CollectionofEmpPayCompNonRecurring d?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ RecurringDeductionItem d?;
+    CollectionofRecurringDeductionItem d?;
 };
 
 public type EmpCompensationCalculated record {
@@ -371,15 +371,15 @@ public type EmpCompensationCalculated record {
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ EmpCompensationCalculated d?;
+    CollectionofEmpCompensationCalculated d?;
 };
 
-public type Collection\ of\ EmpCompensation record {
+public type CollectionofEmpCompensation record {
     EmpCompensation[] results?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ EmpPayCompRecurring d?;
+    CollectionofEmpPayCompRecurring d?;
 };
 
 # Represents the Queries record for the operation: listEmpPayCompNonRecurrings
@@ -400,7 +400,7 @@ public type ListEmpPayCompNonRecurringsQueries record {
     ("alternativeCostCenter"|"createdBy"|"createdDateTime"|"createdOn"|"currencyCode"|"lastModifiedBy"|"lastModifiedDateTime"|"lastModifiedOn"|"notes"|"operation"|"payComponentCode"|"payDate"|"userId"|"value")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmpPayCompRecurring record {
+public type RelatedCollectionSFOData_EmpPayCompRecurring record {
     EmpPayCompRecurring[] results?;
 };
 
@@ -410,11 +410,11 @@ public type EmpCompensationGroupSumCalculated record {
     string userId?;
 };
 
-public type Related\ CollectionSFOData\.EmpCompensationGroupSumCalculated record {
+public type RelatedCollectionSFOData_EmpCompensationGroupSumCalculated record {
     EmpCompensationGroupSumCalculated[] results?;
 };
 
-public type Collection\ of\ EmpCompensationCalculated record {
+public type CollectionofEmpCompensationCalculated record {
     EmpCompensationCalculated[] results?;
 };
 
@@ -429,8 +429,8 @@ public type EmpCompensation record {
     @constraint:String {maxLength: 100}
     string userId?;
     EmpCompensationCalculated empCompensationCalculatedNav?;
-    Related\ CollectionSFOData\.EmpCompensationGroupSumCalculated empCompensationGroupSumCalculatedNav?;
-    Related\ CollectionSFOData\.EmpPayCompRecurring empPayCompRecurringNav?;
+    RelatedCollectionSFOData_EmpCompensationGroupSumCalculated empCompensationGroupSumCalculatedNav?;
+    RelatedCollectionSFOData_EmpPayCompRecurring empPayCompRecurringNav?;
 };
 
 # Represents the Queries record for the operation: listDeductionScreenIds
@@ -451,7 +451,7 @@ public type ListDeductionScreenIdsQueries record {
     ("createdBy"|"createdDateTime"|"dummyFieldValue"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemCreatedBy"|"mdfSystemCreatedDate"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemLastModifiedBy"|"mdfSystemLastModifiedDate"|"mdfSystemLastModifiedDateWithTZ"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"onetimeDeductionId"|"onetimeDeductionUserGoAdminId"|"onetimeDeductionUserGoEmployeeEditId"|"onetimeDeductionUserGoEmployeeId"|"recurringDeductionId")[] \$select?;
 };
 
-public type Collection\ of\ EmpCompensationGroupSumCalculated record {
+public type CollectionofEmpCompensationGroupSumCalculated record {
     EmpCompensationGroupSumCalculated[] results?;
 };
 

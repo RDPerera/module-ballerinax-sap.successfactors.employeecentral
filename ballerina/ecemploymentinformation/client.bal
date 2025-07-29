@@ -19,6 +19,7 @@
 
 import ballerina/data.jsondata;
 import ballerina/http;
+import ballerina/log;
 import ballerinax/sap;
 
 # You can use these APIs to access the employment related information, including job information, employment termination, and work permit.
@@ -33,7 +34,8 @@ public isolated client class Client {
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
-        string serviceUrl = string `https://${hostname}:${port}/successfactors/odata/v2`;
+        string serviceUrl = string `${hostname}:${port}/successfactors/odata/v2`;
+        log:printInfo(string `Initializing SAP SuccessFactors Employee Central Client - serviceUrl: ${serviceUrl}`);
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, http1Settings: config.http1Settings, http2Settings: config.http2Settings, timeout: config.timeout, forwarded: config.forwarded, followRedirects: config.followRedirects, poolConfig: config.poolConfig, cache: config.cache, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, cookieConfig: config.cookieConfig, responseLimits: config.responseLimits, secureSocket: config.secureSocket, proxy: config.proxy, socketConfig: config.socketConfig, validation: config.validation, laxDataBinding: config.laxDataBinding};
         self.clientEp = check new (serviceUrl, httpClientConfig);
     }
@@ -265,7 +267,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New entity 
     # + return - Created entity 
-    remote isolated function createHireDateChange(HireDateChange payload, map<string|string[]> headers = {}) returns Created\ HireDateChange|error {
+    remote isolated function createHireDateChange(HireDateChange payload, map<string|string[]> headers = {}) returns CreatedHireDateChange|error {
         string resourcePath = string `/HireDateChange`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

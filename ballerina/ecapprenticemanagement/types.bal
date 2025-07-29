@@ -26,7 +26,7 @@ public type DeleteApprenticeSchoolEventHeaders record {
     string If\-Match?;
 };
 
-public type Created\ Apprentice record {
+public type CreatedApprentice record {
     Apprentice d?;
 };
 
@@ -48,7 +48,7 @@ public type ListDepartmentApprenticeDetailsQueries record {
     ("Department_effectiveStartDate"|"Department_externalCode"|"apprenticeDepartmentLocation"|"createdBy"|"createdDateTime"|"decentralTrainerUserId"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"maxNumberOfApprentices"|"mdfSystemRecordStatus"|"noteField")[] \$select?;
 };
 
-public type Collection\ of\ Apprentice record {
+public type CollectionofApprentice record {
     Apprentice[] results?;
 };
 
@@ -59,19 +59,19 @@ public type DepartmentApprenticeDetail record {
     string externalCode?;
 };
 
-public type Modified\ DepartmentApprenticeDetail record {
+public type ModifiedDepartmentApprenticeDetail record {
     DepartmentApprenticeDetail d?;
 };
 
-public type Modified\ Apprentice record {
+public type ModifiedApprentice record {
     Apprentice d?;
 };
 
-public type Created\ ApprenticeEventType record {
+public type CreatedApprenticeEventType record {
     ApprenticeEvent d?;
 };
 
-public type Created\ ApprenticeSchoolEvent record {
+public type CreatedApprenticeSchoolEvent record {
     ApprenticeSchoolEvent d?;
 };
 
@@ -152,10 +152,10 @@ public type DeleteApprenticePracticalTrainingEventHeaders record {
 };
 
 public type Wrapper record {
-    Collection\ of\ ApprenticeEventType d?;
+    CollectionofApprenticeEventType d?;
 };
 
-public type Collection\ of\ ApprenticeSchool record {
+public type CollectionofApprenticeSchool record {
     ApprenticeSchool[] results?;
 };
 
@@ -211,7 +211,7 @@ public type ListApprenticeGroupsQueries record {
 public type ApprenticeSchoolEvent record {
     @constraint:String {maxLength: 128}
     string externalCode?;
-    Related\ CollectionSFOData\.Apprentice assignedApprentices?;
+    RelatedCollectionSFOData_Apprentice assignedApprentices?;
     ApprenticeEvent eventTypeNav?;
     ApprenticeSchool schoolNav?;
 };
@@ -258,7 +258,7 @@ public type ListApprenticeEventTypesQueries record {
     ("apprenticeEventTypeCategory"|"createdBy"|"createdDateTime"|"eventTypeDescription_de_DE"|"eventTypeDescription_defaultValue"|"eventTypeDescription_en_DEBUG"|"eventTypeDescription_en_GB"|"eventTypeDescription_en_US"|"eventTypeDescription_es_ES"|"eventTypeDescription_fr_FR"|"eventTypeDescription_ja_JP"|"eventTypeDescription_ko_KR"|"eventTypeDescription_localized"|"eventTypeDescription_nl_NL"|"eventTypeDescription_pt_BR"|"eventTypeDescription_pt_PT"|"eventTypeDescription_ru_RU"|"eventTypeDescription_zh_CN"|"eventTypeDescription_zh_TW"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus")[] \$select?;
 };
 
-public type Created\ ApprenticeGroup record {
+public type CreatedApprenticeGroup record {
     ApprenticeGroup d?;
 };
 
@@ -267,11 +267,11 @@ public type ApprenticeGroup record {
     string externalCode?;
 };
 
-public type Collection\ of\ ApprenticeSchoolEvent record {
+public type CollectionofApprenticeSchoolEvent record {
     ApprenticeSchoolEvent[] results?;
 };
 
-public type Related\ CollectionSFOData\.Apprentice record {
+public type RelatedCollectionSFOData_Apprentice record {
     Apprentice[] results?;
 };
 
@@ -297,7 +297,7 @@ public type GetApprenticeInternalTrainingEventQueries record {
     ("createdBy"|"createdDate"|"createdDateTime"|"endDateAndTime"|"eventName"|"eventType"|"externalCode"|"isAllDayEvent"|"lastModifiedBy"|"lastModifiedDate"|"lastModifiedDateTime"|"lastModifiedDateWithTZ"|"learningItem"|"location"|"mdfSystemEffectiveEndDate"|"mdfSystemEffectiveStartDate"|"mdfSystemEntityId"|"mdfSystemObjectType"|"mdfSystemRecordId"|"mdfSystemRecordStatus"|"mdfSystemStatus"|"mdfSystemTransactionSequence"|"mdfSystemVersionId"|"note"|"shareStatus"|"startDateAndTime")[] \$select?;
 };
 
-public type Collection\ of\ ApprenticeEventType record {
+public type CollectionofApprenticeEventType record {
     ApprenticeEvent[] results?;
 };
 
@@ -311,15 +311,15 @@ public type ApprenticeSchoolEvent_1 record {
     ApprenticeSchoolEvent d?;
 };
 
-public type Collection\ of\ DepartmentApprenticeDetail record {
+public type CollectionofDepartmentApprenticeDetail record {
     DepartmentApprenticeDetail[] results?;
 };
 
-public type Created\ ApprenticeSchool record {
+public type CreatedApprenticeSchool record {
     ApprenticeSchool d?;
 };
 
-public type Created\ DepartmentApprenticeDetail record {
+public type CreatedDepartmentApprenticeDetail record {
     DepartmentApprenticeDetail d?;
 };
 
@@ -328,27 +328,27 @@ public type ApprenticeEventType record {
 };
 
 public type Wrapper_4 record {
-    Collection\ of\ ApprenticeSchoolEvent d?;
+    CollectionofApprenticeSchoolEvent d?;
 };
 
 public type Wrapper_7 record {
-    Collection\ of\ Apprentice d?;
+    CollectionofApprentice d?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ DepartmentApprenticeDetail d?;
+    CollectionofDepartmentApprenticeDetail d?;
 };
 
-public type Modified\ ApprenticeEventType record {
+public type ModifiedApprenticeEventType record {
     ApprenticeEvent d?;
 };
 
 public type Wrapper_2 record {
-    Collection\ of\ ApprenticeSchool d?;
+    CollectionofApprenticeSchool d?;
 };
 
 public type Wrapper_3 record {
-    Collection\ of\ ApprenticeGroup d?;
+    CollectionofApprenticeGroup d?;
 };
 
 # Represents the Queries record for the operation: getApprentice
@@ -431,11 +431,11 @@ public type DepartmentApprenticeDetail_1 record {
     DepartmentApprenticeDetail d?;
 };
 
-public type Modified\ ApprenticeGroup record {
+public type ModifiedApprenticeGroup record {
     ApprenticeGroup d?;
 };
 
-public type Collection\ of\ ApprenticeGroup record {
+public type CollectionofApprenticeGroup record {
     ApprenticeGroup[] results?;
 };
 
@@ -461,7 +461,7 @@ public type ListApprenticeSchoolsQueries record {
     ("createdBy"|"createdDateTime"|"externalCode"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"schoolContactPerson"|"schoolDescription"|"schoolLocation")[] \$select?;
 };
 
-public type Modified\ ApprenticeSchool record {
+public type ModifiedApprenticeSchool record {
     ApprenticeSchool d?;
 };
 
@@ -471,7 +471,7 @@ public type DeleteApprenticeEventTypeHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ ApprenticeSchoolEvent record {
+public type ModifiedApprenticeSchoolEvent record {
     ApprenticeSchoolEvent d?;
 };
 

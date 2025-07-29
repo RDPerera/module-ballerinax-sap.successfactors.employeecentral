@@ -39,7 +39,7 @@ public type ListEmployeeDismissalProtectionDetailsQueries record {
 };
 
 public type Wrapper record {
-    Collection\ of\ EmployeeDismissalProtectionDetail d?;
+    CollectionofEmployeeDismissalProtectionDetail d?;
 };
 
 # Represents the Queries record for the operation: listEmployeeDismissalProtections
@@ -62,14 +62,14 @@ public type ListEmployeeDismissalProtectionsQueries record {
     ("createdBy"|"createdDateTime"|"lastModifiedBy"|"lastModifiedDateTime"|"mdfSystemRecordStatus"|"workerId")[] \$select?;
 };
 
-public type Related\ CollectionSFOData\.EmployeeDismissalProtectionDetail record {
+public type RelatedCollectionSFOData_EmployeeDismissalProtectionDetail record {
     EmployeeDismissalProtectionDetail[] results?;
 };
 
 public type EmployeeDismissalProtection record {
     @constraint:String {maxLength: 100}
     string workerId?;
-    Related\ CollectionSFOData\.EmployeeDismissalProtectionDetail empDismissalProtectionDetails?;
+    RelatedCollectionSFOData_EmployeeDismissalProtectionDetail empDismissalProtectionDetails?;
 };
 
 public type EmployeeDismissalProtection_1 record {
@@ -82,7 +82,7 @@ public type DeleteEmployeeDismissalProtectionHeaders record {
     string If\-Match?;
 };
 
-public type Modified\ EmployeeDismissalProtectionDetail record {
+public type ModifiedEmployeeDismissalProtectionDetail record {
     EmployeeDismissalProtectionDetail d?;
 };
 
@@ -93,19 +93,19 @@ public type EmployeeDismissalProtectionDetail record {
     string externalCode?;
 };
 
-public type Collection\ of\ EmployeeDismissalProtection record {
+public type CollectionofEmployeeDismissalProtection record {
     EmployeeDismissalProtection[] results?;
 };
 
-public type Modified\ EmployeeDismissalProtection record {
+public type ModifiedEmployeeDismissalProtection record {
     EmployeeDismissalProtection d?;
 };
 
-public type Created\ EmployeeDismissalProtection record {
+public type CreatedEmployeeDismissalProtection record {
     EmployeeDismissalProtection d?;
 };
 
-public type Created\ EmployeeDismissalProtectionDetail record {
+public type CreatedEmployeeDismissalProtectionDetail record {
     EmployeeDismissalProtectionDetail d?;
 };
 
@@ -119,12 +119,12 @@ public type DeleteEmployeeDismissalProtectionDetailHeaders record {
     string If\-Match?;
 };
 
-public type Collection\ of\ EmployeeDismissalProtectionDetail record {
+public type CollectionofEmployeeDismissalProtectionDetail record {
     EmployeeDismissalProtectionDetail[] results?;
 };
 
 public type Wrapper_1 record {
-    Collection\ of\ EmployeeDismissalProtection d?;
+    CollectionofEmployeeDismissalProtection d?;
 };
 
 # Represents the Queries record for the operation: getEmployeeDismissalProtection
