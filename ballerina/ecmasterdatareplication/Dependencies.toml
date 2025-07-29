@@ -234,7 +234,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "oauth2"
-version = "2.14.0"
+version = "2.14.1"
 dependencies = [
 	{org = "ballerina", name = "cache"},
 	{org = "ballerina", name = "crypto"},
@@ -330,9 +330,9 @@ modules = [
 ]
 
 [[package]]
-org = "dilanperera"
-name = "ecmasterdatareplication"
-version = "0.1.0"
+org = "ballerinax"
+name = "sap.successfactors.ecmasterdatareplication"
+version = "1.0.0"
 dependencies = [
 	{org = "ballerina", name = "constraint"},
 	{org = "ballerina", name = "data.jsondata"},
@@ -342,6 +342,6 @@ dependencies = [
 	{org = "ballerinax", name = "sap"}
 ]
 modules = [
-	{org = "dilanperera", packageName = "ecmasterdatareplication", moduleName = "ecmasterdatareplication"}
+	{org = "ballerinax", packageName = "sap.successfactors.ecmasterdatareplication", moduleName = "sap.successfactors.ecmasterdatareplication"}
 ]
 
