@@ -1,5 +1,5 @@
 [package]
-org = "ballerinax"
+org = "edotco"
 name = "sap.successfactors.ecalternativecostdistribution"
 version = "1.0.0"
 distribution = "2201.12.0"

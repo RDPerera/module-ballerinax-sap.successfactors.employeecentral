@@ -264,11 +264,10 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "task"
-version = "2.11.0"
+version = "2.7.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "time"},
-	{org = "ballerina", name = "uuid"}
+	{org = "ballerina", name = "time"}
 ]
 
 [[package]]
@@ -288,17 +287,6 @@ dependencies = [
 ]
 modules = [
 	{org = "ballerina", packageName = "url", moduleName = "url"}
-]
-
-[[package]]
-org = "ballerina"
-name = "uuid"
-version = "1.10.0"
-dependencies = [
-	{org = "ballerina", name = "crypto"},
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "lang.int"},
-	{org = "ballerina", name = "time"}
 ]
 
 [[package]]
@@ -330,7 +318,7 @@ modules = [
 ]
 
 [[package]]
-org = "ballerinax"
+org = "edotco"
 name = "sap.successfactors.ecmasterdatareplication"
 version = "1.0.0"
 dependencies = [
@@ -342,6 +330,6 @@ dependencies = [
 	{org = "ballerinax", name = "sap"}
 ]
 modules = [
-	{org = "ballerinax", packageName = "sap.successfactors.ecmasterdatareplication", moduleName = "sap.successfactors.ecmasterdatareplication"}
+	{org = "edotco", packageName = "sap.successfactors.ecmasterdatareplication", moduleName = "sap.successfactors.ecmasterdatareplication"}
 ]
 
