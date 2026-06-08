@@ -52,6 +52,11 @@ jobs:
           distribution: "temurin"
           java-version: 21.0.3
 
+      - name: Cache Dependencies from Prod Central
+        if: ${{ inputs.environment == 'DEV CENTRAL' }}
+        run: |
+          ./gradlew clean :employeecentral-ballerina:${{ inputs.connector }}:build -x test
+
       - name: Ballerina Central Dev Push
         if: ${{ inputs.environment == 'DEV CENTRAL' }}
         env:
@@ -62,7 +67,7 @@ jobs:
           packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
         run: |
-          ./gradlew clean :employeecentral-ballerina:${{ inputs.connector }}:build -PpublishToCentral=true -x test
+          ./gradlew :employeecentral-ballerina:${{ inputs.connector }}:build -PpublishToCentral=true -x test
 
       - name: Ballerina Central Stage Push
         if: ${{ inputs.environment == 'STAGE CENTRAL' }}
