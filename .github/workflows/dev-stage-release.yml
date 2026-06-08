@@ -25,16 +25,15 @@ jobs:
         run: |
           folders=()
           cd ballerina
-          for dir in $(find . -type d -maxdepth 1 -mindepth 1 | cut -c3-); do
+          for dir in $(find . -type d -maxdepth 1  -mindepth 1 | cut -c3-); do
             if [[ "$dir" == resources ]]; then
               continue
             fi
-            folders+=("$dir")
+            folders+=("$dir");
           done
           echo "directories=$(jq -nc --args '$ARGS.positional' ${folders[@]})" >> $GITHUB_OUTPUT
 
   publish-release:
-    name: Publish Connectors
     runs-on: ubuntu-22.04
     needs: generate-matrix
     if: ${{ github.repository_owner == 'ballerina-platform' }}
