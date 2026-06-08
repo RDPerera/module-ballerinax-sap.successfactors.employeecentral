@@ -1,0 +1,126 @@
+name: Release All Connectors
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release-all:
+    name: Release All Connectors
+    runs-on: ubuntu-22.04
+    if: ${{ github.repository_owner == 'ballerina-platform' }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Get Ballerina Version
+        run: |
+          BAL_VERSION=$(grep -w 'ballerinaLangVersion' gradle.properties | cut -d= -f2 | rev | cut --complement -d- -f1 | rev)
+          if [ -z "$BAL_VERSION" ]; then BAL_VERSION="latest"; fi
+          echo "BAL_VERSION=$BAL_VERSION" >> $GITHUB_ENV
+
+      - name: Set Up Ballerina
+        uses: ballerina-platform/setup-ballerina@v1.1.0
+        with:
+          version: ${{ env.BAL_VERSION }}
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 21.0.3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name ${{ secrets.BALLERINA_BOT_USERNAME }}
+          git config --global user.email ${{ secrets.BALLERINA_BOT_EMAIL }}
+
+      - name: Build without Tests
+        env:
+          packageUser: ${{ github.actor }}
+          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew build -x test
+
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        env:
+          TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db,public.ecr.aws/aquasecurity/trivy-db
+          TRIVY_JAVA_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-java-db,public.ecr.aws/aquasecurity/trivy-java-db
+        with:
+          scan-type: "rootfs"
+          scan-ref: "${{ github.workspace }}/ballerina"
+          format: "table"
+          timeout: "10m0s"
+          exit-code: "1"
+          skip-dirs: "resources"
+          scanners: "vuln"
+          cache-dir: "/tmp/trivy-cache"
+
+      - name: Release All Connectors
+        env:
+          GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          BALLERINA_CENTRAL_ACCESS_TOKEN: ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN }}
+          packageUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
+          packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          publishUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
+          publishPAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
+        run: |
+          BASE_BRANCH=${GITHUB_REF##*/}
+          connectors=(
+            ecadvances
+            ecalternativecostdistribution
+            ecapprenticemanagement
+            eccompensationinformation
+            ecdismissalprotection
+            ecemployeecentralpayroll
+            ecemployeeprofile
+            ecemploymentinformation
+            ecfoundationorganization
+            ecglobalassignment
+            ecglobalbenefits
+            ecincometaxdeclaration
+            ecmasterdatareplication
+            ecpaymentinformation
+            ecpayrolltimesheets
+            ecpersonalinformation
+            ecpositionmanagement
+            ecskillsmanagement
+            ectimeoff
+            ecworkflow
+            employeecentralec
+          )
+          for connector in "${connectors[@]}"; do
+            echo "===== Releasing $connector ====="
+
+            # Sync global version= with this connector's version
+            CONNECTOR_VERSION=$(grep -w "${connector}Version" gradle.properties | cut -d= -f2)
+            CURRENT_VERSION=$(grep -w 'version' gradle.properties | cut -d= -f2)
+            if [[ "$CURRENT_VERSION" != "$CONNECTOR_VERSION" ]]; then
+              sed -i "s/version=.*/version=$CONNECTOR_VERSION/" gradle.properties
+              git commit -m "[Automated] Update version to match connector version" gradle.properties
+            fi
+
+            RELEASE_VERSION=$(grep -w 'version' gradle.properties | cut -d= -f2 | rev | cut -d- -f2 | rev)
+            echo "Release version: $RELEASE_VERSION"
+
+            git checkout -b release-${connector}-${RELEASE_VERSION}
+
+            ./gradlew clean :employeecentral-ballerina:${connector}:release \
+              -x :employeecentral-examples:test \
+              -Prelease.useAutomaticVersion=true
+
+            ./gradlew -Pversion=${RELEASE_VERSION} \
+              -P${connector}Version=${RELEASE_VERSION} \
+              :employeecentral-ballerina:${connector}:publish \
+              -x test -PpublishToCentral=true
+
+            git push origin release-${connector}-${RELEASE_VERSION}
+            gh release create ${connector}-v${RELEASE_VERSION} \
+              --title "${connector}-v${RELEASE_VERSION}"
+            gh pr create \
+              --base "$BASE_BRANCH" \
+              --title "[Automated] Sync $BASE_BRANCH after ${connector}-${RELEASE_VERSION} release" \
+              --body "Sync $BASE_BRANCH after ${connector}-${RELEASE_VERSION} release"
+
+            git checkout "$BASE_BRANCH"
+            echo "===== Released $connector ====="
+          done
